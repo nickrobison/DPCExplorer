@@ -8,26 +8,35 @@
 
 import SwiftUI
 
+struct Organization {
+    var name: String
+    var id: String
+}
+
 struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            VStack(alignment: .leading) {
+                HStack {
+                    OrganizationView()
+                    Spacer()
+                }
+                Spacer()
+            }
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("First")
+                        Text("Home")
                     }
                 }
                 .tag(0)
-            Text("Second View")
-                .font(.title)
+            PractitionerView()
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Second")
+                        Text("Providers")
                     }
                 }
                 .tag(1)
@@ -37,6 +46,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+            ContentView()
     }
 }
