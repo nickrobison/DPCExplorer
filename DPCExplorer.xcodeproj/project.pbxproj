@@ -19,8 +19,13 @@
 		EB100E7F23667ED60065E084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7D23667ED60065E084 /* LaunchScreen.storyboard */; };
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
+		EB763A16236BA890001EC7C9 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
+		EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
+		EB763A59236BACA9001EC7C9 /* ProviderBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBio.swift */; };
+		EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5A236BAD51001EC7C9 /* Name.swift */; };
+		EB763A5D236BAD7E001EC7C9 /* TestProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestProviders.swift */; };
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
-		EB9976F4236689320072DD9B /* PractitionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* PractitionerView.swift */; };
+		EB9976F4236689320072DD9B /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +70,13 @@
 		EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCExplorerUITests.swift; sourceTree = "<group>"; };
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB763A15236BA890001EC7C9 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		EB763A56236BABFD001EC7C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		EB763A58236BACA9001EC7C9 /* ProviderBio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderBio.swift; sourceTree = "<group>"; };
+		EB763A5A236BAD51001EC7C9 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		EB763A5C236BAD7E001EC7C9 /* TestProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProviders.swift; sourceTree = "<group>"; };
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
-		EB9976F3236689320072DD9B /* PractitionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PractitionerView.swift; sourceTree = "<group>"; };
+		EB9976F3236689320072DD9B /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EB763A14236BA87C001EC7C9 /* Models */,
 				EB100E6F23667ED30065E084 /* AppDelegate.swift */,
 				EB100E7123667ED30065E084 /* SceneDelegate.swift */,
 				EB100E7623667ED30065E084 /* ContentView.swift */,
@@ -131,7 +142,8 @@
 				EB100E7323667ED30065E084 /* DPCExplorer.xcdatamodeld */,
 				EB100E7A23667ED60065E084 /* Preview Content */,
 				EB9976F1236687D40072DD9B /* OrganizationView.swift */,
-				EB9976F3236689320072DD9B /* PractitionerView.swift */,
+				EB9976F3236689320072DD9B /* ProviderView.swift */,
+				EB763A58236BACA9001EC7C9 /* ProviderBio.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -140,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				EB100E7B23667ED60065E084 /* Preview Assets.xcassets */,
+				EB763A5C236BAD7E001EC7C9 /* TestProviders.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -160,6 +173,16 @@
 				EB100E9623667ED60065E084 /* Info.plist */,
 			);
 			path = DPCExplorerUITests;
+			sourceTree = "<group>";
+		};
+		EB763A14236BA87C001EC7C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB763A15236BA890001EC7C9 /* Organization.swift */,
+				EB763A56236BABFD001EC7C9 /* Provider.swift */,
+				EB763A5A236BAD51001EC7C9 /* Name.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EDA56C22C6D191725923543D /* Frameworks */ = {
@@ -426,10 +449,15 @@
 			files = (
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
-				EB9976F4236689320072DD9B /* PractitionerView.swift in Sources */,
+				EB9976F4236689320072DD9B /* ProviderView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
+				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
+				EB763A59236BACA9001EC7C9 /* ProviderBio.swift in Sources */,
+				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
+				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
 				EB100E7523667ED30065E084 /* DPCExplorer.xcdatamodeld in Sources */,
+				EB763A5D236BAD7E001EC7C9 /* TestProviders.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,35 +8,27 @@
 
 import SwiftUI
 
-struct Organization {
-    var name: String
-    var id: String
-}
 
 struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            VStack(alignment: .leading) {
-                HStack {
-                    OrganizationView()
-                    Spacer()
-                }
-                Spacer()
-            }
+            Text("First View")
+                .font(.title)
                 .tabItem {
                     VStack {
                         Image("first")
-                        Text("Home")
+                        Text("Organization")
                     }
                 }
                 .tag(0)
-            PractitionerView()
+            Text("Second View")
+                .font(.title)
                 .tabItem {
                     VStack {
                         Image("second")
-                        Text("Providers")
+                        Text("Practitioner")
                     }
                 }
                 .tag(1)

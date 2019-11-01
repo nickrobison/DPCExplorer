@@ -8,22 +8,26 @@
 
 import SwiftUI
 struct OrganizationView: View {
+    var o: Organization
     var body: some View {
         VStack(alignment: .leading) {
-        Text("Organization")
+            Text(o.name)
             .font(.title)
             HStack {
-                Text("Test Medical Center")
+                Text("NPI")
                 Text("-")
-                Text("1234")
+                Text(o.npi)
+                Spacer()
             }
             .font(.subheadline)
+            Spacer()
         }
+    .padding()
     }
 }
 
 struct OrganizationView_Previews: PreviewProvider {
     static var previews: some View {
-            OrganizationView()
+        OrganizationView(o: Organization(name: "CMS", npi: "12345"))
     }
 }
