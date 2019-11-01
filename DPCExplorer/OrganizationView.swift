@@ -21,6 +21,15 @@ struct OrganizationView: View {
             }
             .font(.subheadline)
             Spacer()
+            Divider()
+            HStack {
+                Text(o.address.line[0])
+                HStack {
+                    Text("\(o.address.city),")
+                    Text(o.address.state)
+                    Text(o.address.postalCode)
+                }
+            }
         }
     .padding()
     }

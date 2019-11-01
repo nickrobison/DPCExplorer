@@ -1,5 +1,5 @@
 //
-//  Organization.swift
+//  Address.swift
 //  DPCExplorer
 //
 //  Created by Nicholas Robison on 10/31/19.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Organization: Identifiable {
-    let id: UUID
-    let name: String
-    let npi: String
-    let address: Address
+struct Address {
+    var line: [String]
+    var city: String
+    var state: String
+    var postalCode: String
 }

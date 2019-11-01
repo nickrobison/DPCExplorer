@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
+    @EnvironmentObject var client: DPCClient
  
     var body: some View {
         TabView(selection: $selection){
@@ -45,5 +46,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
             ContentView()
+                .environmentObject(DPCClient(baseURL: "http://localhost:3002/v1/api"))
     }
 }
