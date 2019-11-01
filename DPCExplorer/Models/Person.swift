@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Person.swift
 //  DPCExplorer
 //
 //  Created by Nicholas Robison on 10/31/19.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-struct Provider: Person {
-    let name: Name
-    let npi: String
-    let specialty: String
-    let patients: [Patient]
+protocol Person {
+    var name: Name {get}
 }

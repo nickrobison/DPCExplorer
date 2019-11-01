@@ -16,14 +16,16 @@ struct ProviderBioView: View {
                 .imageScale(.large)
             VStack(alignment: .leading) {
                 HStack {
-                    Text(provider.name)
+                    nameFormatter(name: provider.name)
                         .font(.title)
-                    Text("-")
-                    Text(provider.npi)
-                        .font(.subheadline)
                 }
+                HStack {
                 Text(provider.specialty)
                     .font(.subheadline)
+                Text("-")
+                Text(provider.npi)
+                    .font(.subheadline)
+                }
             }
             Spacer()
         }

@@ -21,11 +21,19 @@
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
 		EB763A16236BA890001EC7C9 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
 		EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
-		EB763A59236BACA9001EC7C9 /* ProviderBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBio.swift */; };
+		EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */; };
 		EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5A236BAD51001EC7C9 /* Name.swift */; };
 		EB763A5D236BAD7E001EC7C9 /* TestProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestProviders.swift */; };
+		EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5E236BB06E001EC7C9 /* Patient.swift */; };
+		EB763A61236BB481001EC7C9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A60236BB481001EC7C9 /* Person.swift */; };
+		EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A62236BB512001EC7C9 /* PersonCellView.swift */; };
+		EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A64236BB582001EC7C9 /* ViewHelpers.swift */; };
+		EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A66236BB804001EC7C9 /* ProviderView.swift */; };
+		EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A68236BB922001EC7C9 /* PatientView.swift */; };
+		EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */; };
+		EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */; };
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
-		EB9976F4236689320072DD9B /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderView.swift */; };
+		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,11 +80,19 @@
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB763A15236BA890001EC7C9 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		EB763A56236BABFD001EC7C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		EB763A58236BACA9001EC7C9 /* ProviderBio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderBio.swift; sourceTree = "<group>"; };
+		EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderBioView.swift; sourceTree = "<group>"; };
 		EB763A5A236BAD51001EC7C9 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		EB763A5C236BAD7E001EC7C9 /* TestProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProviders.swift; sourceTree = "<group>"; };
+		EB763A5E236BB06E001EC7C9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		EB763A60236BB481001EC7C9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		EB763A62236BB512001EC7C9 /* PersonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellView.swift; sourceTree = "<group>"; };
+		EB763A64236BB582001EC7C9 /* ViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelpers.swift; sourceTree = "<group>"; };
+		EB763A66236BB804001EC7C9 /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
+		EB763A68236BB922001EC7C9 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
+		EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
+		EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientBioView.swift; sourceTree = "<group>"; };
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
-		EB9976F3236689320072DD9B /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
+		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +158,14 @@
 				EB100E7323667ED30065E084 /* DPCExplorer.xcdatamodeld */,
 				EB100E7A23667ED60065E084 /* Preview Content */,
 				EB9976F1236687D40072DD9B /* OrganizationView.swift */,
-				EB9976F3236689320072DD9B /* ProviderView.swift */,
-				EB763A58236BACA9001EC7C9 /* ProviderBio.swift */,
+				EB9976F3236689320072DD9B /* ProviderDetailView.swift */,
+				EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */,
+				EB763A62236BB512001EC7C9 /* PersonCellView.swift */,
+				EB763A64236BB582001EC7C9 /* ViewHelpers.swift */,
+				EB763A66236BB804001EC7C9 /* ProviderView.swift */,
+				EB763A68236BB922001EC7C9 /* PatientView.swift */,
+				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
+				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -181,6 +203,8 @@
 				EB763A15236BA890001EC7C9 /* Organization.swift */,
 				EB763A56236BABFD001EC7C9 /* Provider.swift */,
 				EB763A5A236BAD51001EC7C9 /* Name.swift */,
+				EB763A5E236BB06E001EC7C9 /* Patient.swift */,
+				EB763A60236BB481001EC7C9 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -449,15 +473,23 @@
 			files = (
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
-				EB9976F4236689320072DD9B /* ProviderView.swift in Sources */,
+				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
+				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
+				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
+				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
+				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
 				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
-				EB763A59236BACA9001EC7C9 /* ProviderBio.swift in Sources */,
+				EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */,
+				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
 				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
 				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
+				EB763A61236BB481001EC7C9 /* Person.swift in Sources */,
 				EB100E7523667ED30065E084 /* DPCExplorer.xcdatamodeld in Sources */,
+				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestProviders.swift in Sources */,
+				EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

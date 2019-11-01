@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Patient.swift
 //  DPCExplorer
 //
 //  Created by Nicholas Robison on 10/31/19.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-struct Provider: Person {
+struct Patient: Person {
     let name: Name
-    let npi: String
-    let specialty: String
-    let patients: [Patient]
+    let mbi: String
+    let birthdate: Date
 }

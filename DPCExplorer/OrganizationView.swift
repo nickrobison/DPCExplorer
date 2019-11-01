@@ -28,6 +28,6 @@ struct OrganizationView: View {
 
 struct OrganizationView_Previews: PreviewProvider {
     static var previews: some View {
-        OrganizationView(o: Organization(name: "CMS", npi: "12345"))
+        OrganizationView(o: testOrg)
     }
 }

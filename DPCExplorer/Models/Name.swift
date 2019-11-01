@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Name {
+struct Name: Hashable {
     let family: String
     let given: [String]
 }
