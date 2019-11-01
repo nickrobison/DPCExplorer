@@ -36,6 +36,7 @@
 		EB763A71236BBFA8001EC7C9 /* DPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A70236BBFA8001EC7C9 /* DPCClient.swift */; };
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
+		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		EB763A70236BBFA8001EC7C9 /* DPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCClient.swift; sourceTree = "<group>"; };
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
+		EBAA8A60236CF7AD00EC0253 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
 				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
 				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
+				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				EB763A71236BBFA8001EC7C9 /* DPCClient.swift in Sources */,
 				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
 				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
+				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
 				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
