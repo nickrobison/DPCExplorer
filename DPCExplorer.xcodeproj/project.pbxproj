@@ -37,6 +37,7 @@
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
+		EBAA8A65236D10E800EC0253 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A64236D10E800EC0253 /* Bundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
 		EBAA8A60236CF7AD00EC0253 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		EBAA8A64236D10E800EC0253 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 				EB763A5E236BB06E001EC7C9 /* Patient.swift */,
 				EB763A60236BB481001EC7C9 /* Person.swift */,
 				EB763A6E236BBE20001EC7C9 /* Address.swift */,
+				EBAA8A64236D10E800EC0253 /* Bundle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
 				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
 				EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */,
+				EBAA8A65236D10E800EC0253 /* Bundle.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
 				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
 				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,

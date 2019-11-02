@@ -9,21 +9,25 @@
 import SwiftUI
 
 struct ProviderView: View {
-    var providers: [Provider]
+    @EnvironmentObject var client: DPCClient
     var body: some View {
         NavigationView {
-        List(providers, id: \.npi) { provider in
+            List(client.providers, id: \.id) { provider in
             NavigationLink(destination: ProviderDetailView(provider: provider)) {
                 PersonCellView(person: provider)
             }
         }
         .navigationBarTitle(Text("Providers"))
     }
+        .onAppear() {
+            debugPrint("Here I am!")
+            self.client.fetchProviders()
+        }
     }
 }
 
 struct ProviderView_Previews: PreviewProvider {
     static var previews: some View {
-        ProviderView(providers: testProviders)
+        ProviderView()
     }
 }

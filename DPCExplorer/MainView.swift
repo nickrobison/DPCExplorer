@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var client: DPCClient
     let organization: Organization
     @State private var selection = 0
     var body: some View {
@@ -21,7 +22,7 @@ struct MainView: View {
                     }
             }
             .tag(0)
-            ProviderView(providers: testProviders)
+            ProviderView()
                 .tabItem {
                     VStack {
                         Image("first")

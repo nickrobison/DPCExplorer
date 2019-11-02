@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Patient: Person {
-    let name: Name
+struct Patient: Person, Decodable {
+    let name: [Name]
     let mbi: String
     let birthdate: Date
 }

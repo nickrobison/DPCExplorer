@@ -9,8 +9,8 @@
 import Foundation
 
 struct Identifier: Codable {
-    var system: String
-    var value: String
+    let system: String
+    let value: String
 }
 
 struct Organization: Identifiable, Decodable {

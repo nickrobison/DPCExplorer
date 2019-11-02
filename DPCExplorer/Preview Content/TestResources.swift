@@ -26,7 +26,7 @@ let orgAddress = Address(line: ["1 Parkview Way"], city: "Fort Wayne", state: "I
 
 let testOrg = Organization(id: testUUID, name: "Parkview Hospital", npi:"11883322", address: orgAddress)
 
-let blythe = Patient(name: Name(family: "Robison", given: ["Blythe", "Kristin"]), mbi: "112233", birthdate: Date(dateString: "2018-01-11")!)
+let blythe = Patient(name: [Name(family: "Robison", given: ["Blythe", "Kristin"])], mbi: "112233", birthdate: Date(dateString: "2018-01-11")!)
 
 let nickPatients = [
     blythe

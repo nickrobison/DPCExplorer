@@ -16,7 +16,7 @@ struct PatientBioView: View {
                 .imageScale(.large)
             VStack(alignment: .leading) {
                 HStack {
-                    nameFormatter(name: patient.name)
+                    nameFormatter(name: patient.name[0])
                         .font(.title)
                 }
                 Text(patient.mbi)

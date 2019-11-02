@@ -8,9 +8,23 @@
 
 import Foundation
 
-struct Provider: Person {
-    let name: Name
-    let npi: String
-    let specialty: String
-    let patients: [Patient]
+struct Provider: Person, Decodable {
+    let id: UUID
+    let name: [Name]
+    let identifier: [Identifier]
+    var patients: [Patient]?
+    
+    init(name: Name, npi: String, specialty: String) {
+        self.id = UUID.init()
+        self.name = [name]
+        self.identifier = [Identifier(system: "NPI", value: npi)]
+        self.patients = []
+    }
+    
+    init(name: Name, npi: String, specialty: String, patients: [Patient]) {
+        self.id = UUID.init()
+        self.name = [name]
+        self.identifier = [Identifier(system: "NPI", value: npi)]
+        self.patients = patients
+    }
 }

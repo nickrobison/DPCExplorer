@@ -14,7 +14,7 @@ struct PersonCellView: View {
         HStack {
             Image(systemName: "person.fill")
                 .imageScale(.large)
-            nameFormatter(name: person.name)
+            nameFormatter(name: person.name[0])
         }
     }
 }

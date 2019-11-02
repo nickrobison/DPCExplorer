@@ -11,14 +11,12 @@ import SwiftUI
 struct PatientView: View {
     let patients: [Patient]
     var body: some View {
-        NavigationView {
             List(patients, id: \.mbi) {patient in
                 NavigationLink(destination: PatientDetailView(patient: patient)) {
                     PersonCellView(person: patient)
                 }
             }
         .navigationBarTitle("Patients")
-        }
     }
 }
 

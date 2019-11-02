@@ -14,9 +14,11 @@ import Alamofire
 final class DPCClient: ObservableObject {
     let baseURL: String
     @Published var organization: Organization?
+    @Published var providers: [Provider]
     
     init(baseURL: String) {
         self.baseURL = baseURL
+        self.providers = []
     }
     
     func fetchOrganization() {
@@ -33,6 +35,30 @@ final class DPCClient: ObservableObject {
                 case let .failure(error):
                     print(error)
                 }
+        }
+    }
+    
+    func fetchProviders() {
+        guard self.organization != nil else {
+            print("No organization yet")
+            return
+        }
+        
+        // Fetch providers from the server
+        let uri = self.baseURL + "Practitioner"
+        
+        AF.request(uri)
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/fhir+json"])
+            .responseDecodable(of: Bundle<Provider>.self){ response in
+            debugPrint(response)
+            switch response.result {
+            case .success:
+                print("Succeeded!")
+                self.providers = testProviders
+            case let .failure(error):
+                print(error)
+            }
         }
     }
 }
