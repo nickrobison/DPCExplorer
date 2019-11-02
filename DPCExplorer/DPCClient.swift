@@ -9,6 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import Alamofire
 
 final class DPCClient: ObservableObject {
     let baseURL: String
@@ -19,6 +20,19 @@ final class DPCClient: ObservableObject {
     }
     
     func fetchOrganization() {
-        self.organization = testOrg
+        let uri = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
+        AF.request(uri)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
+            .responseDecodable(of: Organization.self){ response in
+            debugPrint(response)
+                switch response.result {
+                case .success:
+                    print("Succeeded!")
+                    self.organization = response.value
+                case let .failure(error):
+                    print(error)
+                }
+        }
     }
 }

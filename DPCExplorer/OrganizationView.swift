@@ -16,18 +16,18 @@ struct OrganizationView: View {
             HStack {
                 Text("NPI")
                 Text("-")
-                Text(o.npi)
+                Text(o.identifier[0].value)
                 Spacer()
             }
             .font(.subheadline)
             Spacer()
             Divider()
             HStack {
-                Text(o.address.line[0])
+                Text(o.address[0].line[0])
                 HStack {
-                    Text("\(o.address.city),")
-                    Text(o.address.state)
-                    Text(o.address.postalCode)
+                    Text("\(o.address[0].city),")
+                    Text(o.address[0].state)
+                    Text(o.address[0].postalCode)
                 }
             }
         }

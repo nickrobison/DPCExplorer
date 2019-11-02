@@ -10,35 +10,22 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @State private var selection = 0
+    
     @EnvironmentObject var client: DPCClient
+    @State private var loaded = false
  
     var body: some View {
-        TabView(selection: $selection){
-            OrganizationView(o: testOrg)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("Organization")
+        VStack {
+            if (client.organization != nil) {
+                MainView(organization: client.organization!)
+            } else {
+                VStack {
+                    Button(action: {self.client.fetchOrganization()}){
+                        Text("Load data")
                     }
+                    .padding()
+                }
             }
-            .tag(0)
-            ProviderView(providers: testProviders)
-                .tabItem {
-                    VStack {
-                        Image("first")
-                        Text("Providers")
-                    }
-                }
-                .tag(1)
-            PatientView(patients: nickPatients)
-                .tabItem {
-                    VStack {
-                        Image("second")
-                        Text("Patients")
-                    }
-                }
-                .tag(2)
         }
     }
 }

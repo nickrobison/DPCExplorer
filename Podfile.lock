@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (5.0.0-rc.3)
   - FHIR (4.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
   - FHIR (~> 4.0)
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - FHIR
 
 SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   FHIR: 0c0f7507b2de324dfcc16e138c19d5a7881cdc8f
 
-PODFILE CHECKSUM: 22a2ffa5aa20eca683753aa4301576da92107b96
+PODFILE CHECKSUM: ce8641f3001f122ce7dc853e8e9cbec987fd145f
 
 COCOAPODS: 1.8.4

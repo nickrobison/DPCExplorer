@@ -8,9 +8,21 @@
 
 import Foundation
 
-struct Organization: Identifiable {
+struct Identifier: Codable {
+    var system: String
+    var value: String
+}
+
+struct Organization: Identifiable, Decodable {
     let id: UUID
+    let identifier: [Identifier]
     let name: String
-    let npi: String
-    let address: Address
+    let address: [Address]
+    
+    init(id: UUID, name: String, npi:String, address: Address) {
+        self.id = id
+        self.name = name
+        self.identifier = [Identifier(system: "NPI", value: npi)]
+        self.address = [address]
+    }
 }

@@ -7,6 +7,7 @@ target 'DPCExplorer' do
 
   # Pods for DPCExplorer
   pod 'FHIR',  '~> 4.0'
+  pod 'Alamofire', '~> 5.0.0-rc.3'
 
   target 'DPCExplorerTests' do
     inherit! :search_paths
