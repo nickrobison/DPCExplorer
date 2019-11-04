@@ -9,17 +9,17 @@
 import SwiftUI
 
 struct PatientBioView: View {
-    let patient: Patient
+    let patient: PatientEntity
     var body: some View {
         HStack {
             Image(systemName: "person.fill")
                 .imageScale(.large)
             VStack(alignment: .leading) {
                 HStack {
-                    nameFormatter(name: patient.name[0])
+                    nameFormatter(name: patient.getFirstName)
                         .font(.title)
                 }
-                Text(patient.mbi)
+                Text(patient.getFirstID.value!)
                 .font(.subheadline)
             }
             Spacer()

@@ -12,11 +12,12 @@ struct ProviderView: View {
     @EnvironmentObject var client: DPCClient
     var body: some View {
         NavigationView {
-            List(client.providers, id: \.id) { provider in
-            NavigationLink(destination: ProviderDetailView(provider: provider)) {
-                PersonCellView(person: provider)
-            }
-        }
+            Text("Providers here")
+//            List(client.providers) { provider in
+//            NavigationLink(destination: ProviderDetailView(provider: provider)) {
+////                PersonCellView(person: provider)
+//            }
+//        }
         .navigationBarTitle(Text("Providers"))
     }
         .onAppear() {

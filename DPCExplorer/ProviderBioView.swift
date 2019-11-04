@@ -15,10 +15,10 @@ struct ProviderBioView: View {
             Image(systemName: "person.fill")
                 .imageScale(.large)
             VStack(alignment: .leading) {
-                HStack {
-                    nameFormatter(name: provider.name[0])
-                        .font(.title)
-                }
+//                HStack {
+//                    nameFormatter(name: provider.name[0])
+//                        .font(.title)
+//                }
                 HStack {
                     Text(provider.identifier[0].system)
                     .font(.subheadline)

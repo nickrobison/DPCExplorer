@@ -71,4 +71,47 @@ final class DPCClient: ObservableObject {
             }
         }
     }
+    
+    func fetchPatients() {
+        guard self.organization != nil else {
+            print("No organization yet")
+            return
+        }
+        
+        let uri = self.baseURL + "Patient"
+        
+        let dateStringFormatter = DateFormatter()
+        // FHIR date formatter
+        dateStringFormatter.dateFormat = "YYYY-MM-DD"
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(dateStringFormatter)
+        
+        AF.request(uri)
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/fhir+json"])
+            .responseDecodable(of: Bundle<Patient>.self, decoder: decoder){ response in
+                debugPrint(response)
+                switch response.result {
+                case .success:
+                    print("Succeeded!")
+                    
+                    guard let value = response.value else {
+                        return
+                    }
+                    
+                    value.entry.forEach{entry in
+                        entry.resource.toEntity(ctx: self.context)
+                    }
+                    
+                    // Try to save it
+                    do {
+                        try self.context.save()
+                    } catch {
+                        debugPrint("Error saving!")
+                    }
+                case let .failure(error):
+                    print(error)
+                }
+    }
+    }
 }

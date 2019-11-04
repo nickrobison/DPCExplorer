@@ -5,22 +5,33 @@
         <attribute name="line" attributeType="String" valueTransformerName=""/>
         <attribute name="postalCode" attributeType="String"/>
         <attribute name="state" attributeType="String"/>
-        <relationship name="orgRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrganizationEntity" inverseName="addressRelationship" inverseEntity="OrganizationEntity"/>
     </entity>
     <entity name="IdentitiferEntity" representedClassName="IdentitiferEntity" syncable="YES" codeGenerationType="class">
         <attribute name="system" attributeType="String"/>
         <attribute name="value" attributeType="String"/>
-        <relationship name="orgRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="OrganizationEntity" inverseName="idRelationship" inverseEntity="OrganizationEntity"/>
+    </entity>
+    <entity name="NameEntity" representedClassName="NameEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="given" optional="YES" attributeType="String"/>
     </entity>
     <entity name="OrganizationEntity" representedClassName="OrganizationEntity" syncable="YES" codeGenerationType="class">
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="addressRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="AddressEntity" inverseName="orgRelationship" inverseEntity="AddressEntity"/>
-        <relationship name="idRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="IdentitiferEntity" inverseName="orgRelationship" inverseEntity="IdentitiferEntity" spotlightIndexingEnabled="YES"/>
+        <relationship name="addressRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="AddressEntity"/>
+        <relationship name="idRelationship" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="IdentitiferEntity" spotlightIndexingEnabled="YES"/>
+        <relationship name="patientRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PatientEntity"/>
+    </entity>
+    <entity name="PatientEntity" representedClassName="PatientEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="identifierRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="IdentitiferEntity" spotlightIndexingEnabled="YES"/>
+        <relationship name="nameRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="NameEntity" spotlightIndexingEnabled="YES"/>
     </entity>
     <elements>
-        <element name="OrganizationEntity" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="IdentitiferEntity" positionX="-54" positionY="18" width="128" height="88"/>
-        <element name="AddressEntity" positionX="-36" positionY="45" width="128" height="118"/>
+        <element name="OrganizationEntity" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="IdentitiferEntity" positionX="-54" positionY="18" width="128" height="73"/>
+        <element name="AddressEntity" positionX="-36" positionY="45" width="128" height="103"/>
+        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="103"/>
+        <element name="NameEntity" positionX="0" positionY="81" width="128" height="73"/>
     </elements>
 </model>

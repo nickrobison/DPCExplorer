@@ -20,6 +20,23 @@ extension Date {
     }
 }
 
+func createPatient() -> PatientEntity {
+    let patient = PatientEntity()
+    patient.id = UUID()
+    patient.birthdate = Date(dateString: "2018-01-11")
+    let id = IdentitiferEntity()
+    id.system = "MBI"
+    id.value = "112233"
+    patient.addToIdentifierRelationship(id)
+    
+    let name = NameEntity()
+    name.family = "Robison"
+    name.given = "Blythe, Kristin"
+    patient.addToNameRelationship(name)
+    
+    return patient
+}
+
 func createTestOrg() -> OrganizationEntity {
     let addr = AddressEntity()
     addr.line = "1 Parkview Way"
@@ -46,13 +63,13 @@ let tOrgEntity = createTestOrg()
 
 let testOrg = Organization(id: testUUID, name: "Parkview Hospital", npi:"11883322", address: orgAddress)
 
-let blythe = Patient(name: [Name(family: "Robison", given: ["Blythe", "Kristin"])], mbi: "112233", birthdate: Date(dateString: "2018-01-11")!)
+let blythe = createPatient()
 
-let nickPatients = [
-    blythe
-]
+//let nickPatients = [
+//    blythe
+//]
 
 let testProviders = [
-    Provider(name: Name(family: "Robison", given: ["Nicholas", "A"]), npi: "12345", specialty: "Primary care", patients: nickPatients),
+    Provider(name: Name(family: "Robison", given: ["Nicholas", "A"]), npi: "12345", specialty: "Primary care", patients: []),
     Provider(name: Name(family: "Robison", given: ["Callie", "J"]), npi: "67890", specialty: "Oral surgery", patients: [])
 ]

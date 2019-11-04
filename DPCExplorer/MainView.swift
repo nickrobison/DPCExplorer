@@ -30,7 +30,7 @@ struct MainView: View {
                     }
                 }
                 .tag(1)
-            PatientView(patients: nickPatients)
+            PatientView()
                 .tabItem {
                     VStack {
                         Image("second")

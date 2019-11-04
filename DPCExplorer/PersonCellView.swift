@@ -19,9 +19,9 @@ struct PersonCellView: View {
     }
 }
 
-struct PersonCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        PersonCellView(person: blythe)
-    }
-}
+//struct PersonCellView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PersonCellView(person: blythe)
+//    }
+//}
 

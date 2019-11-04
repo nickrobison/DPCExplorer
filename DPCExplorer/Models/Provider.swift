@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Provider: Person, Decodable {
+struct Provider: Decodable {
     let id: UUID
     let name: [Name]
     let identifier: [Identifier]

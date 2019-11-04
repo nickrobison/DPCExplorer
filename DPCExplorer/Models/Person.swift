@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Person {
-    var name: [Name] {get}
+    var name: [NameEntity] {get}
 }

@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-func nameFormatter(name: Name) -> some View {
+func nameFormatter(name: NameEntity) -> some View {
     HStack{
-        Text("\(name.family),")
-        ForEach(name.given, id: \.self) { g in
-            Text(g)
-        }
+        Text("\(name.family!),")
+        Text(name.given!)
+//        ForEach(name.given, id: \.self) { g in
+//            Text(g)
+//        }
     }
 }

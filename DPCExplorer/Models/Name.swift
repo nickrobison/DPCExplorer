@@ -7,8 +7,16 @@
 //
 
 import Foundation
+import CoreData
 
 struct Name: Hashable, Codable {
     let family: String
     let given: [String]
+    
+    func toEntity(ctx: NSManagedObjectContext) -> NameEntity {
+        let entity = NameEntity()
+        entity.family = self.family
+        entity.given = self.given.joined(separator: ", ")
+        return entity
+    }
 }

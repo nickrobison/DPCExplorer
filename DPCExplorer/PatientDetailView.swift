@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PatientDetailView: View {
-    let patient: Patient
+    let patient: PatientEntity
     var body: some View {
         VStack {
             PatientBioView(patient: patient)
