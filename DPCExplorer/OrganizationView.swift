@@ -7,27 +7,28 @@
 //
 
 import SwiftUI
+import Foundation
 struct OrganizationView: View {
-    var o: Organization
+    var o: OrganizationEntity
     var body: some View {
         VStack(alignment: .leading) {
-            Text(o.name)
+            Text(o.name!)
             .font(.title)
             HStack {
                 Text("NPI")
                 Text("-")
-                Text(o.identifier[0].value)
+                Text(o.getFirstID.value!)
                 Spacer()
             }
             .font(.subheadline)
             Spacer()
             Divider()
             HStack {
-                Text(o.address[0].line[0])
+                Text(o.getFirstAddr.line!)
                 HStack {
-                    Text("\(o.address[0].city),")
-                    Text(o.address[0].state)
-                    Text(o.address[0].postalCode)
+                    Text("\(o.getFirstAddr.city!),")
+                    Text(o.getFirstAddr.state!)
+                    Text(o.getFirstAddr.postalCode!)
                 }
             }
         }
@@ -37,6 +38,6 @@ struct OrganizationView: View {
 
 struct OrganizationView_Previews: PreviewProvider {
     static var previews: some View {
-        OrganizationView(o: testOrg)
+        OrganizationView(o: tOrgEntity)
     }
 }

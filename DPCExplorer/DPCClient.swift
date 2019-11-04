@@ -10,18 +10,22 @@ import Foundation
 import Combine
 import SwiftUI
 import Alamofire
+import CoreData
 
 final class DPCClient: ObservableObject {
     let baseURL: String
-    @Published var organization: Organization?
+    let context: NSManagedObjectContext
+    @Published var organization: OrganizationEntity?
     @Published var providers: [Provider]
     
-    init(baseURL: String) {
+    init(baseURL: String, context: NSManagedObjectContext) {
         self.baseURL = baseURL
         self.providers = []
+        self.context = context;
     }
     
     func fetchOrganization() {
+        
         let uri = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
         AF.request(uri)
             .validate(statusCode: 200..<300)
@@ -31,7 +35,13 @@ final class DPCClient: ObservableObject {
                 switch response.result {
                 case .success:
                     print("Succeeded!")
-                    self.organization = response.value
+                    
+                    // Create a new Managed Organization and go from there
+                    guard let value = response.value else {
+                        return
+                    }
+                    self.organization = value.toEntity(ctx: self.context)
+                    
                 case let .failure(error):
                     print(error)
                 }

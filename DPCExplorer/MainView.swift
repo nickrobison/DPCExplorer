@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var client: DPCClient
-    let organization: Organization
+    let organization: OrganizationEntity
     @State private var selection = 0
     var body: some View {
         TabView(selection: $selection){
@@ -44,6 +44,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(organization: testOrg)
+        MainView(organization: tOrgEntity)
     }
 }

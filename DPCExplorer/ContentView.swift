@@ -31,8 +31,10 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-            ContentView()
-                .environmentObject(DPCClient(baseURL: "http://localhost:3002/v1/api"))
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            return ContentView()
+                .environmentObject(DPCClient(baseURL: "http://localhost:3002/v1/api", context: context))
     }
 }

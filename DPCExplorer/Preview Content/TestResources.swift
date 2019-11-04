@@ -20,9 +20,29 @@ extension Date {
     }
 }
 
+func createTestOrg() -> OrganizationEntity {
+    let addr = AddressEntity()
+    addr.line = "1 Parkview Way"
+    addr.city = "Fort Wayne"
+    addr.state = "Indiana"
+    addr.postalCode = "46815"
+    
+    let idr = IdentitiferEntity()
+    idr.system = "NPI"
+    idr.value = "11883322"
+    
+    let org = OrganizationEntity()
+    org.id = UUID()
+    org.name = "Parkview Hospital"
+//    org.addToIdRelationship(values: [addr])
+    return org
+}
+
 let testUUID = UUID()
 
 let orgAddress = Address(line: ["1 Parkview Way"], city: "Fort Wayne", state: "Indiana", postalCode: "46815")
+
+let tOrgEntity = createTestOrg()
 
 let testOrg = Organization(id: testUUID, name: "Parkview Hospital", npi:"11883322", address: orgAddress)
 
