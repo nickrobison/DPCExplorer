@@ -98,8 +98,15 @@ final class DPCClient: ObservableObject {
                     guard let value = response.value else {
                         return
                     }
-                    
+
                     value.entry.forEach{entry in
+                        // Check if the entry already exists, if so, move on
+                        let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
+                        req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
+                        let existing = try! self.context.fetch(req)
+                        guard existing.isEmpty else {
+                            return
+                        }
                         entry.resource.toEntity(ctx: self.context)
                     }
                     

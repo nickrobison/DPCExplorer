@@ -14,7 +14,7 @@ struct Name: Hashable, Codable {
     let given: [String]
     
     func toEntity(ctx: NSManagedObjectContext) -> NameEntity {
-        let entity = NameEntity()
+        let entity = NameEntity(context: ctx)
         entity.family = self.family
         entity.given = self.given.joined(separator: ", ")
         return entity

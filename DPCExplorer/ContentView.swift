@@ -19,12 +19,7 @@ struct ContentView: View {
             if (client.organization != nil) {
                 MainView(organization: client.organization!)
             } else {
-                VStack {
-                    Button(action: {self.client.fetchOrganization()}){
-                        Text("Load data")
-                    }
-                    .padding()
-                }
+                    OnboardingView()
             }
         }
     }
