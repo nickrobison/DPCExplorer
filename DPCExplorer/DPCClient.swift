@@ -65,7 +65,27 @@ final class DPCClient: ObservableObject {
             switch response.result {
             case .success:
                 print("Succeeded!")
-                self.providers = testProviders
+                guard let value = response.value else {
+                    return
+                }
+
+                value.entry.forEach{entry in
+                    // Check if the entry already exists, if so, move on
+                    let req = NSFetchRequest<ProviderEntity>(entityName: "ProviderEntity")
+                    req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
+                    let existing = try! self.context.fetch(req)
+                    guard existing.isEmpty else {
+                        return
+                    }
+                    entry.resource.toEntity(ctx: self.context)
+                }
+                
+                // Try to save it
+                do {
+                    try self.context.save()
+                } catch {
+                    debugPrint("Error saving!")
+                }
             case let .failure(error):
                 print(error)
             }

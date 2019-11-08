@@ -9,31 +9,26 @@
 import SwiftUI
 
 struct ProviderBioView: View {
-    let provider: Provider
+    let provider: ProviderEntity
     var body: some View {
         HStack {
             Image(systemName: "person.fill")
                 .imageScale(.large)
             VStack(alignment: .leading) {
-//                HStack {
-//                    nameFormatter(name: provider.name[0])
-//                        .font(.title)
-//                }
                 HStack {
-                    Text(provider.identifier[0].system)
-                    .font(.subheadline)
-                Text("-")
-                    Text(provider.identifier[0].value)
-                    .font(.subheadline)
+                    nameFormatter(name: provider.getFirstName)
+                        .font(.title)
                 }
+                Text(provider.getFirstID.value!)
+                .font(.subheadline)
             }
             Spacer()
         }
     }
 }
 
-struct ProviderBioView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProviderBioView(provider: testProviders[0])
-    }
-}
+//struct ProviderBioView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProviderBioView(provider: testProviders[0])
+//    }
+//}

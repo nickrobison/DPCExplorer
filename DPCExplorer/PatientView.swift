@@ -26,6 +26,10 @@ struct PatientView: View {
                 }
             }
         .navigationBarTitle("Patients")
+        .navigationBarItems(trailing:
+            Button(action: {
+                debugPrint("clicked")
+            }, label: { Image(systemName: "plus")}))
     }
         .onAppear() {
             debugPrint("Here are the patients")

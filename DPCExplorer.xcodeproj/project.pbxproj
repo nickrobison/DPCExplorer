@@ -12,7 +12,6 @@
 		8F52E64457812315ED4C4615 /* Pods_DPCExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC2421E234397A5792237969 /* Pods_DPCExplorer.framework */; };
 		EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E6F23667ED30065E084 /* AppDelegate.swift */; };
 		EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7123667ED30065E084 /* SceneDelegate.swift */; };
-		EB100E7523667ED30065E084 /* DPCExplorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7323667ED30065E084 /* DPCExplorer.xcdatamodeld */; };
 		EB100E7723667ED30065E084 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7623667ED30065E084 /* ContentView.swift */; };
 		EB100E7923667ED60065E084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7823667ED60065E084 /* Assets.xcassets */; };
 		EB100E7C23667ED60065E084 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7B23667ED60065E084 /* Preview Assets.xcassets */; };
@@ -71,7 +70,6 @@
 		EB100E6C23667ED30065E084 /* DPCExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPCExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E6F23667ED30065E084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB100E7123667ED30065E084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EB100E7423667ED30065E084 /* DPCExplorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCExplorer.xcdatamodel; sourceTree = "<group>"; };
 		EB100E7623667ED30065E084 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB100E7823667ED60065E084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB100E7B23667ED60065E084 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				EB100E7823667ED60065E084 /* Assets.xcassets */,
 				EB100E7D23667ED60065E084 /* LaunchScreen.storyboard */,
 				EB100E8023667ED60065E084 /* Info.plist */,
-				EB100E7323667ED30065E084 /* DPCExplorer.xcdatamodeld */,
 				EB100E7A23667ED60065E084 /* Preview Content */,
 				EB9976F1236687D40072DD9B /* OrganizationView.swift */,
 				EB9976F3236689320072DD9B /* ProviderDetailView.swift */,
@@ -505,7 +502,6 @@
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
 				EB763A6F236BBE20001EC7C9 /* Address.swift in Sources */,
 				EB763A61236BB481001EC7C9 /* Person.swift in Sources */,
-				EB100E7523667ED30065E084 /* DPCExplorer.xcdatamodeld in Sources */,
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */,
@@ -834,19 +830,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		EB100E7323667ED30065E084 /* DPCExplorer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				EB100E7423667ED30065E084 /* DPCExplorer.xcdatamodel */,
-			);
-			currentVersion = EB100E7423667ED30065E084 /* DPCExplorer.xcdatamodel */;
-			path = DPCExplorer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = EB100E6423667ED30065E084 /* Project object */;
 }

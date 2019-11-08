@@ -7,23 +7,30 @@
 //
 
 import SwiftUI
+import Foundation
+import CoreData
 
 struct ProviderView: View {
     @EnvironmentObject var client: DPCClient
+    
+    @FetchRequest(
+        entity: ProviderEntity.entity(),
+        sortDescriptors: []
+    )
+    var providers: FetchedResults<ProviderEntity>
     var body: some View {
         NavigationView {
-            Text("Providers here")
-//            List(client.providers) { provider in
-//            NavigationLink(destination: ProviderDetailView(provider: provider)) {
-////                PersonCellView(person: provider)
-//            }
-//        }
-        .navigationBarTitle(Text("Providers"))
+            List(providers, id:\.self) { provider in
+                NavigationLink(destination: ProviderDetailView(provider: provider)) {
+                        PersonCellView(person: provider)
+                }
+            }
+            .navigationBarTitle("Providers")
+            .onAppear() {
+                debugPrint("Here are the providers")
+                self.client.fetchProviders()
+            }
     }
-        .onAppear() {
-            debugPrint("Here I am!")
-            self.client.fetchProviders()
-        }
     }
 }
 

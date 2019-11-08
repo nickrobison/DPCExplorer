@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProviderDetailView: View {
-    let provider: Provider
+    let provider: ProviderEntity
     var body: some View {
         VStack {
             ProviderBioView(provider: provider)
@@ -31,14 +31,14 @@ struct ProviderDetailView: View {
     }
 }
 
-struct ProviderDefailtView_Previews: PreviewProvider {
-    
-    
-    static var previews: some View {
-        ForEach(testProviders, id: \.name) {
-            provider in
-            ProviderDetailView(provider: provider)
-        }
-            
-    }
-}
+//struct ProviderDefailtView_Previews: PreviewProvider {
+//
+//
+//    static var previews: some View {
+//        ForEach(testProviders, id: \.name) {
+//            provider in
+//            ProviderDetailView(provider: provider)
+//        }
+//
+//    }
+//}
