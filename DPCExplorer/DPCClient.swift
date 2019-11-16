@@ -122,8 +122,6 @@ final class DPCClient: ObservableObject {
                         return
                     }
                     let group = entry[0].resource as! FHIR.Group
-                    debugPrint(group)
-                    
                     // Do things with the members
                     guard let members = group.member else {
                         return
@@ -145,10 +143,15 @@ final class DPCClient: ObservableObject {
                         guard !patientFetch.isEmpty else {
                             return
                         }
-                        
                         let patient = patientFetch[0]
-                        debugPrint("Patient")
-                        debugPrint(patient)
+                        provider.addToPatientRelationship(patient)
+                    }
+                    
+                    // Save the changes
+                    do {
+                        try self.context.save()
+                    } catch {
+                        debugPrint("Error saving!")
                     }
                 }
                 catch let error as NSError {

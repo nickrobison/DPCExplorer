@@ -15,7 +15,9 @@ struct PatientDetailView: View {
             PatientBioView(patient: patient)
             .padding()
             Divider()
-            Text("More to come")
+            List(patient.providerRelationship?.allObjects as! [ProviderEntity], id: \.self) { provider in
+                PersonCellView(person: provider)
+            }
             Spacer()
         }
     }
