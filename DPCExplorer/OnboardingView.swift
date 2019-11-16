@@ -20,6 +20,7 @@ struct OnboardingView: View {
             .frame(minWidth: 0, maxWidth: .infinity)
             .background(Color.accentColor)
             .cornerRadius(40)
+            .padding()
         }
                             
     }

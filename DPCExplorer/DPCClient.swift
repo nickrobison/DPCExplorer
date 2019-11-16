@@ -11,6 +11,7 @@ import Combine
 import SwiftUI
 import Alamofire
 import CoreData
+import FHIR
 
 final class DPCClient: ObservableObject {
     let baseURL: String
@@ -89,6 +90,71 @@ final class DPCClient: ObservableObject {
             case let .failure(error):
                 print(error)
             }
+        }
+    }
+    
+    func fetchPatientsForProvider(provider: ProviderEntity) {
+        let url = self.baseURL + "Group"
+        let params: Alamofire.Parameters = [
+            "charactistic-value": "|attributed-to$|\(provider.getFirstID.value!)"
+        ]
+        
+        AF.request(url, method: .get, parameters: params,
+                   encoding: URLEncoding(destination: .queryString))
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/fhir+json"])
+            .responseData { response in
+                debugPrint(response)
+                guard let value = response.value else {
+                    return
+                }
+                var json: FHIRJSON?
+                do {
+                    json = try JSONSerialization.jsonObject(with: value, options: []) as? FHIRJSON
+                }
+                catch let error as NSError {
+                    debugPrint(error)
+                    return
+                }
+                do {
+                let bundle = try FHIR.Bundle.init(json: json!)
+                    guard let entry = bundle.entry else {
+                        return
+                    }
+                    let group = entry[0].resource as! FHIR.Group
+                    debugPrint(group)
+                    
+                    // Do things with the members
+                    guard let members = group.member else {
+                        return
+                    }
+                    
+                    // Create Roster entries for each group
+                    members.forEach { member in
+                        let reference = member.entity!.reference!
+                        
+                        let split = reference.string.components(separatedBy: "/")
+                        // Get the patient ID
+                        let patientID = split[1]
+                        
+                        // Look them up in Core Data
+                        let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
+                        req.predicate = NSPredicate(format: "id = %@", patientID)
+                        let patientFetch = try! self.context.fetch(req)
+                        
+                        guard !patientFetch.isEmpty else {
+                            return
+                        }
+                        
+                        let patient = patientFetch[0]
+                        debugPrint("Patient")
+                        debugPrint(patient)
+                    }
+                }
+                catch let error as NSError {
+                    debugPrint(error)
+                    return
+                }
         }
     }
     

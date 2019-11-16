@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct ProviderDetailView: View {
+    @EnvironmentObject var client: DPCClient
+    
     let provider: ProviderEntity
     var body: some View {
         VStack {
@@ -28,6 +30,9 @@ struct ProviderDetailView: View {
 //            }
             Spacer()
             }
+        .onAppear() {
+            self.client.fetchPatientsForProvider(provider: self.provider)
+        }
     }
 }
 
