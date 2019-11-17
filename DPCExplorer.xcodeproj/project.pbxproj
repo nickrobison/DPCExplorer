@@ -16,6 +16,7 @@
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
+		EB5192682381BDF500C979C3 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
 		EB65A35C23789DEA0076C48A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB65A35B23789DEA0076C48A /* Alamofire */; };
 		EB65A35F23789E550076C48A /* DPCExplorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB65A35D23789E550076C48A /* DPCExplorer.xcdatamodeld */; };
 		EB65A3622378A10F0076C48A /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EB65A3612378A10F0076C48A /* FHIR */; };
@@ -73,6 +74,7 @@
 		EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCExplorerUITests.swift; sourceTree = "<group>"; };
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		EB5192672381BDF500C979C3 /* ExportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportClient.swift; sourceTree = "<group>"; };
 		EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCExplorer.xcdatamodel; sourceTree = "<group>"; };
 		EB763A15236BA890001EC7C9 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		EB763A56236BABFD001EC7C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 				EB427DCA2374E84D00833623 /* OnboardingView.swift */,
+				EB5192672381BDF500C979C3 /* ExportClient.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */,
+				EB5192682381BDF500C979C3 /* ExportClient.swift in Sources */,
 				EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

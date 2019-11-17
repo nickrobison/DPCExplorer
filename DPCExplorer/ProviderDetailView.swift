@@ -18,15 +18,23 @@ struct ProviderDetailView: View {
             .padding()
             Divider()
             if (provider.patientRelationship!.count > 0) {
-                List(provider.patientRelationship!.allObjects as! [PatientEntity], id: \.self) {
+                List {
+                    ForEach(provider.patientRelationship!.allObjects as! [PatientEntity], id: \.self){
                     patient in
                     NavigationLink(destination: PatientDetailView(patient: patient)) {
                         PersonCellView(person: patient)
                         .font(.body)
                     }
                 }
+                    .onDelete(perform: self.performDelete)
+                }
             } else {
                 /*@START_MENU_TOKEN@*/EmptyView()/*@END_MENU_TOKEN@*/
+            }
+            Button(action: {
+                self.client.exportData(provider: self.provider)
+            }) {
+                Text("Export data")
             }
             Spacer()
             }
@@ -34,6 +42,11 @@ struct ProviderDetailView: View {
             self.client.fetchPatientsForProvider(provider: self.provider)
         }
     }
+    
+    func performDelete(at offsets: IndexSet) {
+        debugPrint(offsets)
+    }
+
 }
 
 //struct ProviderDefailtView_Previews: PreviewProvider {

@@ -19,10 +19,13 @@ final class DPCClient: ObservableObject {
     @Published var organization: OrganizationEntity?
     @Published var providers: [Provider]
     
+    private let exportClient: ExportClient
+    
     init(baseURL: String, context: NSManagedObjectContext) {
         self.baseURL = baseURL
         self.providers = []
-        self.context = context;
+        self.context = context
+        self.exportClient = ExportClient(with: baseURL)
     }
     
     func fetchOrganization() {
@@ -127,6 +130,10 @@ final class DPCClient: ObservableObject {
                         return
                     }
                     
+                    if  let id = group.id?.string {
+                        provider.rosterID = UUID(uuidString: id)
+                    }
+                    
                     // Create Roster entries for each group
                     members.forEach { member in
                         let reference = member.entity!.reference!
@@ -199,6 +206,7 @@ final class DPCClient: ObservableObject {
                         entry.resource.toEntity(ctx: self.context)
                     }
                     
+                    
                     // Try to save it
                     do {
                         try self.context.save()
@@ -209,5 +217,13 @@ final class DPCClient: ObservableObject {
                     print(error)
                 }
     }
+    }
+    
+    func exportData(provider: ProviderEntity) {
+        guard let rosterID = provider.rosterID else {
+            return
+        }
+        
+        self.exportClient.exportData(groupID: rosterID)
     }
 }
