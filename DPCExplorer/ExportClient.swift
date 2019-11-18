@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import Combine
 
 class ExportClient {
     
     private let defaultURLSession: URLSession
     private let baseURL: String
-    
-    var dataTask: URLSessionDataTask?
+
+    private var exportCancel: AnyCancellable?
     
     init(with: String) {
         self.defaultURLSession = ExportClient.buildSession()
@@ -21,9 +22,7 @@ class ExportClient {
     }
     
     public func exportData(groupID: UUID) {
-        dataTask?.cancel()
-        
-        guard let exportString = "\(self.baseURL)Group/\(groupID.uuidString.lowercased())/$export".addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) else { return }
+        exportCancel?.cancel()
         
         var components = URLComponents()
         components.scheme = "http"
@@ -34,7 +33,7 @@ class ExportClient {
         // /\(groupID.uuidString.lowercased())/$export
         
         do {
-        let u = try components.asURL()
+            let u = try components.asURL()
             debugPrint(u)
         } catch let error {
             debugPrint(error)
@@ -46,24 +45,27 @@ class ExportClient {
         request.setValue("respond-async", forHTTPHeaderField: "Prefer")
         request.setValue("application/fhir+json", forHTTPHeaderField: "Accept")
         
-        self.dataTask = self.defaultURLSession.dataTask(with: request){ [weak self] data, response, error in
-            defer {
-                self?.dataTask = nil
+        self.exportCancel = self.defaultURLSession.dataTaskPublisher(for: request)
+            .tryMap{ data, response -> URL in
+                guard let httpResponse  = response as? HTTPURLResponse,
+                    httpResponse.statusCode == 202 else {
+                        fatalError("Did not export correctly")
+                }
+                guard let location = httpResponse.headers["Content-Location"],
+                    let jobURL = URL(string: location) else {
+                        fatalError("Could not convert to URL")
+                }
+                return jobURL
+        }
+        .sink(receiveCompletion: {completion in
+            debugPrint("Received completion", completion)
+            switch completion {
+            case .finished:
+                break
+            case .failure(let error):
+                debugPrint("Received an error: ", error)
             }
-            
-            if let error = error {
-                debugPrint("Error!", error)
-            } else if
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 202 {
-                debugPrint("Export started")
-            } else {
-                let err = String(decoding: data!, as: UTF8.self)
-                
-                debugPrint("Error starting", err)
-            }
-    }
-        self.dataTask?.resume()
+        }, receiveValue: {someValue in debugPrint("Received: ", someValue)})
     }
     
     private static func buildSession() -> URLSession {
