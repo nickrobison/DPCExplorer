@@ -9,6 +9,10 @@
 import Foundation
 import Combine
 
+enum ExportError: Error {
+    case inProgress
+}
+
 class ExportClient {
     
     private let defaultURLSession: URLSession
@@ -57,15 +61,44 @@ class ExportClient {
                 }
                 return jobURL
         }
+        .flatMap(self.monitorExportJob)
         .sink(receiveCompletion: {completion in
-            debugPrint("Received completion", completion)
+            debugPrint("Received completion:", completion)
             switch completion {
             case .finished:
                 break
             case .failure(let error):
                 debugPrint("Received an error: ", error)
             }
-        }, receiveValue: {someValue in debugPrint("Received: ", someValue)})
+        }, receiveValue: {someValue in debugPrint("Received value:", someValue)})
+    }
+    
+    private func monitorExportJob(jobURL: URL) -> AnyPublisher<Data, Error> {
+        var request = URLRequest(url: jobURL)
+        request.setValue("respond-async", forHTTPHeaderField: "Prefer")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        
+        return self.defaultURLSession.dataTaskPublisher(for: request)
+            .tryMap{data, response -> Data in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    debugPrint(response)
+                    fatalError("Could not get HTTP Response")
+                }
+                
+                // If it's accepted, throw an error, this is gross, but should work?
+                if (httpResponse.statusCode == 202) {
+                    debugPrint("In progress, continuing")
+                    throw ExportError.inProgress
+                } else if (httpResponse.statusCode == 200) {
+                    return data
+                } else {
+                    debugPrint(response)
+                    fatalError("Something else went wrong")
+                }
+        }
+        .retry(.max)
+        .delay(for: 10.0, scheduler: RunLoop.main)
+        .eraseToAnyPublisher()
     }
     
     private static func buildSession() -> URLSession {
