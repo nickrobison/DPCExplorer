@@ -19,10 +19,12 @@ class ExportClient {
     private let baseURL: String
 
     private var exportCancel: AnyCancellable?
+    private var backGroundQueue: DispatchQueue
     
     init(with: String) {
         self.defaultURLSession = ExportClient.buildSession()
         self.baseURL = with
+        self.backGroundQueue = DispatchQueue(label: "DPCExplorer")
     }
     
     public func exportData(groupID: UUID) {
@@ -62,8 +64,8 @@ class ExportClient {
                 return jobURL
         }
         .flatMap(self.monitorExportJob)
+        .decode(type: JobCompletionModel.self, decoder: JSONDecoder())
         .sink(receiveCompletion: {completion in
-            debugPrint("Received completion:", completion)
             switch completion {
             case .finished:
                 break
@@ -90,14 +92,16 @@ class ExportClient {
                     debugPrint("In progress, continuing")
                     throw ExportError.inProgress
                 } else if (httpResponse.statusCode == 200) {
+                    debugPrint("We're done", httpResponse)
                     return data
                 } else {
                     debugPrint(response)
                     fatalError("Something else went wrong")
                 }
         }
+        .delay(for: 2, scheduler: self.backGroundQueue)
         .retry(.max)
-        .delay(for: 10.0, scheduler: RunLoop.main)
+        .subscribe(on: self.backGroundQueue)
         .eraseToAnyPublisher()
     }
     

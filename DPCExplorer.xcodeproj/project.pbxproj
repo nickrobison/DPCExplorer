@@ -39,6 +39,7 @@
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
 		EBAA8A65236D10E800EC0253 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A64236D10E800EC0253 /* Bundle.swift */; };
+		EBE7787E238234D6000AAFFA /* JobCompletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
 		EBAA8A60236CF7AD00EC0253 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EBAA8A64236D10E800EC0253 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				EB763A60236BB481001EC7C9 /* Person.swift */,
 				EB763A6E236BBE20001EC7C9 /* Address.swift */,
 				EBAA8A64236D10E800EC0253 /* Bundle.swift */,
+				EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
 				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
 				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,
+				EBE7787E238234D6000AAFFA /* JobCompletionModel.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
 				EB763A6F236BBE20001EC7C9 /* Address.swift in Sources */,
 				EB763A61236BB481001EC7C9 /* Person.swift in Sources */,
