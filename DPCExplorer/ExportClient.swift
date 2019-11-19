@@ -20,6 +20,7 @@ class ExportClient {
 
     private var exportCancel: AnyCancellable?
     private var backGroundQueue: DispatchQueue
+    private var activeDownloads: [URL: ExportDownload] = [:]
     
     init(with: String) {
         self.defaultURLSession = ExportClient.buildSession()
@@ -72,7 +73,51 @@ class ExportClient {
             case .failure(let error):
                 debugPrint("Received an error: ", error)
             }
-        }, receiveValue: {someValue in debugPrint("Received value:", someValue)})
+        }, receiveValue: self.downloadFiles)
+    }
+    
+    private func downloadFiles(model: JobCompletionModel) -> Void {
+        debugPrint("Completed mode:", model)
+        
+        model.output.forEach{ output in
+            
+            let export = ExportDownload(output: output)
+            
+            export.task = self.defaultURLSession.downloadTask(with: output.url) { url, response, error in
+                guard let url = url else {
+                    return
+                }
+                let download = self.activeDownloads[url]
+                self.activeDownloads[url] = nil
+                download?.isDownloading = false
+                
+                // Don't do this here
+                let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+                let destinationUrl = documentsUrl.appendingPathComponent(url.lastPathComponent)
+                debugPrint("Copying from \(url) to \(destinationUrl)")
+                do {
+                    try FileManager.default.copyItem(at: url, to: destinationUrl)
+                } catch {
+                    debugPrint("Could not copy", error)
+                    return
+                }
+
+                debugPrint("File:", destinationUrl.absoluteString)
+                
+                guard let reader = StreamReader(path: destinationUrl.path) else {
+                    debugPrint("Cannot open file")
+                    return
+                }
+                
+                for line in reader {
+                    debugPrint("Line:", line)
+                }
+            }
+            export.task?.resume()
+            export.isDownloading = true
+            self.activeDownloads[output.url] = export
+        }
     }
     
     private func monitorExportJob(jobURL: URL) -> AnyPublisher<Data, Error> {
