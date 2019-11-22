@@ -8,6 +8,8 @@
 
 import Foundation
 import Combine
+import FHIR
+import CoreData
 
 enum ExportError: Error {
     case inProgress
@@ -17,19 +19,28 @@ class ExportClient {
     
     private let defaultURLSession: URLSession
     private let baseURL: String
+    private let provider: ProviderEntity
+    private let context: NSManagedObjectContext
 
     private var exportCancel: AnyCancellable?
     private var backGroundQueue: DispatchQueue
     private var activeDownloads: [URL: ExportDownload] = [:]
     
-    init(with: String) {
+    init(with: String, provider: ProviderEntity, context: NSManagedObjectContext) {
         self.defaultURLSession = ExportClient.buildSession()
         self.baseURL = with
         self.backGroundQueue = DispatchQueue(label: "DPCExplorer")
+        self.provider = provider
+        self.context = context
     }
     
-    public func exportData(groupID: UUID) {
+    public func exportData() {
         exportCancel?.cancel()
+        
+        guard let groupID = self.provider.rosterID else {
+            debugPrint("No roster, nothing to export")
+            return
+        }
         
         var components = URLComponents()
         components.scheme = "http"
@@ -81,6 +92,10 @@ class ExportClient {
         
         model.output.forEach{ output in
             
+            guard output.type == "ExplanationOfBenefit" else {
+                return
+            }
+            
             let export = ExportDownload(output: output)
             
             export.task = self.defaultURLSession.downloadTask(with: output.url) { url, response, error in
@@ -111,7 +126,49 @@ class ExportClient {
                 }
                 
                 for line in reader {
-                    debugPrint("Line:", line)
+                    // Each line is an EOB, so parse it up
+                    // Gross
+                    let data = line.data(using: .utf8)
+                    let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? FHIRJSON
+
+                    // Disable validation, because we have custom extensions
+                    var ctx = FHIRInstantiationContext(strict: false)
+                    let eob = try? FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
+                    
+                    // Extract the patient ID
+                    debugPrint("Ref:", eob?.patient ?? "")
+                    guard let patientReference = eob?.patient?.reference else {
+                        return
+                    }
+                    
+                    let split = patientReference.string.components(separatedBy: "/")
+                    // Get the patient ID
+                    let patientID = split[1]
+                    
+                    // Split out the type and id
+                    
+                    let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
+                    req.predicate = NSPredicate(format: "ANY identifierRelationship.value = %@", patientID)
+                    let fetchedPatient = try! self.context.fetch(req)
+                    guard !fetchedPatient.isEmpty else {
+                        debugPrint("Could not find patient")
+                        return
+                    }
+                    debugPrint("Found patient:", fetchedPatient[0])
+                    
+                    
+                    // Going back and forth is terrible
+                    var serialized: Data?
+                    var errors: [FHIRValidationError] = []
+                    let serJSON = eob!.asJSON(errors: &errors)
+
+                    do {
+                        serialized = try JSONSerialization.data(withJSONObject: serJSON, options: [])
+                    } catch {
+                        debugPrint("Could not serialize", error)
+                    }
+                    fetchedPatient[0].eob = serialized
+                    debugPrint("Done")
                 }
             }
             export.task?.resume()

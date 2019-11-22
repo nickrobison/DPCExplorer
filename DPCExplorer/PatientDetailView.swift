@@ -18,7 +18,14 @@ struct PatientDetailView: View {
             List(patient.providerRelationship?.allObjects as! [ProviderEntity], id: \.self) { provider in
                 PersonCellView(person: provider)
             }
+            Divider()
+            if (patient.eob != nil) {
+                Text("Fetched EOBs")
+            } else {
+                EmptyView()
+            }
             Spacer()
+            
         }
     }
 }

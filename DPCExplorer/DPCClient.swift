@@ -19,13 +19,10 @@ final class DPCClient: ObservableObject {
     @Published var organization: OrganizationEntity?
     @Published var providers: [Provider]
     
-    private let exportClient: ExportClient
-    
     init(baseURL: String, context: NSManagedObjectContext) {
         self.baseURL = baseURL
         self.providers = []
         self.context = context
-        self.exportClient = ExportClient(with: baseURL)
     }
     
     func fetchOrganization() {
@@ -160,6 +157,7 @@ final class DPCClient: ObservableObject {
                     } catch {
                         debugPrint("Error saving!")
                     }
+                    self.context.refreshAllObjects()
                 }
                 catch let error as NSError {
                     debugPrint(error)
@@ -219,11 +217,13 @@ final class DPCClient: ObservableObject {
     }
     }
     
-    func exportData(provider: ProviderEntity) {
-        guard let rosterID = provider.rosterID else {
-            return
+    func exportData(provider: ProviderEntity) -> Void {
+        let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
+        client.exportData()
+        do {
+            try self.context.save()
+        } catch {
+            debugPrint("Error saving context", error)
         }
-        
-        self.exportClient.exportData(groupID: rosterID)
     }
 }

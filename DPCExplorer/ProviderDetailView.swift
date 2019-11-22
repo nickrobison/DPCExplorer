@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProviderDetailView: View {
     @EnvironmentObject var client: DPCClient
