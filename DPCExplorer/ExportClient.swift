@@ -10,6 +10,7 @@ import Foundation
 import Combine
 import FHIR
 import CoreData
+import Compression
 
 enum ExportError: Error {
     case inProgress
@@ -167,7 +168,10 @@ class ExportClient {
                     } catch {
                         debugPrint("Could not serialize", error)
                     }
-                    fetchedPatient[0].eob = serialized
+                    // Compress it, because, why not?
+                    let compressed = self.compressData(input: serialized)
+                    
+                    fetchedPatient[0].eob = compressed
                     debugPrint("Done")
                 }
             }
@@ -175,6 +179,46 @@ class ExportClient {
             export.isDownloading = true
             self.activeDownloads[output.url] = export
         }
+    }
+    
+    private func compressData(input: Data?) -> Data? {
+        guard input != nil else {
+            return nil
+        }
+        
+        let pageSize = 128
+        debugPrint("Pre-compression:", input?.count ?? 0)
+        var compressed = Data()
+        do {
+            let outputFilter = try OutputFilter(.compress, using: .lzfse) {
+                (data: Data?) -> Void in
+                if let data = data {
+                    compressed.append(data)
+                }
+            }
+            
+            var index = 0
+            let bufferSize = input!.count
+            
+            while true {
+                let rangeLength = min(pageSize, bufferSize - index)
+                
+                let subdata = input!.subdata(in: index ..< index + rangeLength)
+                index += rangeLength
+
+                try outputFilter.write(subdata)
+
+                if (rangeLength == 0) {
+                    break
+                }
+            }
+        } catch {
+            debugPrint("Could not compress:", error)
+            return nil
+        }
+        debugPrint("Compressed size:", compressed.count)
+        
+        return compressed
     }
     
     private func monitorExportJob(jobURL: URL) -> AnyPublisher<Data, Error> {
