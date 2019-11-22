@@ -20,7 +20,12 @@ struct PatientDetailView: View {
             }
             Divider()
             if (patient.eob != nil) {
-                Text("Fetched EOBs")
+                HStack {
+                    Text("Fetched EOBs")
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.subheadline)
+                        .foregroundColor(.green)
+                }
             } else {
                 EmptyView()
             }

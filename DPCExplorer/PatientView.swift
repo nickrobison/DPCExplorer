@@ -20,7 +20,7 @@ struct PatientView: View {
     var patients: FetchedResults<PatientEntity>
     var body: some View {
         NavigationView {
-        List(patients, id:\.self) {patient in
+            List(patients, id:\.id) {patient in
                 NavigationLink(destination: PatientDetailView(patient: patient)) {
                     PersonCellView(person: patient)
                 }

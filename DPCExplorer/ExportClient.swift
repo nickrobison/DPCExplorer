@@ -134,11 +134,11 @@ class ExportClient {
 
                     // Disable validation, because we have custom extensions
                     var ctx = FHIRInstantiationContext(strict: false)
-                    let eob = try? FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
+                    let eob = FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
                     
                     // Extract the patient ID
-                    debugPrint("Ref:", eob?.patient ?? "")
-                    guard let patientReference = eob?.patient?.reference else {
+                    debugPrint("Ref:", eob.patient ?? "")
+                    guard let patientReference = eob.patient?.reference else {
                         return
                     }
                     
@@ -147,9 +147,8 @@ class ExportClient {
                     let patientID = split[1]
                     
                     // Split out the type and id
-                    
                     let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
-                    req.predicate = NSPredicate(format: "ANY identifierRelationship.value = %@", patientID)
+                    req.predicate = NSPredicate(format: "ANY identifierRelationship.value = %@ AND identifierRelationship.@count = 1", patientID)
                     let fetchedPatient = try! self.context.fetch(req)
                     guard !fetchedPatient.isEmpty else {
                         debugPrint("Could not find patient")
@@ -159,17 +158,8 @@ class ExportClient {
                     
                     
                     // Going back and forth is terrible
-                    var serialized: Data?
-                    var errors: [FHIRValidationError] = []
-                    let serJSON = eob!.asJSON(errors: &errors)
-
-                    do {
-                        serialized = try JSONSerialization.data(withJSONObject: serJSON, options: [])
-                    } catch {
-                        debugPrint("Could not serialize", error)
-                    }
                     // Compress it, because, why not?
-                    let compressed = self.compressData(input: serialized)
+                    let compressed = self.compressData(input: line.data(using: .utf8))
                     
                     fetchedPatient[0].eob = compressed
                     debugPrint("Done")
