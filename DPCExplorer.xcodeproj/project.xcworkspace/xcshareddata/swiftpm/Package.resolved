@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Alamofire",
+        "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
+        "state": {
+          "branch": null,
+          "revision": "2cbf59935fbb1f26e352ce4db53f1cf9408d5313",
+          "version": "5.0.0-rc.3"
+        }
+      },
+      {
+        "package": "FHIR",
+        "repositoryURL": "/Users/nickrobison/Developer/external/Swift-FHIR",
+        "state": {
+          "branch": "nickrobison/swift-fixes",
+          "revision": "b68fb5d6c8137de4a06894e683dc1a726a832907",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
