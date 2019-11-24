@@ -22,9 +22,10 @@
         <relationship name="patientRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PatientEntity"/>
     </entity>
     <entity name="PatientEntity" representedClassName="PatientEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="birthdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="birthdate" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="eob" optional="YES" attributeType="Binary"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="gender" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="identifierRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="IdentitiferEntity" spotlightIndexingEnabled="YES"/>
         <relationship name="nameRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="NameEntity" spotlightIndexingEnabled="YES"/>
         <relationship name="providerRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProviderEntity" inverseName="patientRelationship" inverseEntity="ProviderEntity"/>
@@ -41,7 +42,7 @@
         <element name="IdentitiferEntity" positionX="-54" positionY="18" width="128" height="73"/>
         <element name="NameEntity" positionX="0" positionY="81" width="128" height="73"/>
         <element name="OrganizationEntity" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="28"/>
+        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="148"/>
         <element name="ProviderEntity" positionX="-27" positionY="63" width="128" height="118"/>
     </elements>
 </model>

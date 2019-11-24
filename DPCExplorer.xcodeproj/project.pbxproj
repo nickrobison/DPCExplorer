@@ -182,7 +182,6 @@
 				EB5192672381BDF500C979C3 /* ExportClient.swift */,
 				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
 				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
-				EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -226,6 +225,7 @@
 				EBAA8A64236D10E800EC0253 /* Bundle.swift */,
 				EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */,
 				EBE7787F23823AD0000AAFFA /* ExportDownload.swift */,
+				EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

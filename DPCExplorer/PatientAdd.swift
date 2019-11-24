@@ -13,8 +13,7 @@ struct PatientAdd: View {
     @Environment(\.presentationMode) var presentationMode
     
     let completionHandler: ((_ patient: FHIR.Patient) -> Void)?
-    
-    
+
     private let genderValues = ["Male", "Female", "Other", "Unknown"]
     private let minDate = Calendar.current.date(byAdding: .year, value: -65, to: Date())!
     @State private var lastName = ""
@@ -59,7 +58,7 @@ struct PatientAdd: View {
         let patient = FHIR.Patient()
         
         let id = FHIR.Identifier()
-        id.system = FHIRURL.init("http://not.real")
+        id.system = FHIRURL.init("https://bluebutton.cms.gov/resources/variables/bene_id")
         id.value =  FHIRString.init(self.mbi)
         patient.identifier = [id]
         
@@ -67,30 +66,10 @@ struct PatientAdd: View {
         name.given = [FHIRString.init(self.firstName)]
         name.family = FHIRString.init(self.lastName)
         patient.name = [name]
+        patient.birthDate = self.birthday.fhir_asDate()
+        patient.gender = AdministrativeGender.init(rawValue: self.genderValues[self.gender].lowercased())
         
         self.completionHandler?(patient)
-        
-//        self.client.addPatient(patient: patient)
-        //        let patient = PatientEntity(context: self.context)
-        //
-        //        let name = NameEntity(context: self.context)
-        //        name.family = self.lastName
-        //        name.given = self.firstName
-        //        patient.addToNameRelationship(name)
-        //
-        //        let id = IdentitiferEntity(context: self.context)
-        //        id.system = "http://test.system"
-        //        id.value = self.mbi
-        //        patient.addToIdentifierRelationship(id)
-        //        patient.birthdate = self.birthday
-        //
-        //        do {
-        //            try self.context.save()
-        //        } catch {
-        //            debugPrint(error)
-        //        }
-        
-//        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
