@@ -11,7 +11,10 @@ import Foundation
 import CoreData
 
 struct PatientView: View {
+    @Environment(\.managedObjectContext) var context
     @EnvironmentObject var client: DPCClient
+    
+    @State private var showAdd = false
     
     @FetchRequest(
         entity: PatientEntity.entity(),
@@ -25,16 +28,21 @@ struct PatientView: View {
                     PersonCellView(person: patient)
                 }
             }
-        .navigationBarTitle("Patients")
-        .navigationBarItems(trailing:
-            Button(action: {
-                debugPrint("clicked")
-            }, label: { Image(systemName: "plus")}))
-    }
+            .navigationBarTitle("Patients")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    debugPrint("clicked")
+                    self.showAdd = true
+                }, label: { Image(systemName: "plus")}))
+        }
         .onAppear() {
             debugPrint("Here are the patients")
             self.client.fetchPatients()
         }
+    .sheet(isPresented: $showAdd, content: {
+        PatientAdd()
+            .environment(\.managedObjectContext, self.context)
+    })
     }
 }
 
