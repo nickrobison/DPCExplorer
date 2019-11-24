@@ -9,6 +9,7 @@
 import SwiftUI
 import Foundation
 import CoreData
+import FHIR
 
 struct PatientView: View {
     @Environment(\.managedObjectContext) var context
@@ -39,11 +40,15 @@ struct PatientView: View {
             debugPrint("Here are the patients")
             self.client.fetchPatients()
         }
-    .sheet(isPresented: $showAdd, content: {
-        PatientAdd()
-            .environment(\.managedObjectContext, self.context)
-            .environmentObject(self.client)
-    })
+        .sheet(isPresented: $showAdd, content: {
+            PatientAdd(completionHandler: self.submitPatient)
+                .environment(\.managedObjectContext, self.context)
+                .environmentObject(self.client)
+        })
+    }
+    
+    private func submitPatient(patient: FHIR.Patient) {
+        self.client.addPatient(patient: patient)
     }
 }
 

@@ -11,8 +11,8 @@ import FHIR
 
 struct PatientAdd: View {
     @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var context
-    @EnvironmentObject var client: DPCClient
+    
+    let completionHandler: ((_ patient: FHIR.Patient) -> Void)?
     
     
     private let genderValues = ["Male", "Female", "Other", "Unknown"]
@@ -68,7 +68,9 @@ struct PatientAdd: View {
         name.family = FHIRString.init(self.lastName)
         patient.name = [name]
         
-        self.client.addPatient(patient: patient)
+        self.completionHandler?(patient)
+        
+//        self.client.addPatient(patient: patient)
         //        let patient = PatientEntity(context: self.context)
         //
         //        let name = NameEntity(context: self.context)
@@ -88,12 +90,12 @@ struct PatientAdd: View {
         //            debugPrint(error)
         //        }
         
-        self.presentationMode.wrappedValue.dismiss()
+//        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
 struct PatientAdd_Previews: PreviewProvider {
     static var previews: some View {
-        PatientAdd()
+        PatientAdd(completionHandler: nil)
     }
 }

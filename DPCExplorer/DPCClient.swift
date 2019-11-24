@@ -223,22 +223,26 @@ final class DPCClient: ObservableObject {
     }
     
     func addPatient(patient: FHIR.Patient) -> Void {
-        let _ = patient.toEntity(ctx: self.context)
+//        let _ = patient.toEntity(ctx: self.context)
         
         // Submit to DPC
-        let params = try! patient.asJSON()
+        var errors: [FHIRValidationError] = []
+        let params = patient.asJSON(errors: &errors)
         let uri = self.baseURL + "Patient"
-        AF.request(uri, method: .post, parameters: params)
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/fhir+json"
+        ]
+        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
         .validate(statusCode: 200..<300)
         .validate(contentType: ["application/fhir+json"])
             .responseString { response in
                 debugPrint(response)
         }
 
-        do {
-            try self.context.save()
-        } catch {
-            debugPrint("Error saving!")
-        }
+//        do {
+//            try self.context.save()
+//        } catch {
+//            debugPrint("Error saving!")
+//        }
     }
 }
