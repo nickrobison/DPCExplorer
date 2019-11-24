@@ -220,10 +220,5 @@ final class DPCClient: ObservableObject {
     func exportData(provider: ProviderEntity) -> Void {
         let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
         client.exportData()
-        do {
-            try self.context.save()
-        } catch {
-            debugPrint("Error saving context", error)
-        }
     }
 }

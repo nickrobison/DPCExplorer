@@ -22,7 +22,7 @@ class ExportClient {
     private let baseURL: String
     private let provider: ProviderEntity
     private let context: NSManagedObjectContext
-
+    
     private var exportCancel: AnyCancellable?
     private var backGroundQueue: DispatchQueue
     private var activeDownloads: [URL: ExportDownload] = [:]
@@ -109,7 +109,7 @@ class ExportClient {
                 
                 // Don't do this here
                 let documentsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-
+                
                 let destinationUrl = documentsUrl.appendingPathComponent(url.lastPathComponent)
                 debugPrint("Copying from \(url) to \(destinationUrl)")
                 do {
@@ -118,7 +118,7 @@ class ExportClient {
                     debugPrint("Could not copy", error)
                     return
                 }
-
+                
                 debugPrint("File:", destinationUrl.absoluteString)
                 
                 guard let reader = StreamReader(path: destinationUrl.path) else {
@@ -131,7 +131,7 @@ class ExportClient {
                     // Gross
                     let data = line.data(using: .utf8)
                     let json = try? JSONSerialization.jsonObject(with: data!, options: []) as? FHIRJSON
-
+                    
                     // Disable validation, because we have custom extensions
                     var ctx = FHIRInstantiationContext(strict: false)
                     let eob = FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
@@ -147,22 +147,33 @@ class ExportClient {
                     let patientID = split[1]
                     
                     // Split out the type and id
-                    let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
-                    req.predicate = NSPredicate(format: "ANY identifierRelationship.value = %@ AND identifierRelationship.@count = 1", patientID)
-                    let fetchedPatient = try! self.context.fetch(req)
-                    guard !fetchedPatient.isEmpty else {
-                        debugPrint("Could not find patient")
-                        return
+                    
+                    // Create a new background app context to do everything
+                    self.context.performAndWait {
+                        
+                        let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
+                        req.predicate = NSPredicate(format: "ANY identifierRelationship.value = %@ AND identifierRelationship.@count = 1", patientID)
+                        let fetchedPatient = try! self.context.fetch(req)
+                        guard !fetchedPatient.isEmpty else {
+                            debugPrint("Could not find patient")
+                            return
+                        }
+                        debugPrint("Found patient:", fetchedPatient[0])
+                        
+                        
+                        // Going back and forth is terrible
+                        // Compress it, because, why not?
+                        let compressed = self.compressData(input: line.data(using: .utf8))
+                        
+                        fetchedPatient[0].eob = compressed
+                        
+                        do {
+                            try self.context.save()
+                        } catch {
+                            debugPrint("Error saving context", error)
+                        }
+                        debugPrint("Done")
                     }
-                    debugPrint("Found patient:", fetchedPatient[0])
-                    
-                    
-                    // Going back and forth is terrible
-                    // Compress it, because, why not?
-                    let compressed = self.compressData(input: line.data(using: .utf8))
-                    
-                    fetchedPatient[0].eob = compressed
-                    debugPrint("Done")
                 }
             }
             export.task?.resume()
@@ -195,9 +206,9 @@ class ExportClient {
                 
                 let subdata = input!.subdata(in: index ..< index + rangeLength)
                 index += rangeLength
-
+                
                 try outputFilter.write(subdata)
-
+                
                 if (rangeLength == 0) {
                     break
                 }

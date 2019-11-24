@@ -41,7 +41,7 @@
         <element name="IdentitiferEntity" positionX="-54" positionY="18" width="128" height="73"/>
         <element name="NameEntity" positionX="0" positionY="81" width="128" height="73"/>
         <element name="OrganizationEntity" positionX="-63" positionY="-18" width="128" height="118"/>
-        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="133"/>
+        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="28"/>
         <element name="ProviderEntity" positionX="-27" positionY="63" width="128" height="118"/>
     </elements>
 </model>
