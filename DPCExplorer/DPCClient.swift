@@ -32,7 +32,7 @@ final class DPCClient: ObservableObject {
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseDecodable(of: Organization.self){ response in
-            debugPrint(response)
+                debugPrint(response)
                 switch response.result {
                 case .success:
                     print("Succeeded!")
@@ -59,37 +59,37 @@ final class DPCClient: ObservableObject {
         let uri = self.baseURL + "Practitioner"
         
         AF.request(uri)
-        .validate(statusCode: 200..<300)
-        .validate(contentType: ["application/fhir+json"])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
             .responseDecodable(of: Bundle<Provider>.self){ response in
-            debugPrint(response)
-            switch response.result {
-            case .success:
-                print("Succeeded!")
-                guard let value = response.value else {
-                    return
-                }
-
-                value.entry.forEach{entry in
-                    // Check if the entry already exists, if so, move on
-                    let req = NSFetchRequest<ProviderEntity>(entityName: "ProviderEntity")
-                    req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
-                    let existing = try! self.context.fetch(req)
-                    guard existing.isEmpty else {
+                debugPrint(response)
+                switch response.result {
+                case .success:
+                    print("Succeeded!")
+                    guard let value = response.value else {
                         return
                     }
-                    entry.resource.toEntity(ctx: self.context)
+                    
+                    value.entry.forEach{entry in
+                        // Check if the entry already exists, if so, move on
+                        let req = NSFetchRequest<ProviderEntity>(entityName: "ProviderEntity")
+                        req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
+                        let existing = try! self.context.fetch(req)
+                        guard existing.isEmpty else {
+                            return
+                        }
+                        entry.resource.toEntity(ctx: self.context)
+                    }
+                    
+                    // Try to save it
+                    do {
+                        try self.context.save()
+                    } catch {
+                        debugPrint("Error saving!")
+                    }
+                case let .failure(error):
+                    print(error)
                 }
-                
-                // Try to save it
-                do {
-                    try self.context.save()
-                } catch {
-                    debugPrint("Error saving!")
-                }
-            case let .failure(error):
-                print(error)
-            }
         }
     }
     
@@ -101,8 +101,8 @@ final class DPCClient: ObservableObject {
         
         AF.request(url, method: .get, parameters: params,
                    encoding: URLEncoding(destination: .queryString))
-        .validate(statusCode: 200..<300)
-        .validate(contentType: ["application/fhir+json"])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
             .responseData { response in
                 debugPrint(response)
                 guard let value = response.value else {
@@ -117,7 +117,7 @@ final class DPCClient: ObservableObject {
                     return
                 }
                 do {
-                let bundle = try FHIR.Bundle.init(json: json!)
+                    let bundle = try FHIR.Bundle.init(json: json!)
                     guard let entry = bundle.entry else {
                         return
                     }
@@ -181,8 +181,8 @@ final class DPCClient: ObservableObject {
         decoder.dateDecodingStrategy = .formatted(dateStringFormatter)
         
         AF.request(uri)
-        .validate(statusCode: 200..<300)
-        .validate(contentType: ["application/fhir+json"])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
             .responseDecodable(of: Bundle<Patient>.self, decoder: decoder){ response in
                 debugPrint(response)
                 switch response.result {
@@ -192,7 +192,7 @@ final class DPCClient: ObservableObject {
                     guard let value = response.value else {
                         return
                     }
-
+                    
                     value.entry.forEach{entry in
                         // Check if the entry already exists, if so, move on
                         let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
@@ -214,11 +214,31 @@ final class DPCClient: ObservableObject {
                 case let .failure(error):
                     print(error)
                 }
-    }
+        }
     }
     
     func exportData(provider: ProviderEntity) -> Void {
         let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
         client.exportData()
+    }
+    
+    func addPatient(patient: FHIR.Patient) -> Void {
+        let _ = patient.toEntity(ctx: self.context)
+        
+        // Submit to DPC
+        let params = try! patient.asJSON()
+        let uri = self.baseURL + "Patient"
+        AF.request(uri, method: .post, parameters: params)
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/fhir+json"])
+            .responseString { response in
+                debugPrint(response)
+        }
+
+        do {
+            try self.context.save()
+        } catch {
+            debugPrint("Error saving!")
+        }
     }
 }

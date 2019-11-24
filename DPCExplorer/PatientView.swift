@@ -42,6 +42,7 @@ struct PatientView: View {
     .sheet(isPresented: $showAdd, content: {
         PatientAdd()
             .environment(\.managedObjectContext, self.context)
+            .environmentObject(self.client)
     })
     }
 }

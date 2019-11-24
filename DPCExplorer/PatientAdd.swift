@@ -7,10 +7,13 @@
 //
 
 import SwiftUI
+import FHIR
 
 struct PatientAdd: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var context
+    @EnvironmentObject var client: DPCClient
+    
     
     private let genderValues = ["Male", "Female", "Other", "Unknown"]
     private let minDate = Calendar.current.date(byAdding: .year, value: -65, to: Date())!
@@ -53,24 +56,37 @@ struct PatientAdd: View {
     
     private func create() -> Void {
         debugPrint("Creating")
-        let patient = PatientEntity(context: self.context)
+        let patient = FHIR.Patient()
         
-        let name = NameEntity(context: self.context)
-        name.family = self.lastName
-        name.given = self.firstName
-        patient.addToNameRelationship(name)
+        let id = FHIR.Identifier()
+        id.system = FHIRURL.init("http://not.real")
+        id.value =  FHIRString.init(self.mbi)
+        patient.identifier = [id]
         
-        let id = IdentitiferEntity(context: self.context)
-        id.system = "http://test.system"
-        id.value = self.mbi
-        patient.addToIdentifierRelationship(id)
-        patient.birthdate = self.birthday
+        let name = HumanName()
+        name.given = [FHIRString.init(self.firstName)]
+        name.family = FHIRString.init(self.lastName)
+        patient.name = [name]
         
-        do {
-            try self.context.save()
-        } catch {
-            debugPrint(error)
-        }
+        self.client.addPatient(patient: patient)
+        //        let patient = PatientEntity(context: self.context)
+        //
+        //        let name = NameEntity(context: self.context)
+        //        name.family = self.lastName
+        //        name.given = self.firstName
+        //        patient.addToNameRelationship(name)
+        //
+        //        let id = IdentitiferEntity(context: self.context)
+        //        id.system = "http://test.system"
+        //        id.value = self.mbi
+        //        patient.addToIdentifierRelationship(id)
+        //        patient.birthdate = self.birthday
+        //
+        //        do {
+        //            try self.context.save()
+        //        } catch {
+        //            debugPrint(error)
+        //        }
         
         self.presentationMode.wrappedValue.dismiss()
     }
