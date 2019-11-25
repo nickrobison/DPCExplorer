@@ -32,12 +32,14 @@ struct Patient: Decodable {
     let name: [Name]
     let identifier: [Identifier]
     let birthDate: Date
+    let gender: String
     
     @discardableResult
     func toEntity(ctx: NSManagedObjectContext) -> PatientEntity {
         let entity = PatientEntity(context: ctx)
         entity.id = self.id
         entity.birthdate = self.birthDate
+        entity.gender = self.gender
         
         // Identifiers
         self.identifier

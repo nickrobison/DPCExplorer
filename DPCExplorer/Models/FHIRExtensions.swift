@@ -38,3 +38,30 @@ extension FHIR.Patient {
         return entity
     }
 }
+
+extension FHIR.Practitioner {
+    
+    @discardableResult
+    func toEntity(ctx: NSManagedObjectContext) -> ProviderEntity {
+        let entity = ProviderEntity(context: ctx)
+        entity.id = UUID.init(uuidString: self.id!.string)
+        
+        // Many ids
+        self.identifier?.forEach{identifier in
+            let id = IdentitiferEntity(context: ctx)
+            id.system = identifier.system?.absoluteString
+            id.value = identifier.value?.string
+            entity.addToIdRelationship(id)
+        }
+        
+        // Many names
+        self.name?.forEach{name in
+            let nameEntity = NameEntity(context: ctx)
+            nameEntity.family = name.family?.string
+            nameEntity.given = name.given?[0].string
+            entity.addToNameRelationship(nameEntity)
+        }
+        
+        return entity
+    }
+}

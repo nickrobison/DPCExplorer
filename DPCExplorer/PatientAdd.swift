@@ -70,6 +70,7 @@ struct PatientAdd: View {
         patient.gender = AdministrativeGender.init(rawValue: self.genderValues[self.gender].lowercased())
         
         self.completionHandler?(patient)
+        self.presentationMode.wrappedValue.dismiss();
     }
 }
 

@@ -85,7 +85,7 @@ final class DPCClient: ObservableObject {
                     do {
                         try self.context.save()
                     } catch {
-                        debugPrint("Error saving!")
+                        debugPrint("Error saving!", error)
                     }
                 case let .failure(error):
                     print(error)
@@ -96,7 +96,7 @@ final class DPCClient: ObservableObject {
     func fetchPatientsForProvider(provider: ProviderEntity) {
         let url = self.baseURL + "Group"
         let params: Alamofire.Parameters = [
-            "charactistic-value": "|attributed-to$|\(provider.getFirstID.value!)"
+            "characteristic-value": "|attributed-to$|\(provider.getFirstID.value!)"
         ]
         
         AF.request(url, method: .get, parameters: params,
@@ -256,7 +256,36 @@ final class DPCClient: ObservableObject {
                         let _ = patient.toEntity(ctx: self.context)
                         try self.context.save()
                     } catch {
-                        debugPrint("Error saving!")
+                        debugPrint("Error saving!", error)
+                    }
+                }
+        }
+    }
+    
+    func addProvider(provider: FHIR.Practitioner) -> Void {
+        let uri = self.baseURL + "Practitioner"
+        
+        var errors: [FHIRValidationError] = []
+        let params = provider.asJSON(errors: &errors)
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/fhir+json"
+        ]
+        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
+            .responseFHIRResource(of: Practitioner.self){ response in
+                debugPrint(response)
+                
+                guard let value = response.value else {
+                    return
+                }
+                
+                self.context.perform {
+                    do {
+                        let _ = value.toEntity(ctx: self.context)
+                        try self.context.save()
+                    } catch {
+                        debugPrint("Error saving!", error)
                     }
                 }
         }
