@@ -46,6 +46,7 @@
 		EBC0DA6F23838E1F006A2D0D /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
 		EBE7787E238234D6000AAFFA /* JobCompletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */; };
 		EBE7788023823AD0000AAFFA /* ExportDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787F23823AD0000AAFFA /* ExportDownload.swift */; };
+		EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8FDAB238F53200047C024 /* PatientAssign.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletionModel.swift; sourceTree = "<group>"; };
 		EBE7787F23823AD0000AAFFA /* ExportDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDownload.swift; sourceTree = "<group>"; };
+		EBE8FDAB238F53200047C024 /* PatientAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAssign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
 				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
 				EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */,
+				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
 				EB65A35F23789E550076C48A /* DPCExplorer.xcdatamodeld in Sources */,
 				EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */,
+				EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */,
 				EBE7788023823AD0000AAFFA /* ExportDownload.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,

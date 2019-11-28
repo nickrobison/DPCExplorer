@@ -12,6 +12,8 @@ import CoreData
 struct ProviderDetailView: View {
     @EnvironmentObject var client: DPCClient
     
+    @State private var showAdd = false
+    
     let provider: ProviderEntity
     var body: some View {
         VStack {
@@ -41,6 +43,7 @@ struct ProviderDetailView: View {
                 }
                 Button(action: {
                     debugPrint("Adding patient")
+                    self.showAdd = true
                 }) {
                     Text("Add Patient")
                 }
@@ -50,10 +53,30 @@ struct ProviderDetailView: View {
         .onAppear() {
             self.client.fetchPatientsForProvider(provider: self.provider)
         }
+        .sheet(isPresented: $showAdd, content: {
+            PatientAssign(assignablePatients: self.getPatientNames())
+        })
     }
     
     func performDelete(at offsets: IndexSet) {
         debugPrint(offsets)
+    }
+    
+    func getPatientNames() -> [String] {
+        let names = self.client.fetchAssignablePatients(provider: provider)
+            .map({
+                return $0.getFirstName.given!
+            })
+            .collect()
+            .result
+        
+        switch names {
+        case .success(let data):
+            return data
+        case .failure(let error):
+            debugPrint(error)
+            return []
+        }
     }
     
 }
