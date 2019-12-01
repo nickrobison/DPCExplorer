@@ -8,6 +8,7 @@
 
 import SwiftUI
 import CoreData
+import FHIR
 
 struct ProviderDetailView: View {
     @EnvironmentObject var client: DPCClient
@@ -54,19 +55,16 @@ struct ProviderDetailView: View {
             self.client.fetchPatientsForProvider(provider: self.provider)
         }
         .sheet(isPresented: $showAdd, content: {
-            PatientAssign(assignablePatients: self.getPatientNames())
+            PatientAssign(assignablePatients: self.getAssignablePatients(), completionHandler: self.assignPatients)
         })
     }
     
     func performDelete(at offsets: IndexSet) {
         debugPrint(offsets)
     }
-    
-    func getPatientNames() -> [String] {
+
+    private func getAssignablePatients() -> [PatientEntity] {
         let names = self.client.fetchAssignablePatients(provider: provider)
-            .map({
-                return $0.getFirstName.given!
-            })
             .collect()
             .result
         
@@ -77,6 +75,11 @@ struct ProviderDetailView: View {
             debugPrint(error)
             return []
         }
+    }
+    
+    private func assignPatients(patients: [PatientEntity]) -> Void {
+        debugPrint("References:", patients)
+        self.client.assignPatients(patients, to: self.provider)
     }
     
 }

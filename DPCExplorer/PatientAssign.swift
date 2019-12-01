@@ -8,31 +8,51 @@
 
 import SwiftUI
 import Combine
+import FHIR
 
 struct PatientAssign: View {
+    
     @Environment(\.presentationMode) var presentationMode
     
-    let assignablePatients: [String]
+    let assignablePatients: [PatientEntity]
+    let completionHandler: ((_ patients: [PatientEntity]) -> Void)?
+    
+    @State var assignedPatients: [PatientEntity] = []
     var body: some View {
         NavigationView {
             List(assignablePatients, id:\.self) { patient in
-                Text(patient)
+                SelectableRow(title: self.formatName(patient), isSelected: self.assignedPatients.contains(patient), action: {
+                    if self.assignedPatients.contains(patient) {
+                        self.assignedPatients.removeAll(where: {$0 == patient})
+                    } else {
+                        self.assignedPatients.append(patient)
+                    }
+                })
             }
-                
             .navigationBarTitle(Text("Assignable Patients"))
             .navigationBarItems(leading: Button(action: {
                 debugPrint("Cancel")
                 self.presentationMode.wrappedValue.dismiss()
             }, label: {Text("Cancel")}), trailing:
                 Button(action: {
-                    //                self.create()
+                    self.create()
                 }, label: { Text("Add")}))
         }
+    }
+    
+    private func create() -> Void {
+        self.completionHandler?(self.assignedPatients)
+        self.presentationMode.wrappedValue.dismiss();
+    }
+    
+    private func formatName(_ patient: PatientEntity) -> String {
+        let name = patient.getFirstName
+        return "\(name.family!), \(name.given!)"
     }
 }
 
 struct PatientAssign_Previews: PreviewProvider {
     static var previews: some View {
-        PatientAssign(assignablePatients: ["Nick", "Callie"])
+        PatientAssign(assignablePatients: nickPatients, completionHandler: nil)
     }
 }

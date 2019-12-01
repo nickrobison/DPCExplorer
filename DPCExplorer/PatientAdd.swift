@@ -12,7 +12,7 @@ import FHIR
 struct PatientAdd: View {
     @Environment(\.presentationMode) var presentationMode
     
-    let completionHandler: ((_ patient: FHIR.Patient) -> Void)?
+    let completionHandler: CompletionHandler<FHIR.Patient>?
 
     private let genderValues = ["Male", "Female", "Other", "Unknown"]
     private let minDate = Calendar.current.date(byAdding: .year, value: -65, to: Date())!

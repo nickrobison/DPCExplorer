@@ -10,6 +10,9 @@ import Foundation
 import FHIR
 import CoreData
 
+typealias CompletionHandler<T: FHIRAbstractBase> = (_ provider: T) -> Void
+typealias CollectionCompletionHandler<T: FHIRAbstractBase> = (_ collection: [T]) -> Void
+
 extension FHIR.Patient {
     
     @discardableResult

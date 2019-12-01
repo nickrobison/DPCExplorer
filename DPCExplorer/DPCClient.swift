@@ -224,6 +224,58 @@ final class DPCClient: ObservableObject {
         }
     }
     
+    func assignPatients(_ patients: [PatientEntity], to: ProviderEntity) {
+        // If we don't have a rosterID, create  a new one
+        if to.rosterID == nil {
+            createPatientRoster(provider: to, patients: patients)
+        } else {
+            // Create the group to submit
+            let group = Group()
+            group.id = FHIRString(to.rosterID!.uuidString)
+            group.member = patients.map{
+                let member = GroupMember()
+                let ref = Reference()
+                ref.reference = FHIRString($0.id!.uuidString)
+                member.entity = ref
+                return member
+            }
+            
+            // As a parameter set
+            let parameters = FHIR.Parameters()
+            let p = ParametersParameter()
+            p.name = FHIRString("resource")
+            p.resource = group
+            parameters.parameter = [p]
+            var errors: [FHIRValidationError] = []
+            let params = parameters.asJSON(errors: &errors)
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/fhir+json"
+            ]
+            
+            let uri = self.baseURL + "Group/\(to.rosterID!)/$add"
+            // Submit to DPC using the $add operation
+            AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
+                .responseFHIRResource(of: Group.self) { response in
+                    debugPrint("New group:", response)
+                    
+                    // Now, add the patients to the practitoner and continue
+                    patients.forEach {
+                        to.addToPatientRelationship($0)
+                    }
+                    
+                    self.context.perform {
+                        do {
+                            try self.context.save()
+                        } catch {
+                            debugPrint("Error saving!")
+                        }
+                    }
+            }
+        }
+    }
+    
     func exportData(provider: ProviderEntity) -> Void {
         let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
         client.exportData()
@@ -290,6 +342,55 @@ final class DPCClient: ObservableObject {
                 self.context.perform {
                     do {
                         let _ = value.toEntity(ctx: self.context)
+                        try self.context.save()
+                    } catch {
+                        debugPrint("Error saving!", error)
+                    }
+                }
+        }
+    }
+    
+    private func createPatientRoster(provider: ProviderEntity, patients: [PatientEntity]) -> Void {
+        debugPrint("Creating a new patient roster")
+        let group = Group()
+        
+        // Set the attributed characteristic
+        let npi = Coding()
+        npi.system = FHIRURL("http://hl7.org/fhir/sid/us-npi")
+        npi.code = FHIRString("12345") // Fix this
+        
+        let concept = CodeableConcept()
+        concept.coding = [npi]
+        let attributed = CodeableConcept()
+        
+        let attrCode = Coding()
+        attrCode.code = FHIRString("attributed-to")
+        attributed.coding = [attrCode]
+        group.characteristic = [GroupCharacteristic.init(code: attributed, exclude: FHIRBool(false), value: concept)]
+        
+        // Now, submit it
+        var errors: [FHIRValidationError] = []
+        let params = group.asJSON(errors: &errors)
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/fhir+json"
+        ]
+        
+        let uri = self.baseURL + "Group"
+        // Submit to DPC using the $add operation
+        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        .validate(statusCode: 200..<300)
+        .validate(contentType: ["application/fhir+json"])
+            .responseFHIRResource(of: Group.self) { response in
+                debugPrint("New group:", response)
+                provider.rosterID = UUID(uuidString: response.value!.id!.string)
+                
+                // Add all the patients
+                patients.forEach {
+                    provider.addToPatientRelationship($0)
+                }
+                
+                self.context.perform {
+                    do {
                         try self.context.save()
                     } catch {
                         debugPrint("Error saving!", error)

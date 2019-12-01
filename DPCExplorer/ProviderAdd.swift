@@ -9,12 +9,10 @@
 import SwiftUI
 import FHIR
 
-typealias CompletionHandler = (_ provider: FHIR.Practitioner) -> Void
-
 struct ProviderAdd: View {
     @Environment(\.presentationMode) var presentationMode
     
-    let completionHandler: CompletionHandler?
+    let completionHandler: CompletionHandler<Practitioner>?
     
     @State private var lastName = ""
     @State private var firstName = ""
