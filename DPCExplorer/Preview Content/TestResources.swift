@@ -24,7 +24,7 @@ func createPatient(last: String, first: String) -> PatientEntity {
     let patient = PatientEntity()
     patient.id = UUID()
     patient.birthdate = Date(dateString: "2018-01-11")
-    let id = IdentitiferEntity()
+    let id = PatientIdentifier()
     id.system = "MBI"
     id.value = "112233"
     patient.addToIdentifierRelationship(id)
@@ -44,7 +44,7 @@ func createTestOrg() -> OrganizationEntity {
     addr.state = "Indiana"
     addr.postalCode = "46815"
     
-    let idr = IdentitiferEntity()
+    let idr = OrganizationIdentifier()
     idr.system = "NPI"
     idr.value = "11883322"
     
@@ -69,7 +69,7 @@ let nickPatients = [
     blythe
 ]
 
-let testProviders = [
-    Provider(name: Name(family: "Robison", given: ["Nicholas", "A"]), npi: "12345", specialty: "Primary care", patients: []),
-    Provider(name: Name(family: "Robison", given: ["Callie", "J"]), npi: "67890", specialty: "Oral surgery", patients: [])
-]
+//let testProviders = [
+//    Provider(name: Name(family: "Robison", given: ["Nicholas", "A"]), npi: "12345", specialty: "Primary care", patients: []),
+//    Provider(name: Name(family: "Robison", given: ["Callie", "J"]), npi: "67890", specialty: "Oral surgery", patients: [])
+//]

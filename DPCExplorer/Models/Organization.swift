@@ -14,8 +14,8 @@ import CoreData
         let addrs = (self.addressRelationship?.allObjects as? [AddressEntity])
         return addrs![0]
     }
-    var getFirstID: IdentitiferEntity {
-        let ids = self.idRelationship?.allObjects as? [IdentitiferEntity]
+    var getFirstID: FHIRIdentifier {
+        let ids = self.idRelationship?.allObjects as? [OrganizationIdentifier]
         return ids![0]
     }
 }
@@ -23,9 +23,9 @@ import CoreData
 struct Identifier: Codable {
     let system: String
     let value: String
-    
-    func toEntity(ctx: NSManagedObjectContext) -> IdentitiferEntity {
-        let entity = IdentitiferEntity(context: ctx)
+
+    func toEntity(ctx: NSManagedObjectContext) -> OrganizationIdentifier {
+        let entity = OrganizationIdentifier(context: ctx)
         entity.system = self.system
         entity.value = self.value
         return entity

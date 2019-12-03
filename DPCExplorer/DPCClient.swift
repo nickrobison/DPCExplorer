@@ -17,7 +17,7 @@ final class DPCClient: ObservableObject {
     let baseURL: String
     let context: NSManagedObjectContext
     @Published var organization: OrganizationEntity?
-    @Published var providers: [Provider]
+    @Published var providers: [ProviderEntity]
     
     init(baseURL: String, context: NSManagedObjectContext) {
         self.baseURL = baseURL
@@ -61,7 +61,7 @@ final class DPCClient: ObservableObject {
         AF.request(uri)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
-            .responseDecodable(of: Bundle<Provider>.self){ response in
+            .responseFHIRResource(of: FHIR.Bundle.self){ response in
                 debugPrint(response)
                 switch response.result {
                 case .success:
@@ -70,15 +70,22 @@ final class DPCClient: ObservableObject {
                         return
                     }
                     
-                    value.entry.forEach{entry in
+                    value.entry?
+                        .filter {
+                            $0.resource.self is Practitioner
+                    }
+                    .map{
+                        $0.resource! as! Practitioner
+                    }
+                    .forEach{entry in
                         // Check if the entry already exists, if so, move on
                         let req = NSFetchRequest<ProviderEntity>(entityName: "ProviderEntity")
-                        req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
+                        req.predicate = NSPredicate(format: "id = %@", entry.id!.string)
                         let existing = try! self.context.fetch(req)
                         guard existing.isEmpty else {
                             return
                         }
-                        entry.resource.toEntity(ctx: self.context)
+                        entry.toEntity(ctx: self.context)
                     }
                     
                     // Try to save it
@@ -190,7 +197,7 @@ final class DPCClient: ObservableObject {
         AF.request(uri)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
-            .responseDecodable(of: Bundle<Patient>.self, decoder: decoder){ response in
+            .responseFHIRResource(of: FHIR.Bundle.self){ response in
                 debugPrint(response)
                 switch response.result {
                 case .success:
@@ -200,15 +207,22 @@ final class DPCClient: ObservableObject {
                         return
                     }
                     
-                    value.entry.forEach{entry in
+                    value.entry?
+                        .filter {
+                            $0.resource.self is Patient
+                    }
+                    .map{
+                        $0.resource! as! Patient
+                    }
+                    .forEach{entry in
                         // Check if the entry already exists, if so, move on
                         let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
-                        req.predicate = NSPredicate(format: "id = %@", entry.resource.id.uuidString)
+                        req.predicate = NSPredicate(format: "id = %@", entry.id!.string)
                         let existing = try! self.context.fetch(req)
                         guard existing.isEmpty else {
                             return
                         }
-                        entry.resource.toEntity(ctx: self.context)
+                        entry.toEntity(ctx: self.context)
                     }
                     
                     
@@ -255,8 +269,8 @@ final class DPCClient: ObservableObject {
             let uri = self.baseURL + "Group/\(to.rosterID!)/$add"
             // Submit to DPC using the $add operation
             AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/fhir+json"])
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/fhir+json"])
                 .responseFHIRResource(of: Group.self) { response in
                     debugPrint("New group:", response)
                     
@@ -357,7 +371,7 @@ final class DPCClient: ObservableObject {
         // Set the attributed characteristic
         let npi = Coding()
         npi.system = FHIRURL("http://hl7.org/fhir/sid/us-npi")
-        npi.code = FHIRString("12345") // Fix this
+        npi.code = FHIRString(provider.getFirstID.value!) // Fix this
         
         let concept = CodeableConcept()
         concept.coding = [npi]
@@ -367,6 +381,16 @@ final class DPCClient: ObservableObject {
         attrCode.code = FHIRString("attributed-to")
         attributed.coding = [attrCode]
         group.characteristic = [GroupCharacteristic.init(code: attributed, exclude: FHIRBool(false), value: concept)]
+        
+        // Add the patients to the roster
+        let members = patients.map { (patient: PatientEntity) -> GroupMember in
+            let member = GroupMember()
+            let ref = Reference()
+            ref.reference = FHIRString("Patient/\(patient.id!)")
+            member.entity = ref
+            return member
+        }
+        group.member = members
         
         // Now, submit it
         var errors: [FHIRValidationError] = []
@@ -378,8 +402,8 @@ final class DPCClient: ObservableObject {
         let uri = self.baseURL + "Group"
         // Submit to DPC using the $add operation
         AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-        .validate(statusCode: 200..<300)
-        .validate(contentType: ["application/fhir+json"])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
             .responseFHIRResource(of: Group.self) { response in
                 debugPrint("New group:", response)
                 provider.rosterID = UUID(uuidString: response.value!.id!.string)

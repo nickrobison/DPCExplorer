@@ -13,6 +13,44 @@ import CoreData
 typealias CompletionHandler<T: FHIRAbstractBase> = (_ provider: T) -> Void
 typealias CollectionCompletionHandler<T: FHIRAbstractBase> = (_ collection: [T]) -> Void
 
+protocol FHIRIdentifier {
+    var system: String? { get }
+    var value: String? { get }
+}
+
+extension PatientIdentifier: FHIRIdentifier {
+    @discardableResult
+    func toEntity(ctx: NSManagedObjectContext) -> PatientIdentifier {
+        let entity = PatientIdentifier(context: ctx)
+        entity.system = self.system
+        entity.value = self.value
+        
+        return entity
+    }
+}
+
+extension ProviderIdentifier: FHIRIdentifier {
+    @discardableResult
+    func toEntity(ctx: NSManagedObjectContext) -> ProviderIdentifier {
+        let entity = ProviderIdentifier(context: ctx)
+        entity.system = self.system
+        entity.value = self.value
+        
+        return entity
+    }
+}
+
+extension OrganizationIdentifier: FHIRIdentifier {
+    @discardableResult
+    func toEntity(ctx: NSManagedObjectContext) -> OrganizationIdentifier {
+        let entity = OrganizationIdentifier(context: ctx)
+        entity.system = self.system
+        entity.value = self.value
+        
+        return entity
+    }
+}
+
 extension FHIR.Patient {
     
     @discardableResult
@@ -24,7 +62,7 @@ extension FHIR.Patient {
         
         // Many ids
         self.identifier?.forEach{identifier in
-            let id = IdentitiferEntity(context: ctx)
+            let id = PatientIdentifier(context: ctx)
             id.system = identifier.system?.absoluteString
             id.value = identifier.value?.string
             entity.addToIdentifierRelationship(id)
@@ -40,6 +78,10 @@ extension FHIR.Patient {
         
         return entity
     }
+    
+    func getFirstId() -> FHIR.Identifier {
+        self.identifier![0]
+    }
 }
 
 extension FHIR.Practitioner {
@@ -51,7 +93,7 @@ extension FHIR.Practitioner {
         
         // Many ids
         self.identifier?.forEach{identifier in
-            let id = IdentitiferEntity(context: ctx)
+            let id = ProviderIdentifier(context: ctx)
             id.system = identifier.system?.absoluteString
             id.value = identifier.value?.string
             entity.addToIdRelationship(id)
@@ -66,5 +108,9 @@ extension FHIR.Practitioner {
         }
         
         return entity
+    }
+    
+    func getFirstId() -> FHIR.Identifier {
+        self.identifier![0]
     }
 }

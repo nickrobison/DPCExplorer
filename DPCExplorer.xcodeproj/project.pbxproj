@@ -38,7 +38,6 @@
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
-		EBAA8A65236D10E800EC0253 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A64236D10E800EC0253 /* Bundle.swift */; };
 		EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */; };
 		EBAF7EC1238A295B0050039D /* FHIRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */; };
 		EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */; };
@@ -103,7 +102,6 @@
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
 		EBAA8A60236CF7AD00EC0253 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		EBAA8A64236D10E800EC0253 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAdd.swift; sourceTree = "<group>"; };
 		EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIRExtensions.swift; sourceTree = "<group>"; };
 		EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderAdd.swift; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				EB763A5E236BB06E001EC7C9 /* Patient.swift */,
 				EB763A60236BB481001EC7C9 /* Person.swift */,
 				EB763A6E236BBE20001EC7C9 /* Address.swift */,
-				EBAA8A64236D10E800EC0253 /* Bundle.swift */,
 				EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */,
 				EBE7787F23823AD0000AAFFA /* ExportDownload.swift */,
 				EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */,
@@ -407,7 +404,6 @@
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
 				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
 				EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */,
-				EBAA8A65236D10E800EC0253 /* Bundle.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
 				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
 				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,

@@ -14,8 +14,8 @@ extension PatientEntity {
         let names = self.nameRelationship?.allObjects as? [NameEntity]
         return names![0]
     }
-    var getFirstID: IdentitiferEntity {
-        let ids = self.identifierRelationship?.allObjects as? [IdentitiferEntity]
+    var getFirstID: FHIRIdentifier {
+        let ids = self.identifierRelationship?.allObjects as? [PatientIdentifier]
         return ids![0]
     }
 }
@@ -24,32 +24,5 @@ extension PatientEntity: Person {
     var name: [NameEntity] {
         let names = self.nameRelationship?.allObjects as? [NameEntity]
         return names ?? []
-    }
-}
-
-struct Patient: Decodable {
-    let id: UUID
-    let name: [Name]
-    let identifier: [Identifier]
-    let birthDate: Date
-    let gender: String
-    
-    @discardableResult
-    func toEntity(ctx: NSManagedObjectContext) -> PatientEntity {
-        let entity = PatientEntity(context: ctx)
-        entity.id = self.id
-        entity.birthdate = self.birthDate
-        entity.gender = self.gender
-        
-        // Identifiers
-        self.identifier
-            .forEach{identifier in                entity.addToIdentifierRelationship(identifier.toEntity(ctx: ctx))
-        }
-        
-        // Names
-        self.name.forEach{ name in
-            entity.addToNameRelationship(name.toEntity(ctx: ctx))
-        }
-        return entity
     }
 }
