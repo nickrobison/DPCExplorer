@@ -42,7 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "DPCExplorer")
+        guard let modelURL = Bundle(for: type(of: self)).url(forResource: "DPCKit", withExtension:"momd") else {
+                fatalError("Error loading model from bundle")
+        }
+
+        guard let mom = NSManagedObjectModel(contentsOf: modelURL) else {
+            fatalError("Error initializing mom from: \(modelURL)")
+        }
+        let container = NSPersistentContainer(name: "DPCKit", managedObjectModel: mom)
         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Person {
+public protocol Person {
     var name: [NameEntity] {get}
 }

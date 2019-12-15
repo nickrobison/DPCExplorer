@@ -10,6 +10,7 @@ import SwiftUI
 import Foundation
 import CoreData
 import FHIR
+import DPCKit
 
 struct PatientView: View {
     @Environment(\.managedObjectContext) var context

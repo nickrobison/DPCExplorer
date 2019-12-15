@@ -16,37 +16,42 @@
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
-		EB5192682381BDF500C979C3 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
-		EB65A35C23789DEA0076C48A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB65A35B23789DEA0076C48A /* Alamofire */; };
-		EB65A35F23789E550076C48A /* DPCExplorer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB65A35D23789E550076C48A /* DPCExplorer.xcdatamodeld */; };
-		EB65A3622378A10F0076C48A /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EB65A3612378A10F0076C48A /* FHIR */; };
-		EB763A16236BA890001EC7C9 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
-		EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
 		EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */; };
-		EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5A236BAD51001EC7C9 /* Name.swift */; };
 		EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestResources.swift */; };
-		EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5E236BB06E001EC7C9 /* Patient.swift */; };
-		EB763A61236BB481001EC7C9 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A60236BB481001EC7C9 /* Person.swift */; };
 		EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A62236BB512001EC7C9 /* PersonCellView.swift */; };
 		EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A64236BB582001EC7C9 /* ViewHelpers.swift */; };
 		EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A66236BB804001EC7C9 /* ProviderView.swift */; };
 		EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A68236BB922001EC7C9 /* PatientView.swift */; };
 		EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */; };
 		EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */; };
-		EB763A6F236BBE20001EC7C9 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6E236BBE20001EC7C9 /* Address.swift */; };
-		EB763A71236BBFA8001EC7C9 /* DPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A70236BBFA8001EC7C9 /* DPCClient.swift */; };
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
 		EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */; };
-		EBAF7EC1238A295B0050039D /* FHIRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */; };
 		EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */; };
-		EBB899FF238B713D008D7CB6 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
-		EBC0DA6F23838E1F006A2D0D /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
 		EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5EB47239039C6003E0B3B /* SelectableRow.swift */; };
-		EBE7787E238234D6000AAFFA /* JobCompletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */; };
-		EBE7788023823AD0000AAFFA /* ExportDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787F23823AD0000AAFFA /* ExportDownload.swift */; };
 		EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8FDAB238F53200047C024 /* PatientAssign.swift */; };
+		EBEC7EBE23A6B700004D3C22 /* DPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; };
+		EBEC7EC523A6B700004D3C22 /* DPCKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */; };
+		EBEC7EC723A6B700004D3C22 /* DPCKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EBEC7EB723A6B700004D3C22 /* DPCKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBEC7ECA23A6B700004D3C22 /* DPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; };
+		EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBEC7ED323A6B7FD004D3C22 /* DPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A70236BBFA8001EC7C9 /* DPCClient.swift */; };
+		EBEC7ED623A6B85A004D3C22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EBEC7ED523A6B85A004D3C22 /* Alamofire */; };
+		EBEC7ED823A6B85E004D3C22 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EBEC7ED723A6B85E004D3C22 /* FHIR */; };
+		EBEC7EFD23A6BA37004D3C22 /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */; };
+		EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
+		EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
+		EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5A236BAD51001EC7C9 /* Name.swift */; };
+		EBEC7F0323A6BA6D004D3C22 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5E236BB06E001EC7C9 /* Patient.swift */; };
+		EBEC7F0423A6BA6D004D3C22 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A60236BB481001EC7C9 /* Person.swift */; };
+		EBEC7F0523A6BA6D004D3C22 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6E236BBE20001EC7C9 /* Address.swift */; };
+		EBEC7F0623A6BA6D004D3C22 /* JobCompletionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */; };
+		EBEC7F0723A6BA6D004D3C22 /* ExportDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7787F23823AD0000AAFFA /* ExportDownload.swift */; };
+		EBEC7F0823A6BA6D004D3C22 /* FHIRExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */; };
+		EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
+		EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
+		EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +69,42 @@
 			remoteGlobalIDString = EB100E6B23667ED30065E084;
 			remoteInfo = DPCExplorer;
 		};
+		EBEC7EBF23A6B700004D3C22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBEC7EB423A6B700004D3C22;
+			remoteInfo = DPCKit;
+		};
+		EBEC7EC123A6B700004D3C22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB100E6B23667ED30065E084;
+			remoteInfo = DPCExplorer;
+		};
+		EBEC7EC823A6B700004D3C22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBEC7EB423A6B700004D3C22;
+			remoteInfo = DPCKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EBEC7ECC23A6B700004D3C22 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EB100E6C23667ED30065E084 /* DPCExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPCExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +151,12 @@
 		EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletionModel.swift; sourceTree = "<group>"; };
 		EBE7787F23823AD0000AAFFA /* ExportDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDownload.swift; sourceTree = "<group>"; };
 		EBE8FDAB238F53200047C024 /* PatientAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAssign.swift; sourceTree = "<group>"; };
+		EBEC7EB523A6B700004D3C22 /* DPCKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DPCKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBEC7EB723A6B700004D3C22 /* DPCKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPCKit.h; sourceTree = "<group>"; };
+		EBEC7EB823A6B700004D3C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCKitTests.swift; sourceTree = "<group>"; };
+		EBEC7EC623A6B700004D3C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB65A35C23789DEA0076C48A /* Alamofire in Frameworks */,
-				EB65A3622378A10F0076C48A /* FHIR in Frameworks */,
+				EBEC7ECA23A6B700004D3C22 /* DPCKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +182,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBEC7EB223A6B700004D3C22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEC7ED623A6B85A004D3C22 /* Alamofire in Frameworks */,
+				EBEC7ED823A6B85E004D3C22 /* FHIR in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBEC7EBA23A6B700004D3C22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEC7EBE23A6B700004D3C22 /* DPCKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -146,8 +208,11 @@
 				EB100E6E23667ED30065E084 /* DPCExplorer */,
 				EB100E8823667ED60065E084 /* DPCExplorerTests */,
 				EB100E9323667ED60065E084 /* DPCExplorerUITests */,
+				EBEC7EB623A6B700004D3C22 /* DPCKit */,
+				EBEC7EC323A6B700004D3C22 /* DPCKitTests */,
 				EB100E6D23667ED30065E084 /* Products */,
 				F34C7A9EA834079C139D7829 /* Pods */,
+				EBEC7ED423A6B85A004D3C22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +222,8 @@
 				EB100E6C23667ED30065E084 /* DPCExplorer.app */,
 				EB100E8523667ED60065E084 /* DPCExplorerTests.xctest */,
 				EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */,
+				EBEC7EB523A6B700004D3C22 /* DPCKit.framework */,
+				EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,8 +231,6 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
-				EB65A35D23789E550076C48A /* DPCExplorer.xcdatamodeld */,
-				EB763A14236BA87C001EC7C9 /* Models */,
 				EB100E6F23667ED30065E084 /* AppDelegate.swift */,
 				EB100E7123667ED30065E084 /* SceneDelegate.swift */,
 				EB100E7623667ED30065E084 /* ContentView.swift */,
@@ -182,14 +247,10 @@
 				EB763A68236BB922001EC7C9 /* PatientView.swift */,
 				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
 				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
-				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 				EB427DCA2374E84D00833623 /* OnboardingView.swift */,
-				EB5192672381BDF500C979C3 /* ExportClient.swift */,
-				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
 				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
 				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
-				EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */,
 				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
 			);
@@ -239,6 +300,37 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
+			isa = PBXGroup;
+			children = (
+				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
+				EB5192672381BDF500C979C3 /* ExportClient.swift */,
+				EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */,
+				EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */,
+				EB763A14236BA87C001EC7C9 /* Models */,
+				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
+				EBEC7EB723A6B700004D3C22 /* DPCKit.h */,
+				EBEC7EB823A6B700004D3C22 /* Info.plist */,
+			);
+			path = DPCKit;
+			sourceTree = "<group>";
+		};
+		EBEC7EC323A6B700004D3C22 /* DPCKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */,
+				EBEC7EC623A6B700004D3C22 /* Info.plist */,
+			);
+			path = DPCKitTests;
+			sourceTree = "<group>";
+		};
+		EBEC7ED423A6B85A004D3C22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F34C7A9EA834079C139D7829 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +340,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		EBEC7EB023A6B700004D3C22 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEC7EC723A6B700004D3C22 /* DPCKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		EB100E6B23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXNativeTarget;
@@ -256,15 +359,15 @@
 				EB100E6823667ED30065E084 /* Sources */,
 				EB100E6923667ED30065E084 /* Frameworks */,
 				EB100E6A23667ED30065E084 /* Resources */,
+				EBEC7ECC23A6B700004D3C22 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EBEC7EC923A6B700004D3C22 /* PBXTargetDependency */,
 			);
 			name = DPCExplorer;
 			packageProductDependencies = (
-				EB65A35B23789DEA0076C48A /* Alamofire */,
-				EB65A3612378A10F0076C48A /* FHIR */,
 			);
 			productName = DPCExplorer;
 			productReference = EB100E6C23667ED30065E084 /* DPCExplorer.app */;
@@ -306,13 +409,54 @@
 			productReference = EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EBEC7EB423A6B700004D3C22 /* DPCKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBEC7ED123A6B700004D3C22 /* Build configuration list for PBXNativeTarget "DPCKit" */;
+			buildPhases = (
+				EBEC7EB023A6B700004D3C22 /* Headers */,
+				EBEC7EB123A6B700004D3C22 /* Sources */,
+				EBEC7EB223A6B700004D3C22 /* Frameworks */,
+				EBEC7EB323A6B700004D3C22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DPCKit;
+			packageProductDependencies = (
+				EBEC7ED523A6B85A004D3C22 /* Alamofire */,
+				EBEC7ED723A6B85E004D3C22 /* FHIR */,
+			);
+			productName = DPCKit;
+			productReference = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EBEC7EBC23A6B700004D3C22 /* DPCKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBEC7ED223A6B700004D3C22 /* Build configuration list for PBXNativeTarget "DPCKitTests" */;
+			buildPhases = (
+				EBEC7EB923A6B700004D3C22 /* Sources */,
+				EBEC7EBA23A6B700004D3C22 /* Frameworks */,
+				EBEC7EBB23A6B700004D3C22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBEC7EC023A6B700004D3C22 /* PBXTargetDependency */,
+				EBEC7EC223A6B700004D3C22 /* PBXTargetDependency */,
+			);
+			name = DPCKitTests;
+			productName = DPCKitTests;
+			productReference = EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EB100E6423667ED30065E084 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Nicholas Robison";
 				TargetAttributes = {
@@ -325,6 +469,13 @@
 					};
 					EB100E8F23667ED60065E084 = {
 						CreatedOnToolsVersion = 11.1;
+						TestTargetID = EB100E6B23667ED30065E084;
+					};
+					EBEC7EB423A6B700004D3C22 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					EBEC7EBC23A6B700004D3C22 = {
+						CreatedOnToolsVersion = 11.3;
 						TestTargetID = EB100E6B23667ED30065E084;
 					};
 				};
@@ -349,6 +500,8 @@
 				EB100E6B23667ED30065E084 /* DPCExplorer */,
 				EB100E8423667ED60065E084 /* DPCExplorerTests */,
 				EB100E8F23667ED60065E084 /* DPCExplorerUITests */,
+				EBEC7EB423A6B700004D3C22 /* DPCKit */,
+				EBEC7EBC23A6B700004D3C22 /* DPCKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,6 +531,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBEC7EB323A6B700004D3C22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBEC7EBB23A6B700004D3C22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -387,36 +554,22 @@
 			files = (
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
-				EBC0DA6F23838E1F006A2D0D /* StreamReader.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
-				EB763A71236BBFA8001EC7C9 /* DPCClient.swift in Sources */,
-				EBB899FF238B713D008D7CB6 /* FHIRSerializers.swift in Sources */,
-				EBAF7EC1238A295B0050039D /* FHIRExtensions.swift in Sources */,
 				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
 				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
-				EB65A35F23789E550076C48A /* DPCExplorer.xcdatamodeld in Sources */,
 				EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */,
 				EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */,
-				EBE7788023823AD0000AAFFA /* ExportDownload.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
-				EB763A5B236BAD51001EC7C9 /* Name.swift in Sources */,
-				EB763A5F236BB06E001EC7C9 /* Patient.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
-				EB763A16236BA890001EC7C9 /* Organization.swift in Sources */,
-				EB763A57236BABFD001EC7C9 /* Provider.swift in Sources */,
-				EBE7787E238234D6000AAFFA /* JobCompletionModel.swift in Sources */,
 				EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
-				EB763A6F236BBE20001EC7C9 /* Address.swift in Sources */,
-				EB763A61236BB481001EC7C9 /* Person.swift in Sources */,
 				EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */,
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */,
-				EB5192682381BDF500C979C3 /* ExportClient.swift in Sources */,
 				EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +590,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBEC7EB123A6B700004D3C22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEC7EFD23A6BA37004D3C22 /* DPCKit.xcdatamodeld in Sources */,
+				EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */,
+				EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */,
+				EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */,
+				EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */,
+				EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */,
+				EBEC7F0323A6BA6D004D3C22 /* Patient.swift in Sources */,
+				EBEC7F0423A6BA6D004D3C22 /* Person.swift in Sources */,
+				EBEC7F0523A6BA6D004D3C22 /* Address.swift in Sources */,
+				EBEC7F0623A6BA6D004D3C22 /* JobCompletionModel.swift in Sources */,
+				EBEC7F0723A6BA6D004D3C22 /* ExportDownload.swift in Sources */,
+				EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */,
+				EBEC7F0823A6BA6D004D3C22 /* FHIRExtensions.swift in Sources */,
+				EBEC7ED323A6B7FD004D3C22 /* DPCClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBEC7EB923A6B700004D3C22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBEC7EC523A6B700004D3C22 /* DPCKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -449,6 +631,21 @@
 			isa = PBXTargetDependency;
 			target = EB100E6B23667ED30065E084 /* DPCExplorer */;
 			targetProxy = EB100E9123667ED60065E084 /* PBXContainerItemProxy */;
+		};
+		EBEC7EC023A6B700004D3C22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBEC7EB423A6B700004D3C22 /* DPCKit */;
+			targetProxy = EBEC7EBF23A6B700004D3C22 /* PBXContainerItemProxy */;
+		};
+		EBEC7EC223A6B700004D3C22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB100E6B23667ED30065E084 /* DPCExplorer */;
+			targetProxy = EBEC7EC123A6B700004D3C22 /* PBXContainerItemProxy */;
+		};
+		EBEC7EC923A6B700004D3C22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBEC7EB423A6B700004D3C22 /* DPCKit */;
+			targetProxy = EBEC7EC823A6B700004D3C22 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -581,6 +778,7 @@
 		EB100E9A23667ED60065E084 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DPCExplorer/Preview Content\"";
@@ -600,6 +798,7 @@
 		EB100E9B23667ED60065E084 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"DPCExplorer/Preview Content\"";
@@ -696,6 +895,102 @@
 			};
 			name = Release;
 		};
+		EBEC7ECD23A6B700004D3C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DPCKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EBEC7ECE23A6B700004D3C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = DPCKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EBEC7ECF23A6B700004D3C22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DPCKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPCExplorer.app/DPCExplorer";
+			};
+			name = Debug;
+		};
+		EBEC7ED023A6B700004D3C22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DPCKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPCExplorer.app/DPCExplorer";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -735,6 +1030,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EBEC7ED123A6B700004D3C22 /* Build configuration list for PBXNativeTarget "DPCKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBEC7ECD23A6B700004D3C22 /* Debug */,
+				EBEC7ECE23A6B700004D3C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBEC7ED223A6B700004D3C22 /* Build configuration list for PBXNativeTarget "DPCKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBEC7ECF23A6B700004D3C22 /* Debug */,
+				EBEC7ED023A6B700004D3C22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -757,12 +1070,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EB65A35B23789DEA0076C48A /* Alamofire */ = {
+		EBEC7ED523A6B85A004D3C22 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB65A35A23789DEA0076C48A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		EB65A3612378A10F0076C48A /* FHIR */ = {
+		EBEC7ED723A6B85E004D3C22 /* FHIR */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB65A3602378A10F0076C48A /* XCRemoteSwiftPackageReference "Swift-FHIR" */;
 			productName = FHIR;
@@ -770,13 +1083,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		EB65A35D23789E550076C48A /* DPCExplorer.xcdatamodeld */ = {
+		EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */,
 			);
 			currentVersion = EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */;
-			path = DPCExplorer.xcdatamodeld;
+			path = DPCKit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

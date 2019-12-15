@@ -9,6 +9,7 @@
 import SwiftUI
 import CoreData
 import FHIR
+import DPCKit
 
 struct ProviderDetailView: View {
     @EnvironmentObject var client: DPCClient

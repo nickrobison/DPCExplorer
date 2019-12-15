@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import DPCKit
 
 struct PersonCellView: View {
     let person: Person

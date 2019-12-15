@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import DPCKit
 
 func nameFormatter(name: NameEntity) -> some View {
     HStack{

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import DPCKit
 
 struct MainView: View {
     @EnvironmentObject var client: DPCClient

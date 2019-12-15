@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import DPCKit
 
 struct OnboardingView: View {
     @EnvironmentObject var client: DPCClient

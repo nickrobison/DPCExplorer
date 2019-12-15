@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
- extension OrganizationEntity {
+ public extension OrganizationEntity {
     var getFirstAddr: AddressEntity {
         let addrs = (self.addressRelationship?.allObjects as? [AddressEntity])
         return addrs![0]
@@ -32,13 +32,13 @@ struct Identifier: Codable {
     }
 }
 
-struct Organization: Identifiable, Decodable {
-    let id: UUID
+public struct Organization: Identifiable, Decodable {
+    public let id: UUID
     let identifier: [Identifier]
     let name: String
     let address: [Address]
     
-    init(id: UUID, name: String, npi:String, address: Address) {
+    public init(id: UUID, name: String, npi:String, address: Address) {
         self.id = id
         self.name = name
         self.identifier = [Identifier(system: "NPI", value: npi)]

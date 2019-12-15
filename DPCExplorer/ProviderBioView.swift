@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import DPCKit
 
 struct ProviderBioView: View {
     let provider: ProviderEntity

@@ -13,19 +13,19 @@ import Alamofire
 import CoreData
 import FHIR
 
-final class DPCClient: ObservableObject {
+public final class DPCClient: ObservableObject {
     let baseURL: String
     let context: NSManagedObjectContext
-    @Published var organization: OrganizationEntity?
-    @Published var providers: [ProviderEntity]
+    @Published public var organization: OrganizationEntity?
+    @Published public var providers: [ProviderEntity]
     
-    init(baseURL: String, context: NSManagedObjectContext) {
+    public init(baseURL: String, context: NSManagedObjectContext) {
         self.baseURL = baseURL
         self.providers = []
         self.context = context
     }
     
-    func fetchOrganization() {
+    public func fetchOrganization() {
         
         let uri = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
         AF.request(uri)
@@ -49,7 +49,7 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func fetchProviders() {
+    public func fetchProviders() {
         guard self.organization != nil else {
             print("No organization yet")
             return
@@ -100,7 +100,7 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func fetchPatientsForProvider(provider: ProviderEntity) {
+    public func fetchPatientsForProvider(provider: ProviderEntity) {
         let url = self.baseURL + "Group"
         let params: Alamofire.Parameters = [
             "characteristic-value": "|attributed-to$|\(provider.getFirstID.value!)"
@@ -173,14 +173,14 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func fetchAssignablePatients(provider: ProviderEntity) -> Publishers.Sequence<[PatientEntity], Never> {
+    public func fetchAssignablePatients(provider: ProviderEntity) -> Publishers.Sequence<[PatientEntity], Never> {
         let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
         // Find all the unassigned patients (which also includes any patients that have not been assigned yet
         req.predicate = NSPredicate(format: "ANY providerRelationship != %@ OR providerRelationship.@count == 0", provider)
         return try! self.context.fetch(req).publisher
     }
     
-    func fetchPatients() {
+    public func fetchPatients() {
         guard self.organization != nil else {
             print("No organization yet")
             return
@@ -238,7 +238,7 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func assignPatients(_ patients: [PatientEntity], to: ProviderEntity) {
+    public func assignPatients(_ patients: [PatientEntity], to: ProviderEntity) {
         // If we don't have a rosterID, create  a new one
         if to.rosterID == nil {
             createPatientRoster(provider: to, patients: patients)
@@ -290,12 +290,12 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func exportData(provider: ProviderEntity) -> Void {
+    public func exportData(provider: ProviderEntity) -> Void {
         let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
         client.exportData()
     }
     
-    func addPatient(patient: FHIR.Patient) -> Void {
+    public func addPatient(patient: FHIR.Patient) -> Void {
         // Submit to DPC
         var errors: [FHIRValidationError] = []
         let params = patient.asJSON(errors: &errors)
@@ -335,7 +335,7 @@ final class DPCClient: ObservableObject {
         }
     }
     
-    func addProvider(provider: FHIR.Practitioner) -> Void {
+    public func addProvider(provider: FHIR.Practitioner) -> Void {
         let uri = self.baseURL + "Practitioner"
         
         var errors: [FHIRValidationError] = []

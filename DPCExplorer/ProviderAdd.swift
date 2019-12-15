@@ -8,6 +8,7 @@
 
 import SwiftUI
 import FHIR
+import DPCKit
 
 struct ProviderAdd: View {
     @Environment(\.presentationMode) var presentationMode

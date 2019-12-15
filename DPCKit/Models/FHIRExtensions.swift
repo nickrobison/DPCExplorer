@@ -10,10 +10,10 @@ import Foundation
 import FHIR
 import CoreData
 
-typealias CompletionHandler<T: FHIRAbstractBase> = (_ provider: T) -> Void
-typealias CollectionCompletionHandler<T: FHIRAbstractBase> = (_ collection: [T]) -> Void
+public typealias CompletionHandler<T: FHIRAbstractBase> = (_ provider: T) -> Void
+public typealias CollectionCompletionHandler<T: FHIRAbstractBase> = (_ collection: [T]) -> Void
 
-protocol FHIRIdentifier {
+public protocol FHIRIdentifier {
     var system: String? { get }
     var value: String? { get }
 }

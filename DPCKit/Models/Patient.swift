@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Patient.swift
 //  DPCExplorer
 //
 //  Created by Nicholas Robison on 10/31/19.
@@ -9,19 +9,19 @@
 import Foundation
 import CoreData
 
-extension ProviderEntity {
+public extension PatientEntity {
     var getFirstName: NameEntity {
         let names = self.nameRelationship?.allObjects as? [NameEntity]
         return names![0]
     }
     var getFirstID: FHIRIdentifier {
-        let ids = self.idRelationship?.allObjects as? [ProviderIdentifier]
+        let ids = self.identifierRelationship?.allObjects as? [PatientIdentifier]
         return ids![0]
     }
 }
 
-extension ProviderEntity: Person {
-    var name: [NameEntity] {
+extension PatientEntity: Person {
+    public var name: [NameEntity] {
         let names = self.nameRelationship?.allObjects as? [NameEntity]
         return names ?? []
     }
