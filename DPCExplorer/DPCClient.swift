@@ -175,8 +175,8 @@ final class DPCClient: ObservableObject {
     
     func fetchAssignablePatients(provider: ProviderEntity) -> Publishers.Sequence<[PatientEntity], Never> {
         let req = NSFetchRequest<PatientEntity>(entityName: "PatientEntity")
-        // Find all the unassigned patients
-        req.predicate = NSPredicate(format: "ANY providerRelationship != %@", provider)
+        // Find all the unassigned patients (which also includes any patients that have not been assigned yet
+        req.predicate = NSPredicate(format: "ANY providerRelationship != %@ OR providerRelationship.@count == 0", provider)
         return try! self.context.fetch(req).publisher
     }
     
