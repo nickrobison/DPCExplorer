@@ -14,27 +14,28 @@ struct OrganizationView: View {
     var o: OrganizationEntity
     var body: some View {
         VStack(alignment: .leading) {
-            Text(o.name!)
+            Text(o.name!).lineLimit(1)
             .font(.title)
             HStack {
                 Text("NPI")
                 Text("-")
-                Text(o.getFirstID.value!)
+                Text(o.getFirstID.value!).lineLimit(1)
                 Spacer()
             }
             .font(.subheadline)
             Spacer()
             Divider()
-            HStack {
+            VStack {
                 Text(o.getFirstAddr.line!)
                 HStack {
                     Text("\(o.getFirstAddr.city!),")
-                    Text(o.getFirstAddr.state!)
+                    Text(o.getFirstAddr.state!).layoutPriority(1)
                     Text(o.getFirstAddr.postalCode!)
                 }
             }
         }
     .padding()
+        .background(Image("WalterReed").resizable())
     }
 }
 
