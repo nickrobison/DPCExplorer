@@ -13,15 +13,15 @@ struct PatientBioView: View {
     let patient: PatientEntity
     var body: some View {
         HStack {
-            Image(systemName: "person.fill")
-                .imageScale(.large)
             VStack(alignment: .leading) {
                 HStack {
-                    nameFormatter(name: patient.getFirstName)
+                    InitialsView(name: patient.getFirstName)
+                    NameView(name: patient.getFirstName)
                         .font(.title)
                 }
-                Text(patient.getFirstID.value!)
-                .font(.subheadline)
+                .padding()
+                Text("MBI: \(patient.getFirstID.value!)")
+                    .font(.subheadline)
             }
             Spacer()
         }

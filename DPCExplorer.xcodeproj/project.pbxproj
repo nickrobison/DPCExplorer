@@ -15,6 +15,8 @@
 		EB100E7F23667ED60065E084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7D23667ED60065E084 /* LaunchScreen.storyboard */; };
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
+		EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
+		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
 		EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */; };
 		EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestResources.swift */; };
@@ -121,6 +123,8 @@
 		EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCExplorerUITests.swift; sourceTree = "<group>"; };
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
+		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		EB5192672381BDF500C979C3 /* ExportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportClient.swift; sourceTree = "<group>"; };
 		EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCExplorer.xcdatamodel; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EB3F1EC423A71F2B002844C1 /* PatientViews */,
 				EB100E6F23667ED30065E084 /* AppDelegate.swift */,
 				EB100E7123667ED30065E084 /* SceneDelegate.swift */,
 				EB100E7623667ED30065E084 /* ContentView.swift */,
@@ -244,15 +249,13 @@
 				EB763A62236BB512001EC7C9 /* PersonCellView.swift */,
 				EB763A64236BB582001EC7C9 /* ViewHelpers.swift */,
 				EB763A66236BB804001EC7C9 /* ProviderView.swift */,
-				EB763A68236BB922001EC7C9 /* PatientView.swift */,
-				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
-				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 				EB427DCA2374E84D00833623 /* OnboardingView.swift */,
-				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
 				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
 				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
+				EB3F1EC523A72239002844C1 /* InitialsView.swift */,
+				EB3F1EC723A723FB002844C1 /* NameView.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -282,6 +285,17 @@
 				EB100E9623667ED60065E084 /* Info.plist */,
 			);
 			path = DPCExplorerUITests;
+			sourceTree = "<group>";
+		};
+		EB3F1EC423A71F2B002844C1 /* PatientViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB763A68236BB922001EC7C9 /* PatientView.swift */,
+				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
+				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
+				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
+			);
+			path = PatientViews;
 			sourceTree = "<group>";
 		};
 		EB763A14236BA87C001EC7C9 /* Models */ = {
@@ -553,6 +567,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
+				EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */,
+				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
@@ -915,9 +931,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -943,9 +959,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.DPCKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

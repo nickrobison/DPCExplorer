@@ -70,6 +70,14 @@ let nickPatients = [
     blythe
 ]
 
+let testName = { () -> NameEntity in
+    let n = NameEntity()
+    n.given = "Nick"
+    n.family = "Robison"
+    
+    return n
+}()
+
 //let testProviders = [
 //    Provider(name: Name(family: "Robison", given: ["Nicholas", "A"]), npi: "12345", specialty: "Primary care", patients: []),
 //    Provider(name: Name(family: "Robison", given: ["Callie", "J"]), npi: "67890", specialty: "Oral surgery", patients: [])

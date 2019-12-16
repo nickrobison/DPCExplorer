@@ -13,11 +13,10 @@ struct ProviderBioView: View {
     let provider: ProviderEntity
     var body: some View {
         HStack {
-            Image(systemName: "person.fill")
-                .imageScale(.large)
+            InitialsView(name: provider.getFirstName)
             VStack(alignment: .leading) {
                 HStack {
-                    nameFormatter(name: provider.getFirstName)
+                    NameView(name: provider.getFirstName)
                         .font(.title)
                 }
                 Text(provider.getFirstID.value!)
