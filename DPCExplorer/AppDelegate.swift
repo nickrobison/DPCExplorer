@@ -42,7 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        guard let modelURL = Bundle(for: type(of: self)).url(forResource: "DPCKit", withExtension:"momd") else {
+//        let bundle = Bundle(for: type(of: self))
+        guard let bundle = Bundle(identifier: "com.nickrobison.DPCKit") else {
+            fatalError("Cannot find shared bundle")
+        }
+        
+        /*
+         The .mom file is in the .momd directory, so we need to manually specify the CoreData Framework model
+         Solution found here: https://williamboles.me/step-by-step-core-data-migration/
+         */
+        guard let modelURL = bundle.url(forResource: "DPCKit", withExtension:"mom", subdirectory: "DPCKit.momd") else {
                 fatalError("Error loading model from bundle")
         }
 
