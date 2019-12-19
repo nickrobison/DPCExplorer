@@ -32,6 +32,14 @@
 		EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */; };
 		EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */; };
 		EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5EB47239039C6003E0B3B /* SelectableRow.swift */; };
+		EBD24E3723AB08A900D35859 /* BlueButtonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; };
+		EBD24E3E23AB08A900D35859 /* BlueButtonKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E3D23AB08A900D35859 /* BlueButtonKitTests.swift */; };
+		EBD24E4023AB08AA00D35859 /* BlueButtonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EBD24E3023AB08A900D35859 /* BlueButtonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBD24E4323AB08AA00D35859 /* BlueButtonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; };
+		EBD24E4423AB08AA00D35859 /* BlueButtonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EBD24E4C23AB08CD00D35859 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EBD24E4B23AB08CD00D35859 /* FHIR */; };
+		EBD24E4E23AB09A800D35859 /* BlueButtonOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */; };
+		EBD24E5123AB0A4800D35859 /* Test Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5023AB0A4800D35859 /* Test Resources.swift */; };
 		EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8FDAB238F53200047C024 /* PatientAssign.swift */; };
 		EBEC7EBE23A6B700004D3C22 /* DPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; };
 		EBEC7EC523A6B700004D3C22 /* DPCKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */; };
@@ -71,6 +79,27 @@
 			remoteGlobalIDString = EB100E6B23667ED30065E084;
 			remoteInfo = DPCExplorer;
 		};
+		EBD24E3823AB08A900D35859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBD24E2D23AB08A900D35859;
+			remoteInfo = BlueButtonKit;
+		};
+		EBD24E3A23AB08A900D35859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB100E6B23667ED30065E084;
+			remoteInfo = DPCExplorer;
+		};
+		EBD24E4123AB08AA00D35859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBD24E2D23AB08A900D35859;
+			remoteInfo = BlueButtonKit;
+		};
 		EBEC7EBF23A6B700004D3C22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB100E6423667ED30065E084 /* Project object */;
@@ -102,6 +131,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */,
+				EBD24E4423AB08AA00D35859 /* BlueButtonKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +182,14 @@
 		EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIRSerializers.swift; sourceTree = "<group>"; };
 		EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		EBC5EB47239039C6003E0B3B /* SelectableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableRow.swift; sourceTree = "<group>"; };
+		EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlueButtonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD24E3023AB08A900D35859 /* BlueButtonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueButtonKit.h; sourceTree = "<group>"; };
+		EBD24E3123AB08A900D35859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBD24E3623AB08A900D35859 /* BlueButtonKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlueButtonKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBD24E3D23AB08A900D35859 /* BlueButtonKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonKitTests.swift; sourceTree = "<group>"; };
+		EBD24E3F23AB08AA00D35859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonOverviewView.swift; sourceTree = "<group>"; };
+		EBD24E5023AB0A4800D35859 /* Test Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test Resources.swift"; sourceTree = "<group>"; };
 		EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletionModel.swift; sourceTree = "<group>"; };
 		EBE7787F23823AD0000AAFFA /* ExportDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDownload.swift; sourceTree = "<group>"; };
 		EBE8FDAB238F53200047C024 /* PatientAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAssign.swift; sourceTree = "<group>"; };
@@ -169,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBEC7ECA23A6B700004D3C22 /* DPCKit.framework in Frameworks */,
+				EBD24E4323AB08AA00D35859 /* BlueButtonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +222,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD24E2B23AB08A900D35859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD24E4C23AB08CD00D35859 /* FHIR in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD24E3323AB08A900D35859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD24E3723AB08A900D35859 /* BlueButtonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +269,8 @@
 				EB100E9323667ED60065E084 /* DPCExplorerUITests */,
 				EBEC7EB623A6B700004D3C22 /* DPCKit */,
 				EBEC7EC323A6B700004D3C22 /* DPCKitTests */,
+				EBD24E2F23AB08A900D35859 /* BlueButtonKit */,
+				EBD24E3C23AB08A900D35859 /* BlueButtonKitTests */,
 				EB100E6D23667ED30065E084 /* Products */,
 				F34C7A9EA834079C139D7829 /* Pods */,
 				EBEC7ED423A6B85A004D3C22 /* Frameworks */,
@@ -228,6 +285,8 @@
 				EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */,
 				EBEC7EB523A6B700004D3C22 /* DPCKit.framework */,
 				EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */,
+				EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */,
+				EBD24E3623AB08A900D35859 /* BlueButtonKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -322,6 +381,34 @@
 			path = ProviderViews;
 			sourceTree = "<group>";
 		};
+		EBD24E2F23AB08A900D35859 /* BlueButtonKit */ = {
+			isa = PBXGroup;
+			children = (
+				EBD24E4F23AB0A3500D35859 /* Preview Content */,
+				EBD24E3023AB08A900D35859 /* BlueButtonKit.h */,
+				EBD24E3123AB08A900D35859 /* Info.plist */,
+				EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */,
+			);
+			path = BlueButtonKit;
+			sourceTree = "<group>";
+		};
+		EBD24E3C23AB08A900D35859 /* BlueButtonKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBD24E3D23AB08A900D35859 /* BlueButtonKitTests.swift */,
+				EBD24E3F23AB08AA00D35859 /* Info.plist */,
+			);
+			path = BlueButtonKitTests;
+			sourceTree = "<group>";
+		};
+		EBD24E4F23AB0A3500D35859 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EBD24E5023AB0A4800D35859 /* Test Resources.swift */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +450,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		EBD24E2923AB08A900D35859 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD24E4023AB08AA00D35859 /* BlueButtonKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBEC7EB023A6B700004D3C22 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +482,7 @@
 			);
 			dependencies = (
 				EBEC7EC923A6B700004D3C22 /* PBXTargetDependency */,
+				EBD24E4223AB08AA00D35859 /* PBXTargetDependency */,
 			);
 			name = DPCExplorer;
 			packageProductDependencies = (
@@ -430,6 +526,46 @@
 			productName = DPCExplorerUITests;
 			productReference = EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		EBD24E2D23AB08A900D35859 /* BlueButtonKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD24E4523AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKit" */;
+			buildPhases = (
+				EBD24E2923AB08A900D35859 /* Headers */,
+				EBD24E2A23AB08A900D35859 /* Sources */,
+				EBD24E2B23AB08A900D35859 /* Frameworks */,
+				EBD24E2C23AB08A900D35859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlueButtonKit;
+			packageProductDependencies = (
+				EBD24E4B23AB08CD00D35859 /* FHIR */,
+			);
+			productName = BlueButtonKit;
+			productReference = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EBD24E3523AB08A900D35859 /* BlueButtonKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBD24E4823AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKitTests" */;
+			buildPhases = (
+				EBD24E3223AB08A900D35859 /* Sources */,
+				EBD24E3323AB08A900D35859 /* Frameworks */,
+				EBD24E3423AB08A900D35859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBD24E3923AB08A900D35859 /* PBXTargetDependency */,
+				EBD24E3B23AB08A900D35859 /* PBXTargetDependency */,
+			);
+			name = BlueButtonKitTests;
+			productName = BlueButtonKitTests;
+			productReference = EBD24E3623AB08A900D35859 /* BlueButtonKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		EBEC7EB423A6B700004D3C22 /* DPCKit */ = {
 			isa = PBXNativeTarget;
@@ -493,6 +629,14 @@
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = EB100E6B23667ED30065E084;
 					};
+					EBD24E2D23AB08A900D35859 = {
+						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
+					};
+					EBD24E3523AB08A900D35859 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = EB100E6B23667ED30065E084;
+					};
 					EBEC7EB423A6B700004D3C22 = {
 						CreatedOnToolsVersion = 11.3;
 					};
@@ -524,6 +668,8 @@
 				EB100E8F23667ED60065E084 /* DPCExplorerUITests */,
 				EBEC7EB423A6B700004D3C22 /* DPCKit */,
 				EBEC7EBC23A6B700004D3C22 /* DPCKitTests */,
+				EBD24E2D23AB08A900D35859 /* BlueButtonKit */,
+				EBD24E3523AB08A900D35859 /* BlueButtonKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -547,6 +693,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EB100E8E23667ED60065E084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD24E2C23AB08A900D35859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD24E3423AB08A900D35859 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -614,6 +774,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EBD24E2A23AB08A900D35859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD24E5123AB0A4800D35859 /* Test Resources.swift in Sources */,
+				EBD24E4E23AB09A800D35859 /* BlueButtonOverviewView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBD24E3223AB08A900D35859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBD24E3E23AB08A900D35859 /* BlueButtonKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBEC7EB123A6B700004D3C22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -655,6 +832,21 @@
 			isa = PBXTargetDependency;
 			target = EB100E6B23667ED30065E084 /* DPCExplorer */;
 			targetProxy = EB100E9123667ED60065E084 /* PBXContainerItemProxy */;
+		};
+		EBD24E3923AB08A900D35859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBD24E2D23AB08A900D35859 /* BlueButtonKit */;
+			targetProxy = EBD24E3823AB08A900D35859 /* PBXContainerItemProxy */;
+		};
+		EBD24E3B23AB08A900D35859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB100E6B23667ED30065E084 /* DPCExplorer */;
+			targetProxy = EBD24E3A23AB08A900D35859 /* PBXContainerItemProxy */;
+		};
+		EBD24E4223AB08AA00D35859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBD24E2D23AB08A900D35859 /* BlueButtonKit */;
+			targetProxy = EBD24E4123AB08AA00D35859 /* PBXContainerItemProxy */;
 		};
 		EBEC7EC023A6B700004D3C22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -919,9 +1111,109 @@
 			};
 			name = Release;
 		};
+		EBD24E4623AB08AA00D35859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"BlueButtonKit/Preview Content\"";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BlueButtonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.BlueButtonKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EBD24E4723AB08AA00D35859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"BlueButtonKit/Preview Content\"";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = BlueButtonKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.BlueButtonKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EBD24E4923AB08AA00D35859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BlueButtonKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.BlueButtonKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPCExplorer.app/DPCExplorer";
+			};
+			name = Debug;
+		};
+		EBD24E4A23AB08AA00D35859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = BlueButtonKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.BlueButtonKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DPCExplorer.app/DPCExplorer";
+			};
+			name = Release;
+		};
 		EBEC7ECD23A6B700004D3C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -950,6 +1242,7 @@
 		EBEC7ECE23A6B700004D3C22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1054,6 +1347,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EBD24E4523AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD24E4623AB08AA00D35859 /* Debug */,
+				EBD24E4723AB08AA00D35859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBD24E4823AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBD24E4923AB08AA00D35859 /* Debug */,
+				EBD24E4A23AB08AA00D35859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBEC7ED123A6B700004D3C22 /* Build configuration list for PBXNativeTarget "DPCKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1094,6 +1405,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EBD24E4B23AB08CD00D35859 /* FHIR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB65A3602378A10F0076C48A /* XCRemoteSwiftPackageReference "Swift-FHIR" */;
+			productName = FHIR;
+		};
 		EBEC7ED523A6B85A004D3C22 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB65A35A23789DEA0076C48A /* XCRemoteSwiftPackageReference "Alamofire" */;
