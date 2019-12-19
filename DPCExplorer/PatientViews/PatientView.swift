@@ -29,6 +29,7 @@ struct PatientView: View {
                 NavigationLink(destination: PatientDetailView(patient: patient)) {
                     PersonCellView(person: patient)
                 }
+                .isDetailLink(true)
             }
             .navigationBarTitle("Patients")
             .navigationBarItems(trailing:
@@ -37,9 +38,10 @@ struct PatientView: View {
                     self.showAdd = true
                 }, label: { Image(systemName: "plus")}))
         }
-        .onAppear() {
-            debugPrint("Here are the patients")
-            self.client.fetchPatients()
+            .navigationViewStyle(StackNavigationViewStyle()) // Temporary hack found via Reddit: https://www.reddit.com/r/SwiftUI/comments/ds5ku3/navigationview_rotation_bug_portrait_to_landscape/
+            .onAppear() {
+                debugPrint("Here are the patients")
+                self.client.fetchPatients()
         }
         .sheet(isPresented: $showAdd, content: {
             PatientAdd(completionHandler: self.submitPatient)

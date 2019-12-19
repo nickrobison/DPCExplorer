@@ -28,6 +28,7 @@ struct ProviderView: View {
                 NavigationLink(destination: ProviderDetailView(provider: provider)) {
                     PersonCellView(person: provider)
                 }
+                .isDetailLink(true)
             }
             .navigationBarTitle("Providers")
             .navigationBarItems(trailing:
@@ -43,6 +44,7 @@ struct ProviderView: View {
                 ProviderAdd(completionHandler: self.submitProvider)
             })
         }
+            .navigationViewStyle(StackNavigationViewStyle()) // Temporary hack found via Reddit: https://www.reddit.com/r/SwiftUI/comments/ds5ku3/navigationview_rotation_bug_portrait_to_landscape/
     }
     
     private func submitProvider(provider: FHIR.Practitioner) {

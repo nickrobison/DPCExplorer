@@ -235,6 +235,7 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EBD24E2823AB086800D35859 /* ProviderViews */,
 				EB3F1EC423A71F2B002844C1 /* PatientViews */,
 				EB100E6F23667ED30065E084 /* AppDelegate.swift */,
 				EB100E7123667ED30065E084 /* SceneDelegate.swift */,
@@ -244,15 +245,11 @@
 				EB100E8023667ED60065E084 /* Info.plist */,
 				EB100E7A23667ED60065E084 /* Preview Content */,
 				EB9976F1236687D40072DD9B /* OrganizationView.swift */,
-				EB9976F3236689320072DD9B /* ProviderDetailView.swift */,
-				EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */,
 				EB763A62236BB512001EC7C9 /* PersonCellView.swift */,
 				EB763A64236BB582001EC7C9 /* ViewHelpers.swift */,
 				EB763A66236BB804001EC7C9 /* ProviderView.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 				EB427DCA2374E84D00833623 /* OnboardingView.swift */,
-				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
-				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
 				EB3F1EC523A72239002844C1 /* InitialsView.swift */,
 				EB3F1EC723A723FB002844C1 /* NameView.swift */,
@@ -312,6 +309,17 @@
 				EBAF7EC0238A295B0050039D /* FHIRExtensions.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EBD24E2823AB086800D35859 /* ProviderViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB9976F3236689320072DD9B /* ProviderDetailView.swift */,
+				EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */,
+				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
+				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
+			);
+			path = ProviderViews;
 			sourceTree = "<group>";
 		};
 		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
