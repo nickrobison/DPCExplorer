@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5423AB0C8E00D35859 /* LoadData.swift */; };
+		EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5023AB0A4800D35859 /* Test Resources.swift */; };
 		EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E6F23667ED30065E084 /* AppDelegate.swift */; };
 		EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7123667ED30065E084 /* SceneDelegate.swift */; };
 		EB100E7723667ED30065E084 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7623667ED30065E084 /* ContentView.swift */; };
@@ -39,7 +41,7 @@
 		EBD24E4423AB08AA00D35859 /* BlueButtonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBD24E4C23AB08CD00D35859 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EBD24E4B23AB08CD00D35859 /* FHIR */; };
 		EBD24E4E23AB09A800D35859 /* BlueButtonOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */; };
-		EBD24E5123AB0A4800D35859 /* Test Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5023AB0A4800D35859 /* Test Resources.swift */; };
+		EBD24E5323AB0BA400D35859 /* test_eob.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD24E5223AB0BA400D35859 /* test_eob.json */; };
 		EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8FDAB238F53200047C024 /* PatientAssign.swift */; };
 		EBEC7EBE23A6B700004D3C22 /* DPCKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; };
 		EBEC7EC523A6B700004D3C22 /* DPCKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */; };
@@ -190,6 +192,8 @@
 		EBD24E3F23AB08AA00D35859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonOverviewView.swift; sourceTree = "<group>"; };
 		EBD24E5023AB0A4800D35859 /* Test Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Test Resources.swift"; sourceTree = "<group>"; };
+		EBD24E5223AB0BA400D35859 /* test_eob.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test_eob.json; sourceTree = "<group>"; };
+		EBD24E5423AB0C8E00D35859 /* LoadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadData.swift; sourceTree = "<group>"; };
 		EBE7787D238234D6000AAFFA /* JobCompletionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCompletionModel.swift; sourceTree = "<group>"; };
 		EBE7787F23823AD0000AAFFA /* ExportDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportDownload.swift; sourceTree = "<group>"; };
 		EBE8FDAB238F53200047C024 /* PatientAssign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAssign.swift; sourceTree = "<group>"; };
@@ -272,7 +276,6 @@
 				EBD24E2F23AB08A900D35859 /* BlueButtonKit */,
 				EBD24E3C23AB08A900D35859 /* BlueButtonKitTests */,
 				EB100E6D23667ED30065E084 /* Products */,
-				F34C7A9EA834079C139D7829 /* Pods */,
 				EBEC7ED423A6B85A004D3C22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -405,6 +408,8 @@
 			isa = PBXGroup;
 			children = (
 				EBD24E5023AB0A4800D35859 /* Test Resources.swift */,
+				EBD24E5423AB0C8E00D35859 /* LoadData.swift */,
+				EBD24E5223AB0BA400D35859 /* test_eob.json */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -438,13 +443,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F34C7A9EA834079C139D7829 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -703,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBD24E5323AB0BA400D35859 /* test_eob.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,8 +777,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD24E5123AB0A4800D35859 /* Test Resources.swift in Sources */,
+				EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */,
 				EBD24E4E23AB09A800D35859 /* BlueButtonOverviewView.swift in Sources */,
+				EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,17 +7,18 @@
 //
 
 import SwiftUI
+import FHIR
 
 struct BlueButtonOverviewView: View {
     
-    let str: String
+    let eob: ExplanationOfBenefit
     var body: some View {
-        Text(str)
+        Text(eob.id?.string ?? "Nothing")
     }
 }
 
 struct BlueButtonOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        BlueButtonOverviewView(str: testString)
+        BlueButtonOverviewView(eob: testEOB)
     }
 }

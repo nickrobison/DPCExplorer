@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import FHIR
 
+let testEOB: ExplanationOfBenefit = load("test_eob.json")
 
 let testString  = "This is a test"
