@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5423AB0C8E00D35859 /* LoadData.swift */; };
 		EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E5023AB0A4800D35859 /* Test Resources.swift */; };
+		EB08272923AF142500CA7CC8 /* VitalRecordBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08272823AF142500CA7CC8 /* VitalRecordBox.swift */; };
 		EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E6F23667ED30065E084 /* AppDelegate.swift */; };
 		EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7123667ED30065E084 /* SceneDelegate.swift */; };
 		EB100E7723667ED30065E084 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E7623667ED30065E084 /* ContentView.swift */; };
@@ -141,6 +142,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB08272123AF136800CA7CC8 /* SwiftIcons.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIcons.framework; path = Carthage/Build/iOS/SwiftIcons.framework; sourceTree = "<group>"; };
+		EB08272623AF13A400CA7CC8 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
+		EB08272723AF13CD00CA7CC8 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
+		EB08272823AF142500CA7CC8 /* VitalRecordBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalRecordBox.swift; sourceTree = "<group>"; };
 		EB100E6C23667ED30065E084 /* DPCExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPCExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E6F23667ED30065E084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB100E7123667ED30065E084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -268,6 +273,8 @@
 		EB100E6323667ED30065E084 = {
 			isa = PBXGroup;
 			children = (
+				EB08272723AF13CD00CA7CC8 /* output.xcfilelist */,
+				EB08272623AF13A400CA7CC8 /* input.xcfilelist */,
 				EB100E6E23667ED30065E084 /* DPCExplorer */,
 				EB100E8823667ED60065E084 /* DPCExplorerTests */,
 				EB100E9323667ED60065E084 /* DPCExplorerUITests */,
@@ -391,6 +398,7 @@
 				EBD24E3023AB08A900D35859 /* BlueButtonKit.h */,
 				EBD24E3123AB08A900D35859 /* Info.plist */,
 				EBD24E4D23AB09A800D35859 /* BlueButtonOverviewView.swift */,
+				EB08272823AF142500CA7CC8 /* VitalRecordBox.swift */,
 			);
 			path = BlueButtonKit;
 			sourceTree = "<group>";
@@ -441,6 +449,7 @@
 		EBEC7ED423A6B85A004D3C22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB08272123AF136800CA7CC8 /* SwiftIcons.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 				EBD24E2A23AB08A900D35859 /* Sources */,
 				EBD24E2B23AB08A900D35859 /* Frameworks */,
 				EBD24E2C23AB08A900D35859 /* Resources */,
+				EB08272523AF137A00CA7CC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -728,6 +738,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EB08272523AF137A00CA7CC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(SRCROOT)/input.xcfilelist",
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+				"$(SRCROOT)/output.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EB100E6823667ED30065E084 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -780,6 +812,7 @@
 				EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */,
 				EBD24E4E23AB09A800D35859 /* BlueButtonOverviewView.swift in Sources */,
 				EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */,
+				EB08272923AF142500CA7CC8 /* VitalRecordBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,6 +1155,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BlueButtonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -1152,6 +1189,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BlueButtonKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
