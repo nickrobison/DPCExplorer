@@ -9,7 +9,15 @@
 import SwiftUI
 import SwiftIcons
 
+enum RecordStatus: CaseIterable {
+    case success
+    case failure
+    case unknown
+}
+
 struct VitalRecordBox: View {
+    
+    let status: RecordStatus
     var body: some View {
         VStack {
             HStack {
@@ -24,20 +32,39 @@ struct VitalRecordBox: View {
                 .font(.subheadline)
             HStack {
                 Spacer()
-                Image(systemName: "checkmark.circle")
-                    .foregroundColor(Color.green)
-                    .imageScale(.large)
-                    .padding()
+                generateStatusIcon(status)
             }
         }
         .padding()
         .background(Color.gray)
         .cornerRadius(20)
     }
+    
+    private func generateStatusIcon(_ status: RecordStatus) -> some View {
+        let icon: String
+        let color: Color
+        switch (status) {
+        case .success:
+            icon = "checkmark.circle"
+            color = .green
+        case .failure:
+            icon = "multiply.circle"
+            color = .red
+        case .unknown:
+            icon = "questionmark.circle"
+            color = .orange
+        }
+        
+        return Image(systemName: icon)
+            .foregroundColor(color)
+            .imageScale(.large)
+    }
 }
 
 struct VitalRecordBox_Previews: PreviewProvider {
     static var previews: some View {
-        VitalRecordBox()
+        ForEach(RecordStatus.allCases, id: \.self) { status in
+            VitalRecordBox(status: status)
+        }
     }
 }
