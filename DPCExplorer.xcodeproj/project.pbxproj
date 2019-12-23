@@ -38,6 +38,7 @@
 		EBCC9C8223AFE93E0083538F /* EOBItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */; };
 		EBCC9C8423AFEAFC0083538F /* EOBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */; };
 		EBCC9C8623AFFB8C0083538F /* ServiceRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */; };
+		EBCC9C8A23AFFFB40083538F /* ClaimsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */; };
 		EBD24E3723AB08A900D35859 /* BlueButtonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; };
 		EBD24E3E23AB08A900D35859 /* BlueButtonKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E3D23AB08A900D35859 /* BlueButtonKitTests.swift */; };
 		EBD24E4023AB08AA00D35859 /* BlueButtonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EBD24E3023AB08A900D35859 /* BlueButtonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -195,6 +196,7 @@
 		EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBItemExtensions.swift; sourceTree = "<group>"; };
 		EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBExtensions.swift; sourceTree = "<group>"; };
 		EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRowItemView.swift; sourceTree = "<group>"; };
+		EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsOverviewView.swift; sourceTree = "<group>"; };
 		EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlueButtonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD24E3023AB08A900D35859 /* BlueButtonKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlueButtonKit.h; sourceTree = "<group>"; };
 		EBD24E3123AB08A900D35859 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */,
 				EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */,
 				EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */,
+				EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */,
 			);
 			path = BlueButtonKit;
 			sourceTree = "<group>";
@@ -824,6 +827,7 @@
 				EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */,
 				EB08272923AF142500CA7CC8 /* VitalRecordBox.swift in Sources */,
 				EBCC9C8623AFFB8C0083538F /* ServiceRowItemView.swift in Sources */,
+				EBCC9C8A23AFFFB40083538F /* ClaimsOverviewView.swift in Sources */,
 				EBCC9C8223AFE93E0083538F /* EOBItemExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

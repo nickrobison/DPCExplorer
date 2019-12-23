@@ -17,29 +17,47 @@ extension Patient {
 
 struct BlueButtonOverviewView: View {
     
-    let patient: Patient
+    @Binding var isExpanded: Bool
     let eob: ExplanationOfBenefit
     var body: some View {
-        VStack {
-            Text("Claim Details")
-                .font(.title)
-            VStack {
-            Text("Diagnosis: \(eob.primaryDiagnosis!.icd9Code)" )
-                Text("Date: \(eob.date?.description ?? "None")")
+        Section(header: buildHeader()) {
+            if (self.isExpanded) {
+                HStack {
+                    Text("Services")
+                        .font(.headline)
+                    Spacer()
+                }
+                .padding([.leading])
+                Divider()
+                ForEach(eob.item!, id: \.self) { item in
+                    ServiceRowItemView(item: item)
+                }
             }
-            .padding([.bottom, .top])
-            Text("Services")
-            Divider()
-            ForEach(eob.item!, id: \.self) { item in
-                ServiceRowItemView(item: item)
-            }
-            Spacer()
         }
+        //        VStack {
+        //            if isExpanded {
+        //                Text("Claim Details")
+        //                    .font(.title)
+        //                VStack {
+        //                    Text("Diagnosis: \(eob.primaryDiagnosis!.icd9Code)" )
+        //                    Text("Date: \(eob.date?.description ?? "None")")
+        //                }
+        //                .padding([.bottom])
+        //                 else {
+        //
+        //            }
+        //        }
+    }
+    
+    private func buildHeader() -> some View {
+        Text("Claim on: \(eob.date?.description ?? "None"). Diagnosis: \(eob.primaryDiagnosis!.icd9Code)")
     }
 }
 
 struct BlueButtonOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        BlueButtonOverviewView(patient: testPatient, eob: testEOB)
+        ForEach(["true", "false"], id: \.self) {
+            BlueButtonOverviewView(isExpanded: .constant(Bool.init($0)!), eob: testEOB)
+        }
     }
 }

@@ -50,6 +50,18 @@ extension ExplanationOfBenefitDiagnosis {
     }
 }
 
+// MARK: EOB Hashing implementation
+
+extension ExplanationOfBenefit: Hashable {
+    public static func == (lhs: ExplanationOfBenefit, rhs: ExplanationOfBenefit) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.id)
+    }
+}
+
 extension ExplanationOfBenefit {
     
     public func serviceType() -> String {

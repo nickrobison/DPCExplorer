@@ -20,6 +20,7 @@ struct VitalRecordBox: View {
     let status: RecordStatus
     var body: some View {
         VStack {
+            // This alignment is totally gross. Would love to come up with a better solution. AlignmentGuides?
             HStack {
                 Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.syringe), size: CGSize(width: 50, height: 50)))
                 Spacer()
@@ -28,8 +29,12 @@ struct VitalRecordBox: View {
                     .font(.title)
                 Spacer()
             }
+            HStack {
+                Spacer()
             Text("1/3/18")
                 .font(.subheadline)
+                Spacer()
+            }
             HStack {
                 Spacer()
                 generateStatusIcon(status)
@@ -38,6 +43,8 @@ struct VitalRecordBox: View {
         .padding()
         .background(Color.gray)
         .cornerRadius(20)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        
     }
     
     private func generateStatusIcon(_ status: RecordStatus) -> some View {
