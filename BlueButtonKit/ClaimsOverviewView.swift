@@ -10,11 +10,12 @@ import SwiftUI
 import FHIR
 
 struct ClaimsOverviewView: View {
-    
+
     @State var claimState: [Int: Bool] = [:]
-    
-    let patient: Patient
+
     let eob: [ExplanationOfBenefit]
+    @Binding var boxes: [VitalRecordBox]
+    
     var body: some View {
         VStack {
             HStack {
@@ -48,6 +49,6 @@ struct ClaimsOverviewView: View {
 
 struct ClaimsOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        ClaimsOverviewView(patient: testPatient, eob: [testEOB])
+        ClaimsOverviewView(eob: [testEOB], boxes: .constant([VitalRecordBox(status: .success)]))
     }
 }

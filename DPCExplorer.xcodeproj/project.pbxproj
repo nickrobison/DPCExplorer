@@ -18,6 +18,12 @@
 		EB100E7F23667ED60065E084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7D23667ED60065E084 /* LaunchScreen.storyboard */; };
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
+		EB19AFDE23B16721005CB43F /* SwiftFHIRDependency.h in Headers */ = {isa = PBXBuildFile; fileRef = EB19AFDC23B16721005CB43F /* SwiftFHIRDependency.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB19AFE723B16729005CB43F /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EB19AFE623B16729005CB43F /* FHIR */; };
+		EB19AFEC23B16789005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
+		EB19AFED23B1678E005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
+		EB19AFF023B167EA005CB43F /* SwiftFHIRDependency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EB19AFF123B16810005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
 		EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
@@ -44,7 +50,6 @@
 		EBD24E4023AB08AA00D35859 /* BlueButtonKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EBD24E3023AB08A900D35859 /* BlueButtonKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBD24E4323AB08AA00D35859 /* BlueButtonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; };
 		EBD24E4423AB08AA00D35859 /* BlueButtonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EBD24E4C23AB08CD00D35859 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EBD24E4B23AB08CD00D35859 /* FHIR */; };
 		EBD24E4E23AB09A800D35859 /* BlueButtonClaimOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD24E4D23AB09A800D35859 /* BlueButtonClaimOverviewView.swift */; };
 		EBD24E5323AB0BA400D35859 /* test_eob.json in Resources */ = {isa = PBXBuildFile; fileRef = EBD24E5223AB0BA400D35859 /* test_eob.json */; };
 		EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE8FDAB238F53200047C024 /* PatientAssign.swift */; };
@@ -55,7 +60,6 @@
 		EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBEC7ED323A6B7FD004D3C22 /* DPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A70236BBFA8001EC7C9 /* DPCClient.swift */; };
 		EBEC7ED623A6B85A004D3C22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EBEC7ED523A6B85A004D3C22 /* Alamofire */; };
-		EBEC7ED823A6B85E004D3C22 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = EBEC7ED723A6B85E004D3C22 /* FHIR */; };
 		EBEC7EFD23A6BA37004D3C22 /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */; };
 		EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
 		EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
@@ -85,6 +89,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = EB100E6B23667ED30065E084;
 			remoteInfo = DPCExplorer;
+		};
+		EB19AFE823B16732005CB43F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB19AFD923B16721005CB43F;
+			remoteInfo = SwiftFHIRDependency;
+		};
+		EB19AFEA23B1673A005CB43F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB19AFD923B16721005CB43F;
+			remoteInfo = SwiftFHIRDependency;
+		};
+		EB19AFEE23B167E4005CB43F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB100E6423667ED30065E084 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB19AFD923B16721005CB43F;
+			remoteInfo = SwiftFHIRDependency;
 		};
 		EBD24E3823AB08A900D35859 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -137,6 +162,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				EB19AFF023B167EA005CB43F /* SwiftFHIRDependency.framework in Embed Frameworks */,
 				EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */,
 				EBD24E4423AB08AA00D35859 /* BlueButtonKit.framework in Embed Frameworks */,
 			);
@@ -164,6 +190,9 @@
 		EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCExplorerUITests.swift; sourceTree = "<group>"; };
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFHIRDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB19AFDC23B16721005CB43F /* SwiftFHIRDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftFHIRDependency.h; sourceTree = "<group>"; };
+		EB19AFDD23B16721005CB43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -223,6 +252,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB19AFF123B16810005CB43F /* SwiftFHIRDependency.framework in Frameworks */,
 				EBEC7ECA23A6B700004D3C22 /* DPCKit.framework in Frameworks */,
 				EBD24E4323AB08AA00D35859 /* BlueButtonKit.framework in Frameworks */,
 			);
@@ -242,11 +272,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB19AFD723B16721005CB43F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB19AFE723B16729005CB43F /* FHIR in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBD24E2B23AB08A900D35859 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD24E4C23AB08CD00D35859 /* FHIR in Frameworks */,
+				EB19AFED23B1678E005CB43F /* SwiftFHIRDependency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,8 +300,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB19AFEC23B16789005CB43F /* SwiftFHIRDependency.framework in Frameworks */,
 				EBEC7ED623A6B85A004D3C22 /* Alamofire in Frameworks */,
-				EBEC7ED823A6B85E004D3C22 /* FHIR in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +328,7 @@
 				EBEC7EC323A6B700004D3C22 /* DPCKitTests */,
 				EBD24E2F23AB08A900D35859 /* BlueButtonKit */,
 				EBD24E3C23AB08A900D35859 /* BlueButtonKitTests */,
+				EB19AFDB23B16721005CB43F /* SwiftFHIRDependency */,
 				EB100E6D23667ED30065E084 /* Products */,
 				EBEC7ED423A6B85A004D3C22 /* Frameworks */,
 			);
@@ -305,6 +344,7 @@
 				EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */,
 				EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */,
 				EBD24E3623AB08A900D35859 /* BlueButtonKitTests.xctest */,
+				EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -359,6 +399,15 @@
 				EB100E9623667ED60065E084 /* Info.plist */,
 			);
 			path = DPCExplorerUITests;
+			sourceTree = "<group>";
+		};
+		EB19AFDB23B16721005CB43F /* SwiftFHIRDependency */ = {
+			isa = PBXGroup;
+			children = (
+				EB19AFDC23B16721005CB43F /* SwiftFHIRDependency.h */,
+				EB19AFDD23B16721005CB43F /* Info.plist */,
+			);
+			path = SwiftFHIRDependency;
 			sourceTree = "<group>";
 		};
 		EB3F1EC423A71F2B002844C1 /* PatientViews */ = {
@@ -469,6 +518,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		EB19AFD523B16721005CB43F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB19AFDE23B16721005CB43F /* SwiftFHIRDependency.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBD24E2923AB08A900D35859 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,6 +557,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				EB19AFEF23B167E4005CB43F /* PBXTargetDependency */,
 				EBEC7EC923A6B700004D3C22 /* PBXTargetDependency */,
 				EBD24E4223AB08AA00D35859 /* PBXTargetDependency */,
 			);
@@ -546,6 +604,27 @@
 			productReference = EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EB19AFD923B16721005CB43F /* SwiftFHIRDependency */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB19AFE323B16721005CB43F /* Build configuration list for PBXNativeTarget "SwiftFHIRDependency" */;
+			buildPhases = (
+				EB19AFD523B16721005CB43F /* Headers */,
+				EB19AFD623B16721005CB43F /* Sources */,
+				EB19AFD723B16721005CB43F /* Frameworks */,
+				EB19AFD823B16721005CB43F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftFHIRDependency;
+			packageProductDependencies = (
+				EB19AFE623B16729005CB43F /* FHIR */,
+			);
+			productName = SwiftFHIRDependency;
+			productReference = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		EBD24E2D23AB08A900D35859 /* BlueButtonKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBD24E4523AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKit" */;
@@ -559,10 +638,10 @@
 			buildRules = (
 			);
 			dependencies = (
+				EB19AFE923B16732005CB43F /* PBXTargetDependency */,
 			);
 			name = BlueButtonKit;
 			packageProductDependencies = (
-				EBD24E4B23AB08CD00D35859 /* FHIR */,
 			);
 			productName = BlueButtonKit;
 			productReference = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */;
@@ -599,11 +678,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				EB19AFEB23B1673A005CB43F /* PBXTargetDependency */,
 			);
 			name = DPCKit;
 			packageProductDependencies = (
 				EBEC7ED523A6B85A004D3C22 /* Alamofire */,
-				EBEC7ED723A6B85E004D3C22 /* FHIR */,
 			);
 			productName = DPCKit;
 			productReference = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */;
@@ -649,6 +728,9 @@
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = EB100E6B23667ED30065E084;
 					};
+					EB19AFD923B16721005CB43F = {
+						CreatedOnToolsVersion = 11.3;
+					};
 					EBD24E2D23AB08A900D35859 = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -690,6 +772,7 @@
 				EBEC7EBC23A6B700004D3C22 /* DPCKitTests */,
 				EBD24E2D23AB08A900D35859 /* BlueButtonKit */,
 				EBD24E3523AB08A900D35859 /* BlueButtonKitTests */,
+				EB19AFD923B16721005CB43F /* SwiftFHIRDependency */,
 			);
 		};
 /* End PBXProject section */
@@ -713,6 +796,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		EB100E8E23667ED60065E084 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB19AFD823B16721005CB43F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -817,6 +907,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB19AFD623B16721005CB43F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBD24E2A23AB08A900D35859 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -881,6 +978,21 @@
 			isa = PBXTargetDependency;
 			target = EB100E6B23667ED30065E084 /* DPCExplorer */;
 			targetProxy = EB100E9123667ED60065E084 /* PBXContainerItemProxy */;
+		};
+		EB19AFE923B16732005CB43F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB19AFD923B16721005CB43F /* SwiftFHIRDependency */;
+			targetProxy = EB19AFE823B16732005CB43F /* PBXContainerItemProxy */;
+		};
+		EB19AFEB23B1673A005CB43F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB19AFD923B16721005CB43F /* SwiftFHIRDependency */;
+			targetProxy = EB19AFEA23B1673A005CB43F /* PBXContainerItemProxy */;
+		};
+		EB19AFEF23B167E4005CB43F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB19AFD923B16721005CB43F /* SwiftFHIRDependency */;
+			targetProxy = EB19AFEE23B167E4005CB43F /* PBXContainerItemProxy */;
 		};
 		EBD24E3923AB08A900D35859 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1160,6 +1272,60 @@
 			};
 			name = Release;
 		};
+		EB19AFE423B16721005CB43F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftFHIRDependency/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.SwiftFHIRDependency;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EB19AFE523B16721005CB43F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SwiftFHIRDependency/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickrobison.SwiftFHIRDependency;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EBD24E4623AB08AA00D35859 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1404,6 +1570,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EB19AFE323B16721005CB43F /* Build configuration list for PBXNativeTarget "SwiftFHIRDependency" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB19AFE423B16721005CB43F /* Debug */,
+				EB19AFE523B16721005CB43F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBD24E4523AB08AA00D35859 /* Build configuration list for PBXNativeTarget "BlueButtonKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1462,7 +1637,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EBD24E4B23AB08CD00D35859 /* FHIR */ = {
+		EB19AFE623B16729005CB43F /* FHIR */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB65A3602378A10F0076C48A /* XCRemoteSwiftPackageReference "Swift-FHIR" */;
 			productName = FHIR;
@@ -1471,11 +1646,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EB65A35A23789DEA0076C48A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		EBEC7ED723A6B85E004D3C22 /* FHIR */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EB65A3602378A10F0076C48A /* XCRemoteSwiftPackageReference "Swift-FHIR" */;
-			productName = FHIR;
 		};
 /* End XCSwiftPackageProductDependency section */
 
