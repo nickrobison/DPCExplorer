@@ -9,14 +9,21 @@
 import SwiftUI
 import FHIR
 
-struct ClaimsOverviewView: View {
-
-    @State var claimState: [Int: Bool] = [:]
-
-    let eob: [ExplanationOfBenefit]
-    @Binding var boxes: [VitalRecordBox]
+public struct ClaimsOverviewView: View {
     
-    var body: some View {
+    @ObservedObject var manager: ClaimsManager
+
+    private let eob: [ExplanationOfBenefit]
+    @Binding var boxes: [VitalRecordBox]
+    @State var claimState: [Int: Bool] = [:]
+    
+    public init (manager: ClaimsManager, boxes: Binding<[VitalRecordBox]>) {
+        self._boxes = boxes
+        self.manager = manager
+        self.eob = manager.claims
+    }
+    
+    public var body: some View {
         VStack {
             HStack {
                 Text("Claims history")
@@ -24,7 +31,7 @@ struct ClaimsOverviewView: View {
                 Spacer()
             }
             ForEach(RecordStatus.allCases, id: \.self){ status in
-                VitalRecordBox(status: status)
+                VitalRecordBox(status)
                     .padding([.trailing, .leading])
             }
             HStack {
@@ -49,6 +56,6 @@ struct ClaimsOverviewView: View {
 
 struct ClaimsOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        ClaimsOverviewView(eob: [testEOB], boxes: .constant([VitalRecordBox(status: .success)]))
+        ClaimsOverviewView(manager: ClaimsManager(eob: [testEOB]), boxes: .constant([VitalRecordBox(.success)]))
     }
 }

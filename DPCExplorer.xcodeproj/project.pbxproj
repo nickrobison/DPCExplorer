@@ -73,6 +73,7 @@
 		EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
 		EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
 		EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
+		EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,6 +246,7 @@
 		EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCKitTests.swift; sourceTree = "<group>"; };
 		EBEC7EC623A6B700004D3C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -460,6 +462,7 @@
 				EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */,
 				EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */,
 				EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */,
+				EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */,
 			);
 			path = BlueButtonKit;
 			sourceTree = "<group>";
@@ -921,6 +924,7 @@
 				EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */,
 				EBD24E4E23AB09A800D35859 /* BlueButtonClaimOverviewView.swift in Sources */,
 				EBCC9C8423AFEAFC0083538F /* EOBExtensions.swift in Sources */,
+				EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */,
 				EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */,
 				EB08272923AF142500CA7CC8 /* VitalRecordBox.swift in Sources */,
 				EBCC9C8623AFFB8C0083538F /* ServiceRowItemView.swift in Sources */,

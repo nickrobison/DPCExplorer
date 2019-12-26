@@ -8,6 +8,7 @@
 
 import SwiftUI
 import DPCKit
+import BlueButtonKit
 
 struct PatientTabView: View {
     
@@ -46,12 +47,13 @@ struct PatientTabView: View {
     }
     
     private func buildWithClaims() -> some View {
-        return HStack {
-            Text("Fetched EOBs")
+        return ScrollView {VStack {
+            Text("Fetched EOBs: \(patient.claims.count)")
             Image(systemName: "checkmark.circle.fill")
                 .font(.subheadline)
                 .foregroundColor(.green)
-            
+            ClaimsOverviewView(manager: ClaimsManager(eob: patient.claims), boxes: .constant([VitalRecordBox(.success)]))
+            }
         }
     }
     

@@ -70,20 +70,23 @@ extension ExplanationOfBenefit {
     
     var primaryDiagnosis: ExplanationOfBenefitDiagnosis? {
         let diag = diagnosis?.filter {diag in
-            guard let typ = diag.type else {
-                return false
-            }
-            
-            let c = Coding()
-            c.system = FHIRURL.init("http://hl7.org/fhir/ex-diagnosistype")
-            c.code = FHIRString.init("[PRINCIPAL]")
-            
-            
-            let fst = typ.first { code in
-                return code.containsCode(c)
-            }
-            
-            return fst != nil
+            // The sample EOB from the BB website has code [PRINCIPAL], which doesn't match what the BFD data actually has.
+            // So we'll just be really simplistic for now
+            return diag.type != nil
+//            guard let typ = diag.type else {
+//                return false
+//            }
+//
+//            let c = Coding()
+//            c.system = FHIRURL.init("http://hl7.org/fhir/ex-diagnosistype")
+//            c.code = FHIRString.init("principal")
+//
+//
+//            let fst = typ.first { code in
+//                return code.containsCode(c)
+//            }
+//
+//            return fst != nil
         }
         
         return diag?[0]

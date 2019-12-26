@@ -9,16 +9,21 @@
 import SwiftUI
 import SwiftIcons
 
-enum RecordStatus: CaseIterable {
+public enum RecordStatus: CaseIterable {
     case success
     case failure
     case unknown
 }
 
-struct VitalRecordBox: View {
+public struct VitalRecordBox: View {
     
     let status: RecordStatus
-    var body: some View {
+    
+    public init (_ status: RecordStatus) {
+        self.status = status
+    }
+    
+    public var body: some View {
         VStack {
             // This alignment is totally gross. Would love to come up with a better solution. AlignmentGuides?
             HStack {
@@ -71,7 +76,7 @@ struct VitalRecordBox: View {
 struct VitalRecordBox_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(RecordStatus.allCases, id: \.self) { status in
-            VitalRecordBox(status: status)
+            VitalRecordBox(status)
         }
     }
 }
