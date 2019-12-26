@@ -195,6 +195,8 @@
 		EB19AFDC23B16721005CB43F /* SwiftFHIRDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftFHIRDependency.h; sourceTree = "<group>"; };
 		EB19AFDD23B16721005CB43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCKit.xcdatamodel; sourceTree = "<group>"; };
+		EB1BE1C723B51BDB00D33A7E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		EB1BE1C823B51BFF00D33A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -321,6 +323,8 @@
 		EB100E6323667ED30065E084 = {
 			isa = PBXGroup;
 			children = (
+				EB1BE1C823B51BFF00D33A7E /* README.md */,
+				EB1BE1C723B51BDB00D33A7E /* LICENSE.md */,
 				EB08272723AF13CD00CA7CC8 /* output.xcfilelist */,
 				EB08272623AF13A400CA7CC8 /* input.xcfilelist */,
 				EB100E6E23667ED30065E084 /* DPCExplorer */,
