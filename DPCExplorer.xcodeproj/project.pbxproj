@@ -26,6 +26,13 @@
 		EB19AFF123B16810005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
 		EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */; };
 		EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */; };
+		EB1BE1CC23B53C6100D33A7E /* FullScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */; };
+		EB1BE1CF23B53EA100D33A7E /* InitialOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1CE23B53EA100D33A7E /* InitialOnboardingView.swift */; };
+		EB1BE1D123B53ED300D33A7E /* HostSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D023B53ED300D33A7E /* HostSelectionView.swift */; };
+		EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */; };
+		EB1BE1D523B5450500D33A7E /* PublicKeyUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */; };
+		EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */; };
+		EB1BE1D923B5467400D33A7E /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */; };
 		EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
@@ -199,6 +206,13 @@
 		EB1BE1C723B51BDB00D33A7E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		EB1BE1C823B51BFF00D33A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenButton.swift; sourceTree = "<group>"; };
+		EB1BE1CE23B53EA100D33A7E /* InitialOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialOnboardingView.swift; sourceTree = "<group>"; };
+		EB1BE1D023B53ED300D33A7E /* HostSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostSelectionView.swift; sourceTree = "<group>"; };
+		EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIDInputView.swift; sourceTree = "<group>"; };
+		EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyUploadView.swift; sourceTree = "<group>"; };
+		EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteView.swift; sourceTree = "<group>"; };
+		EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -360,6 +374,7 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EB1BE1CD23B53E9200D33A7E /* OnboardingViews */,
 				EBD24E2823AB086800D35859 /* ProviderViews */,
 				EB3F1EC423A71F2B002844C1 /* PatientViews */,
 				EB100E6F23667ED30065E084 /* AppDelegate.swift */,
@@ -379,6 +394,7 @@
 				EB3F1EC523A72239002844C1 /* InitialsView.swift */,
 				EB3F1EC723A723FB002844C1 /* NameView.swift */,
 				EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */,
+				EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -417,6 +433,19 @@
 				EB19AFDD23B16721005CB43F /* Info.plist */,
 			);
 			path = SwiftFHIRDependency;
+			sourceTree = "<group>";
+		};
+		EB1BE1CD23B53E9200D33A7E /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB1BE1CE23B53EA100D33A7E /* InitialOnboardingView.swift */,
+				EB1BE1D023B53ED300D33A7E /* HostSelectionView.swift */,
+				EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */,
+				EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */,
+				EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */,
+				EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */,
+			);
+			path = OnboardingViews;
 			sourceTree = "<group>";
 		};
 		EB3F1EC423A71F2B002844C1 /* PatientViews */ = {
@@ -877,19 +906,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1BE1D923B5467400D33A7E /* OnboardingProtocol.swift in Sources */,
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */,
 				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,
+				EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
 				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
 				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
+				EB1BE1CC23B53C6100D33A7E /* FullScreenButton.swift in Sources */,
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
 				EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */,
 				EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
+				EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
+				EB1BE1CF23B53EA100D33A7E /* InitialOnboardingView.swift in Sources */,
+				EB1BE1D523B5450500D33A7E /* PublicKeyUploadView.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
 				EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */,
 				EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */,
@@ -897,6 +932,7 @@
 				EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */,
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
+				EB1BE1D123B53ED300D33A7E /* HostSelectionView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */,
 				EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */,
 			);
