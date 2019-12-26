@@ -11,6 +11,7 @@ import DPCKit
 
 struct MainView: View {
     @EnvironmentObject var client: DPCClient
+    @EnvironmentObject var preferences: PreferencesManager
     @State private var selection = 0
     var body: some View {
         TabView(selection: $selection){
@@ -28,16 +29,24 @@ struct MainView: View {
                         Image("first")
                         Text("Providers")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
             PatientView()
                 .tabItem {
                     VStack {
                         Image("second")
                         Text("Patients")
                     }
-                }
-                .tag(2)
+            }
+            .tag(2)
+            SettingsView(settings: .constant(preferences.settings!))
+                .tabItem {
+                    VStack {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
+            }
+            .tag(3)
         }
     }
 }
