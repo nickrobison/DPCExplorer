@@ -39,7 +39,7 @@ struct PatientTabView: View {
     }
     
     private func buildClaims() -> AnyView  {
-        if (self.patient.eob != nil) {
+        if (self.patient.eobs?.count ?? 0 > 1) {
             return AnyView(buildWithClaims())
         } else {
             return AnyView(buildNoClaims())

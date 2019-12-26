@@ -24,6 +24,7 @@
 		EB19AFED23B1678E005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
 		EB19AFF023B167EA005CB43F /* SwiftFHIRDependency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB19AFF123B16810005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
+		EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */; };
 		EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
@@ -60,7 +61,6 @@
 		EBEC7ECB23A6B700004D3C22 /* DPCKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBEC7ED323A6B7FD004D3C22 /* DPCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A70236BBFA8001EC7C9 /* DPCClient.swift */; };
 		EBEC7ED623A6B85A004D3C22 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EBEC7ED523A6B85A004D3C22 /* Alamofire */; };
-		EBEC7EFD23A6BA37004D3C22 /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */; };
 		EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A15236BA890001EC7C9 /* Organization.swift */; };
 		EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A56236BABFD001EC7C9 /* Provider.swift */; };
 		EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5A236BAD51001EC7C9 /* Name.swift */; };
@@ -194,11 +194,11 @@
 		EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftFHIRDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB19AFDC23B16721005CB43F /* SwiftFHIRDependency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftFHIRDependency.h; sourceTree = "<group>"; };
 		EB19AFDD23B16721005CB43F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCKit.xcdatamodel; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		EB5192672381BDF500C979C3 /* ExportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportClient.swift; sourceTree = "<group>"; };
-		EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCExplorer.xcdatamodel; sourceTree = "<group>"; };
 		EB763A15236BA890001EC7C9 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		EB763A56236BABFD001EC7C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderBioView.swift; sourceTree = "<group>"; };
@@ -489,10 +489,10 @@
 		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
 			isa = PBXGroup;
 			children = (
+				EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */,
 				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
 				EB5192672381BDF500C979C3 /* ExportClient.swift */,
 				EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */,
-				EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */,
 				EB763A14236BA87C001EC7C9 /* Models */,
 				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
 				EBEC7EB723A6B700004D3C22 /* DPCKit.h */,
@@ -945,7 +945,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBEC7EFD23A6BA37004D3C22 /* DPCKit.xcdatamodeld in Sources */,
+				EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */,
 				EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */,
 				EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */,
 				EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */,
@@ -1654,12 +1654,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		EB65A35D23789E550076C48A /* DPCKit.xcdatamodeld */ = {
+		EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */,
+				EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */,
 			);
-			currentVersion = EB65A35E23789E550076C48A /* DPCExplorer.xcdatamodel */;
+			currentVersion = EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */;
 			path = DPCKit.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

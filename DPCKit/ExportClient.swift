@@ -164,8 +164,10 @@ class ExportClient {
                         // Going back and forth is terrible
                         // Compress it, because, why not?
                         let compressed = self.compressData(input: line.data(using: .utf8))
+                        let pEOB = EOBEntity(context: self.context)
+                        pEOB.eob = compressed
                         
-                        fetchedPatient[0].eob = compressed
+                        fetchedPatient[0].addToEobs(pEOB)
                         
                         do {
                             try self.context.save()

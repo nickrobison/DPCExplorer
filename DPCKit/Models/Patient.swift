@@ -31,17 +31,25 @@ extension PatientEntity: Person {
 
 extension PatientEntity {
     public var claims: [ExplanationOfBenefit] {
-        guard let decompressed = decompressData(input: self.eob) else {
+        guard let eobs = self.eobs else {
             return []
         }
         
-        let json = try? JSONSerialization.jsonObject(with: decompressed, options: []) as? FHIRJSON
+        var returnValues: [ExplanationOfBenefit] = []
+        eobs.forEach { eob in
+            guard let decompressed = decompressData(input: (eob as! EOBEntity).eob) else {
+                return
+            }
+            
+            let json = try? JSONSerialization.jsonObject(with: decompressed, options: []) as? FHIRJSON
+            
+            // Disable validation, because we have custom extensions
+            var ctx = FHIRInstantiationContext(strict: false)
+            let eob = FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
+            returnValues.append(eob)
+        }
         
-        // Disable validation, because we have custom extensions
-        var ctx = FHIRInstantiationContext(strict: false)
-        let eob = FHIR.ExplanationOfBenefit.init(json: json!, context: &ctx)
-        
-        return [eob]
+        return returnValues
     }
 }
 
