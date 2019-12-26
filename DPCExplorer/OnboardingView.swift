@@ -10,9 +10,9 @@ import SwiftUI
 import DPCKit
 
 struct OnboardingView: View {
-    @EnvironmentObject var client: DPCClient
+    let handler: ((_ settings: ApplicationSettings) -> Void)?
     var body: some View {
-        Button(action: {self.client.fetchOrganization()}){
+        Button(action: self.updateSettings){
             Text("Load data")
             .fontWeight(.semibold)
             .font(.title)
@@ -25,10 +25,16 @@ struct OnboardingView: View {
         }
                             
     }
+    
+    private func updateSettings() {
+        debugPrint("Setting settings")
+        let settings = ApplicationSettings(url: URL.init(string: "http://localhost:3002/v1/")!, clientToken: "")
+        self.handler?(settings)
+    }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(handler: nil)
     }
 }

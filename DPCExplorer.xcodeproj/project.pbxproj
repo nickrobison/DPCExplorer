@@ -25,6 +25,7 @@
 		EB19AFF023B167EA005CB43F /* SwiftFHIRDependency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EB19AFF123B16810005CB43F /* SwiftFHIRDependency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19AFDA23B16721005CB43F /* SwiftFHIRDependency.framework */; };
 		EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */; };
+		EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */; };
 		EB3F1EC623A72239002844C1 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
@@ -197,6 +198,7 @@
 		EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCKit.xcdatamodel; sourceTree = "<group>"; };
 		EB1BE1C723B51BDB00D33A7E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		EB1BE1C823B51BFF00D33A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -376,6 +378,7 @@
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
 				EB3F1EC523A72239002844C1 /* InitialsView.swift */,
 				EB3F1EC723A723FB002844C1 /* NameView.swift */,
+				EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -888,6 +891,7 @@
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
+				EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */,
 				EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
 				EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */,

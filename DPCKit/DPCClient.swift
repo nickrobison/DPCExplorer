@@ -25,7 +25,7 @@ public final class DPCClient: ObservableObject {
         self.context = context
     }
     
-    public func fetchOrganization() {
+    public func fetchOrganization(handler: (() -> Void)? ) {
         
         let uri = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
         AF.request(uri)
@@ -42,6 +42,7 @@ public final class DPCClient: ObservableObject {
                         return
                     }
                     self.organization = value.toEntity(ctx: self.context)
+                    handler?()
                     
                 case let .failure(error):
                     print(error)

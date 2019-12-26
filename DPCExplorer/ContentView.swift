@@ -11,25 +11,48 @@ import DPCKit
 
 struct ContentView: View {
     
-    @EnvironmentObject var client: DPCClient
-    @State private var loaded = false
+    @EnvironmentObject var preferences: PreferencesManager
+    @Environment(\.managedObjectContext) var managedObjectContext
+    @State private var client: DPCClient?
  
     var body: some View {
         VStack {
-            if (client.organization != nil) {
-                MainView(organization: client.organization!)
+            if (client != nil) {
+                MainView()
+                    .environmentObject(client!)
             } else {
-                    OnboardingView()
+                OnboardingView(handler: self.updateSettings)
             }
         }
+        .onAppear() {
+            self.buildClient()
+        }
+    }
+    
+    private func updateSettings(_ settings: ApplicationSettings) {
+        debugPrint("From the completion handler")
+        self.preferences.saveSettings(settings)
+        self.buildClient()
+    }
+    
+    private func buildClient() {
+        debugPrint("Building client")
+        guard let settings = self.preferences.settings else {
+            return
+        }
+        let client = DPCClient(baseURL: settings.url.absoluteString, context: managedObjectContext)
+        client.fetchOrganization(handler: {
+            debugPrint("From org completion handler")
+            self.client = client
+        })
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            return ContentView()
-                .environmentObject(DPCClient(baseURL: "http://localhost:3002/v1/api", context: context))
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        return ContentView()
+        .environmentObject(PreferencesManager())
     }
 }
