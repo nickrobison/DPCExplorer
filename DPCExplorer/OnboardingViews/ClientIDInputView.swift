@@ -17,7 +17,8 @@ struct ClientIDInputView: View {
     var body: some View {
         VStack {
             Spacer()
-            TextField("Paste your client token", text: $clientID)
+            Text("Past your client token here:")
+            TextField("client token", text: $clientID)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding()
             Spacer()

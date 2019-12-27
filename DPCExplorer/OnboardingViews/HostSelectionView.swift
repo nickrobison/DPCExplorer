@@ -23,8 +23,8 @@ struct HostSelectionView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Connect to host")
-                .font(.title)
+            Text("Select a host to connect to:")
+            Text("Make sure you have permissions to access each environment")
             Picker(selection: $selectedHost, label: Text("")) {
                 ForEach(hosts, id: \.0) { (name, env) in
                     Text(name)
@@ -37,6 +37,7 @@ struct HostSelectionView: View {
                 self.handler?(URL.init(string: self.hosts[self.selectedHost].value)!)
             })
         }
+        .transition(.opacity)
     }
 }
 

@@ -15,7 +15,13 @@ struct OnboardingCompleteView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Ready to start")
+            Image(systemName: "checkmark.circle")
+                .resizable()
+                .scaledToFit()
+                .foregroundColor(.green)
+                .padding(100)
+            Text("Setup complete!")
+                .font(.title)
             Spacer()
             FullScreenButton(text: "Finish", handler: self.handler)
         }

@@ -34,6 +34,7 @@ struct BlueButtonOverviewView: View {
                 }
             }
         }
+        .animation(.easeInOut)
         //        VStack {
         //            if isExpanded {
         //                Text("Claim Details")

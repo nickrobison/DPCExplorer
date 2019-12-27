@@ -16,9 +16,10 @@ struct PublicKeyUploadView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
+            Spacer()
             Group{
-                Text("Copy and upload public key")
-                    .font(.title)
+                Text("Use this public key:")
+                Text("Copy and paste it into the web UI")
                 TextField("Public Key", text: $publicKey)
                     .foregroundColor(.gray)
                     .labelsHidden()
@@ -27,8 +28,10 @@ struct PublicKeyUploadView: View {
                 })) {
                     Text("Copy key")
                 }
+                .padding([.top, .bottom])
             }
             .padding(.leading)
+            Spacer()
             FullScreenButton(text: "Next", handler: {
                 self.handler?("This is a private key")
             })

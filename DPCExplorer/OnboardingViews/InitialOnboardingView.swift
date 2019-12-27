@@ -12,7 +12,7 @@ struct InitialOnboardingView: View {
     
     let handler: () -> Void
     var body: some View {
-        return VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
             Spacer()
             Group {
                 Text("Hello,")
