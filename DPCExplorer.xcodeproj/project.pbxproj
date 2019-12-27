@@ -182,8 +182,6 @@
 		D66AA5004EB211FCACF1F4EA /* Pods-DPCKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPCKit.release.xcconfig"; path = "Target Support Files/Pods-DPCKit/Pods-DPCKit.release.xcconfig"; sourceTree = "<group>"; };
 		E3E083957CB475B3655CAED9 /* Pods_SwiftFHIRDependency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftFHIRDependency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB08272123AF136800CA7CC8 /* SwiftIcons.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftIcons.framework; path = Carthage/Build/iOS/SwiftIcons.framework; sourceTree = "<group>"; };
-		EB08272623AF13A400CA7CC8 /* input.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = input.xcfilelist; sourceTree = "<group>"; };
-		EB08272723AF13CD00CA7CC8 /* output.xcfilelist */ = {isa = PBXFileReference; lastKnownFileType = text.xcfilelist; path = output.xcfilelist; sourceTree = "<group>"; };
 		EB08272823AF142500CA7CC8 /* VitalRecordBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VitalRecordBox.swift; sourceTree = "<group>"; };
 		EB100E6C23667ED30065E084 /* DPCExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPCExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E6F23667ED30065E084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -360,8 +358,6 @@
 			children = (
 				EB1BE1C823B51BFF00D33A7E /* README.md */,
 				EB1BE1C723B51BDB00D33A7E /* LICENSE.md */,
-				EB08272723AF13CD00CA7CC8 /* output.xcfilelist */,
-				EB08272623AF13A400CA7CC8 /* input.xcfilelist */,
 				EB100E6E23667ED30065E084 /* DPCExplorer */,
 				EB100E8823667ED60065E084 /* DPCExplorerTests */,
 				EB100E9323667ED60065E084 /* DPCExplorerUITests */,

@@ -23,6 +23,11 @@ class BlueButtonKitTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    
+    func testDateExtraction() {
+        let date = testEOB.item![0].getDate()
+        XCTAssertNotNil(date, "Should have date from EOB item")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
