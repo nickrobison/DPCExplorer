@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (5.0.0-rc.3)
+  - FHIR (3.0.0)
+  - SwiftIcons (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.3)
+  - FHIR (from `https://github.com/nickrobison-usds/Swift-FHIR.git`, branch `swift5-stu3`)
+  - SwiftIcons (~> 2.3.2)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SwiftIcons
+
+EXTERNAL SOURCES:
+  FHIR:
+    :branch: swift5-stu3
+    :git: https://github.com/nickrobison-usds/Swift-FHIR.git
+
+CHECKOUT OPTIONS:
+  FHIR:
+    :commit: 68fdf5ff28ddc745335989f0c268670074db33ee
+    :git: https://github.com/nickrobison-usds/Swift-FHIR.git
+
+SPEC CHECKSUMS:
+  Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  FHIR: 62ef849618a11e4b8d219fbbcde33b9d39b7a257
+  SwiftIcons: e652cfd2676441c462ad57b6e92977faf577e590
+
+PODFILE CHECKSUM: 8f08e88f66a5fb26baba33b784df8229bb1b1419
+
+COCOAPODS: 1.8.4

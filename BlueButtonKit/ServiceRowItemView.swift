@@ -11,7 +11,8 @@ import FHIR
 
 extension ExplanationOfBenefitItem {
     var serviceCode: String {
-        self.productOrService?.coding?[0].code?.string ?? "Nada"
+        return "ada"
+//        self.productOrService?.coding?[0].code?.string ?? "Nada"
     }
 }
 
