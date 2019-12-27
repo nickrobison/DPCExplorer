@@ -1,16 +1,19 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - BlueRSA (1.0.34)
   - FHIR (3.0.0)
   - SwiftIcons (2.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - BlueRSA
   - FHIR (from `https://github.com/nickrobison-usds/Swift-FHIR.git`, branch `swift5-stu3`)
   - SwiftIcons (~> 2.3.2)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BlueRSA
     - SwiftIcons
 
 EXTERNAL SOURCES:
@@ -25,9 +28,10 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  BlueRSA: 6f9776d62d9773502415a7db3bcbb2bbb3f71fc3
   FHIR: 62ef849618a11e4b8d219fbbcde33b9d39b7a257
   SwiftIcons: e652cfd2676441c462ad57b6e92977faf577e590
 
-PODFILE CHECKSUM: 8f08e88f66a5fb26baba33b784df8229bb1b1419
+PODFILE CHECKSUM: 7b54ac2cc969831d9eb537063682bba25786561f
 
 COCOAPODS: 1.8.4

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import CryptorRSA
 @testable import DPCExplorer
 
 class DPCExplorerTests: XCTestCase {
@@ -22,6 +23,17 @@ class DPCExplorerTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testKeyGeneration() {
+        let manager = KeyPairManager()
+        let res = try! manager.generateKeyPair()
+        
+        let pem = try? manager.convertToPEM(key: res.1)
+        XCTAssertNotNil(pem, "Should have PEM")
+        
+        // Try to convert it back to a public key, and make sure it works correctly
+        let _ = try! CryptorRSA.createPublicKey(withPEM: pem!)
     }
 
     func testPerformanceExample() {

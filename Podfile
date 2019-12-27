@@ -26,6 +26,7 @@ target 'DPCExplorer' do
   target 'DPCExplorerTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'BlueRSA'
   end
 
   target 'DPCExplorerUITests' do

@@ -81,6 +81,8 @@
 		EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
 		EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
 		EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
+		EBEECBBC23B666750018A8C4 /* KeyPairManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */; };
+		EBEECBBE23B673670018A8C4 /* CryptoImportExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */; };
 		EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +260,8 @@
 		EBEC7EBD23A6B700004D3C22 /* DPCKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEC7EC423A6B700004D3C22 /* DPCKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCKitTests.swift; sourceTree = "<group>"; };
 		EBEC7EC623A6B700004D3C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairManager.swift; sourceTree = "<group>"; };
+		EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoImportExportManager.swift; sourceTree = "<group>"; };
 		EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsManager.swift; sourceTree = "<group>"; };
 		F3DF8002CA6518F5A87E6CBB /* Pods_DPCExplorer_DPCExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPCExplorer_DPCExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F407B3ED6A60C5A18F24C812 /* Pods-DPCExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPCExplorer.release.xcconfig"; path = "Target Support Files/Pods-DPCExplorer/Pods-DPCExplorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 				EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */,
 				EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */,
 				EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */,
+				EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */,
+				EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -617,6 +623,7 @@
 				EB100E8123667ED60065E084 /* Sources */,
 				EB100E8223667ED60065E084 /* Frameworks */,
 				EB100E8323667ED60065E084 /* Resources */,
+				AAC1756F83C8F03E4E2033A8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,8 +710,6 @@
 			dependencies = (
 			);
 			name = DPCKit;
-			packageProductDependencies = (
-			);
 			productName = DPCKit;
 			productReference = EBEC7EB523A6B700004D3C22 /* DPCKit.framework */;
 			productType = "com.apple.product-type.framework";
@@ -777,8 +782,6 @@
 				Base,
 			);
 			mainGroup = EB100E6323667ED30065E084;
-			packageReferences = (
-			);
 			productRefGroup = EB100E6D23667ED30065E084 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1012,6 +1015,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DPCExplorer/Pods-DPCExplorer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AAC1756F83C8F03E4E2033A8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DPCExplorerTests/Pods-DPCExplorerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DPCExplorerTests/Pods-DPCExplorerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DPCExplorerTests/Pods-DPCExplorerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AFCD5D72914650968A87A4B0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1084,6 +1104,7 @@
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,
 				EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */,
+				EBEECBBE23B673670018A8C4 /* CryptoImportExportManager.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
@@ -1093,6 +1114,7 @@
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
 				EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */,
 				EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */,
+				EBEECBBC23B666750018A8C4 /* KeyPairManager.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */,
 				EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */,
