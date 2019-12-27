@@ -8,12 +8,13 @@
 
 import SwiftUI
 import DPCKit
+import FHIR
 
 struct InitialsView: View {
     
-    let name: NameEntity
+    let name: HumanName
     var body: some View {
-        Text("\(stringUnwrap(value: name.given))\(stringUnwrap(value: name.family))")
+        Text("\(name.given![0].string)\(name.family!.string)")
             .font(.title)
             .fontWeight(.heavy)
             .foregroundColor(.white)
@@ -23,14 +24,6 @@ struct InitialsView: View {
                 .clipped()
         )
     }
-}
-
-func stringUnwrap(value: String?) -> String {
-    guard let v = value?.character(at: 0) else {
-        return ""
-    }
-    
-    return String(v)
 }
 
 struct InitialsView_Previews: PreviewProvider {

@@ -8,13 +8,14 @@
 
 import SwiftUI
 import DPCKit
+import FHIR
 
 struct NameView: View {
-    var name: NameEntity
+    var name: HumanName
     var body: some View {
         HStack{
-            Text("\(name.family!),").layoutPriority(1)
-            Text(name.given!)
+            Text("\(name.family!.string),").layoutPriority(1)
+            Text(name.given![0].string)
         }.lineLimit(1)
     }
 }

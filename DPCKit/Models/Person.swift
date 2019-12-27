@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import FHIR
 
 public protocol Person {
-    var name: [NameEntity] {get}
+    var name: [HumanName] {get}
 }

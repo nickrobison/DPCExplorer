@@ -8,6 +8,7 @@
 
 import Foundation
 import DPCKit
+import FHIR
 
 extension Date {
     init?(dateString: String) {
@@ -29,11 +30,9 @@ func createPatient(last: String, first: String) -> PatientEntity {
     id.system = "MBI"
     id.value = "112233"
     patient.addToIdentifierRelationship(id)
-    
-    let name = NameEntity()
-    name.family = last
-    name.given = first
-    patient.addToNameRelationship(name)
+
+    patient.family = last
+    patient.given = first
     
     return patient
 }
@@ -70,9 +69,9 @@ let nickPatients = [
     blythe
 ]
 
-let testName = { () -> NameEntity in
-    let n = NameEntity()
-    n.given = "Nick"
+let testName = { () -> HumanName in
+    let n = HumanName()
+    n.given = ["Nick"]
     n.family = "Robison"
     
     return n

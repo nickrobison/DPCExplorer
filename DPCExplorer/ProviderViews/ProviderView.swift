@@ -19,7 +19,8 @@ struct ProviderView: View {
     
     @FetchRequest(
         entity: ProviderEntity.entity(),
-        sortDescriptors: []
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \ProviderEntity.family, ascending: true)]
     )
     var providers: FetchedResults<ProviderEntity>
     var body: some View {

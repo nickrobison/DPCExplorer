@@ -12,9 +12,11 @@ import FHIR
 import Compression
 
 public extension PatientEntity {
-    var getFirstName: NameEntity {
-        let names = self.nameRelationship?.allObjects as? [NameEntity]
-        return names![0]
+    var getFirstName: HumanName {
+        let name = HumanName()
+        name.family = FHIRString.init(self.family ?? "")
+        name.given = [FHIRString.init(self.given ?? "")]
+        return name
     }
     var getFirstID: FHIRIdentifier {
         let ids = self.identifierRelationship?.allObjects as? [PatientIdentifier]
@@ -23,9 +25,11 @@ public extension PatientEntity {
 }
 
 extension PatientEntity: Person {
-    public var name: [NameEntity] {
-        let names = self.nameRelationship?.allObjects as? [NameEntity]
-        return names ?? []
+    public var name: [HumanName] {
+        let name = HumanName()
+        name.family = FHIRString.init(self.family ?? "")
+        name.given = [FHIRString.init(self.given ?? "")]
+        return [name]
     }
 }
 

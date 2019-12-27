@@ -33,21 +33,23 @@
     </entity>
     <entity name="PatientEntity" representedClassName="PatientEntity" syncable="YES" codeGenerationType="class">
         <attribute name="birthdate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="family" optional="YES" attributeType="String"/>
         <attribute name="gender" attributeType="String"/>
+        <attribute name="given" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="eobs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EOBEntity" inverseName="patient" inverseEntity="EOBEntity"/>
         <relationship name="identifierRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="PatientIdentifier" inverseName="patientRelationship" inverseEntity="PatientIdentifier" spotlightIndexingEnabled="YES"/>
-        <relationship name="nameRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="NameEntity" spotlightIndexingEnabled="YES"/>
         <relationship name="providerRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProviderEntity" inverseName="patientRelationship" inverseEntity="ProviderEntity"/>
     </entity>
     <entity name="PatientIdentifier" representedClassName="PatientIdentifier" parentEntity="IdentifierEntity" syncable="YES" codeGenerationType="class">
         <relationship name="patientRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientEntity" inverseName="identifierRelationship" inverseEntity="PatientEntity"/>
     </entity>
     <entity name="ProviderEntity" representedClassName="ProviderEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="given" optional="YES" attributeType="String"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="rosterID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="idRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="ProviderIdentifier" inverseName="providerRelationship" inverseEntity="ProviderIdentifier"/>
-        <relationship name="nameRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="NameEntity"/>
         <relationship name="patientRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PatientEntity" inverseName="providerRelationship" inverseEntity="PatientEntity"/>
     </entity>
     <entity name="ProviderIdentifier" representedClassName="ProviderIdentifier" syncable="YES" codeGenerationType="class">
@@ -57,14 +59,14 @@
     </entity>
     <elements>
         <element name="AddressEntity" positionX="-36" positionY="45" width="128" height="103"/>
+        <element name="EOBEntity" positionX="-27" positionY="90" width="128" height="88"/>
         <element name="IdentifierEntity" positionX="-9" positionY="108" width="128" height="73"/>
         <element name="NameEntity" positionX="0" positionY="81" width="128" height="73"/>
         <element name="OrganizationEntity" positionX="-63" positionY="-18" width="128" height="118"/>
         <element name="OrganizationIdentifier" positionX="-18" positionY="99" width="128" height="88"/>
-        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="148"/>
+        <element name="PatientEntity" positionX="-18" positionY="72" width="128" height="163"/>
         <element name="PatientIdentifier" positionX="-54" positionY="18" width="128" height="58"/>
-        <element name="ProviderEntity" positionX="-27" positionY="63" width="128" height="118"/>
+        <element name="ProviderEntity" positionX="-27" positionY="63" width="128" height="133"/>
         <element name="ProviderIdentifier" positionX="-27" positionY="90" width="128" height="88"/>
-        <element name="EOBEntity" positionX="-27" positionY="90" width="128" height="88"/>
     </elements>
 </model>

@@ -20,7 +20,8 @@ struct PatientView: View {
     
     @FetchRequest(
         entity: PatientEntity.entity(),
-        sortDescriptors: []
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \PatientEntity.family, ascending: true)]
     )
     var patients: FetchedResults<PatientEntity>
     var body: some View {

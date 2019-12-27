@@ -69,11 +69,9 @@ extension FHIR.Patient {
         }
         
         // Many names
-        self.name?.forEach{name in
-            let nameEntity = NameEntity(context: ctx)
-            nameEntity.family = name.family?.string
-            nameEntity.given = name.given?[0].string
-            entity.addToNameRelationship(nameEntity)
+        if let name = self.name?[0] {
+            entity.family = name.family?.string
+            entity.given = name.given?[0].string
         }
         
         return entity
@@ -100,11 +98,9 @@ extension FHIR.Practitioner {
         }
         
         // Many names
-        self.name?.forEach{name in
-            let nameEntity = NameEntity(context: ctx)
-            nameEntity.family = name.family?.string
-            nameEntity.given = name.given?[0].string
-            entity.addToNameRelationship(nameEntity)
+        if let name = self.name?[0] {
+            entity.family = name.family?.string
+            entity.given = name.given?[0].string
         }
         
         return entity
