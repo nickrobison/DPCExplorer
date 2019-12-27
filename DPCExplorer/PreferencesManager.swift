@@ -16,8 +16,11 @@ class PreferencesManager: ObservableObject {
     
     @Published var client: DPCClient?
     @Published var settings: ApplicationSettings?
+    @Published var publicKey: String
     
     init() {
+        let manager = KeyPairManager()
+        self.publicKey = try! manager.convertToPEM(key: manager.getPublicKey()!)!
         self.settings = loadSettings()
     }
     

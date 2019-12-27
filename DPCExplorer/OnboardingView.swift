@@ -18,27 +18,20 @@ enum OnBoardingState: CaseIterable {
 }
 
 struct OnboardingView: View {
-    
     static let defaultKeyText = "This is a public key"
     
     let handler: ((_ settings: ApplicationSettings) -> Void)?
+    let publicKey: String
     @State var onboardingState: OnBoardingState = .initial
     @State private var stateIdx = 0
-    @State private var host: URL? = nil
+    @State private var host: String? = "http://localhost:3002/v1/" // This needs to work correctly. Why doesn't it?
     @State private var clientToken = ""
-    @State private var privateKey = OnboardingView.defaultKeyText
     
     var body: some View {
         VStack {
             Spacer()
             self.buildViews()
         }
-    }
-    
-    private func updateSettings() {
-        debugPrint("Setting settings")
-        let settings = ApplicationSettings(url: self.host!, clientToken: self.clientToken)
-        self.handler?(settings)
     }
     
     private func buildViews() -> some View {
@@ -49,26 +42,43 @@ struct OnboardingView: View {
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             }
             else if (self.onboardingState == .host) {
-                HostSelectionView()
+                HostSelectionView(hostURL: self.$host)
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             } else if (self.onboardingState == .clientID) {
                 ClientIDInputView()
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             } else if (self.onboardingState == .key) {
-                PublicKeyUploadView(publicKey: $privateKey)
+                PublicKeyUploadView(publicKey: self.publicKey)
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             } else {
                 OnboardingCompleteView()
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             }
             Spacer()
-            FullScreenButton(text: self.buttonText(), handler: self.incrementState)
+            FullScreenButton(text: self.buttonText(), handler: self.buttonHandler())
+        }
+    }
+    
+    private func buttonHandler() -> (() -> Void) {
+        switch (self.onboardingState) {
+        case.finished:
+            return self.updateSettings
+        default:
+            return self.incrementState
         }
     }
     
     private func incrementState() -> Void {
         self.stateIdx += 1
         self.onboardingState = OnBoardingState.allCases[self.stateIdx]
+    }
+    
+    private func updateSettings() {
+        debugPrint("Setting settings")
+        debugPrint("Host: ", self.host!)
+        debugPrint("Token: ", self.clientToken)
+        let settings = ApplicationSettings(url: URL.init(string: self.host!)!, clientToken: self.clientToken)
+        self.handler?(settings)
     }
     
     private func buttonText() -> String {
@@ -84,7 +94,7 @@ struct OnboardingView: View {
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(OnBoardingState.allCases, id: \.self) {state in
-            OnboardingView(handler: nil, onboardingState: state)
+            OnboardingView(handler: nil, publicKey: "", onboardingState: state)
         }
         
     }

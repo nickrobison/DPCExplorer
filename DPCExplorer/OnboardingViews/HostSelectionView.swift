@@ -10,6 +10,8 @@ import SwiftUI
 
 struct HostSelectionView: View {
     
+    @Binding var hostURL: String?
+    
     private let hosts = ["Local": "http://localhost:3002/v1/",
         "Dev": "https://dev.dpc.cms.gov/api/v1/",
         "Sandbox": "https://sandbox.dpc.cms.gov/api/v1/",
@@ -23,19 +25,23 @@ struct HostSelectionView: View {
             Spacer()
             Text("Select a host to connect to:")
             Text("Make sure you have permissions to access each environment")
-            Picker(selection: $selectedHost, label: Text("")) {
+            Picker(selection: $hostURL, label: Text("")) {
                 ForEach(hosts, id: \.0) { (name, env) in
-                    Text(name)
+                    Text(name).tag(env)
                 }
             }
             .labelsHidden()
-            .pickerStyle(WheelPickerStyle())
+            .pickerStyle(DefaultPickerStyle())
         }
     }
+    
+//    private func buildHost(host: String) -> URL {
+//        self.hostURL = URL.init(string: host)
+//    }
 }
 
 struct HostSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        HostSelectionView()
+        HostSelectionView(hostURL: .constant("Hello"))
     }
 }

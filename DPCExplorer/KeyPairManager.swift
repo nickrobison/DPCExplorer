@@ -12,6 +12,11 @@ struct KeyPairManager {
     
     public static let keyTag = "com.nickrobison.DPCExplorer.keys.PrimaryKey"
     
+    init() {
+        // Do we initialize things here?
+        try! self.generateKeyPair()
+    }
+    
     func generateKeyPair() throws {
         let tag = KeyPairManager.keyTag.data(using: .utf8)!
         
