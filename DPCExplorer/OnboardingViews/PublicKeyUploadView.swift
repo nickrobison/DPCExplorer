@@ -10,7 +10,8 @@ import SwiftUI
 
 struct PublicKeyUploadView: View {
     
-    @State private var publicKey = "This is a public key"
+    @Binding var publicKey: String
+    @State private var buttonText = "Copy key"
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -22,18 +23,28 @@ struct PublicKeyUploadView: View {
                     .labelsHidden()
                 Button(action: ({
                     debugPrint("Copied")
+                    let pasteboard = UIPasteboard.general
+                    pasteboard.string = self.publicKey
+                    self.buttonText = "Copied"
                 })) {
-                    Text("Copy key")
+                    Text(self.buttonText)
                 }
+                .disabled(self.copyDisabled())
                 .padding([.top, .bottom])
             }
             .padding(.leading)
         }
     }
+    
+    private func copyDisabled() -> Bool {
+        self.publicKey == OnboardingView.defaultKeyText
+    }
 }
 
 struct PublicKeyUploadView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicKeyUploadView()
+        ForEach(["Hello", OnboardingView.defaultKeyText], id: \.self) {
+            PublicKeyUploadView(publicKey: .constant($0))
+        }
     }
 }

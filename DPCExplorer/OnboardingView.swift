@@ -19,12 +19,14 @@ enum OnBoardingState: CaseIterable {
 
 struct OnboardingView: View {
     
+    static let defaultKeyText = "This is a public key"
+    
     let handler: ((_ settings: ApplicationSettings) -> Void)?
     @State var onboardingState: OnBoardingState = .initial
     @State private var stateIdx = 0
     @State private var host: URL? = nil
     @State private var clientToken = ""
-    @State private var privateKey = ""
+    @State private var privateKey = OnboardingView.defaultKeyText
     
     var body: some View {
         VStack {
@@ -53,7 +55,7 @@ struct OnboardingView: View {
                 ClientIDInputView()
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             } else if (self.onboardingState == .key) {
-                PublicKeyUploadView()
+                PublicKeyUploadView(publicKey: $privateKey)
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             } else {
                 OnboardingCompleteView()
