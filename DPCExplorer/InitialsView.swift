@@ -14,7 +14,7 @@ struct InitialsView: View {
     
     let name: HumanName
     var body: some View {
-        Text("\(name.given![0].string)\(name.family!.string)")
+        Text("\(stringUnwrap(name.given![0]))\(stringUnwrap(name.family))")
             .font(.title)
             .fontWeight(.heavy)
             .foregroundColor(.white)
@@ -23,6 +23,14 @@ struct InitialsView: View {
                 .fill(Color.gray)
                 .clipped()
         )
+    }
+    
+    private func stringUnwrap(_ value: FHIRString?) -> String {
+        guard let v = value?.string.character(at: 0) else {
+            return ""
+        }
+        
+        return String(v)
     }
 }
 
