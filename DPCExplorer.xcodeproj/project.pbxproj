@@ -33,7 +33,6 @@
 		EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */; };
 		EB1BE1D523B5450500D33A7E /* PublicKeyUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */; };
 		EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */; };
-		EB1BE1D923B5467400D33A7E /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */; };
 		EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
@@ -207,7 +206,6 @@
 		EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIDInputView.swift; sourceTree = "<group>"; };
 		EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyUploadView.swift; sourceTree = "<group>"; };
 		EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteView.swift; sourceTree = "<group>"; };
-		EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
 		EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
@@ -448,7 +446,6 @@
 				EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */,
 				EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */,
 				EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */,
-				EB1BE1D823B5467400D33A7E /* OnboardingProtocol.swift */,
 			);
 			path = OnboardingViews;
 			sourceTree = "<group>";
@@ -1083,7 +1080,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB1BE1D923B5467400D33A7E /* OnboardingProtocol.swift in Sources */,
 				EB8DB38C23B597EE009A62B0 /* InitialsView.swift in Sources */,
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,

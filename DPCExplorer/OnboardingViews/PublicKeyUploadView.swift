@@ -12,11 +12,8 @@ struct PublicKeyUploadView: View {
     
     @State private var publicKey = "This is a public key"
     
-    var handler: ((String) -> Void)?
-    
     var body: some View {
         VStack(alignment: .leading) {
-            Spacer()
             Group{
                 Text("Use this public key:")
                 Text("Copy and paste it into the web UI")
@@ -31,10 +28,6 @@ struct PublicKeyUploadView: View {
                 .padding([.top, .bottom])
             }
             .padding(.leading)
-            Spacer()
-            FullScreenButton(text: "Next", handler: {
-                self.handler?("This is a private key")
-            })
         }
     }
 }

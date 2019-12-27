@@ -18,8 +18,6 @@ struct HostSelectionView: View {
     
     @State private var selectedHost = 1
     
-    var handler: ((URL) -> Void)?
-    
     var body: some View {
         VStack {
             Spacer()
@@ -32,12 +30,7 @@ struct HostSelectionView: View {
             }
             .labelsHidden()
             .pickerStyle(WheelPickerStyle())
-            Spacer()
-            FullScreenButton(text: "Next", handler: {
-                self.handler?(URL.init(string: self.hosts[self.selectedHost].value)!)
-            })
         }
-        .transition(.opacity)
     }
 }
 

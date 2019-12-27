@@ -12,19 +12,12 @@ struct ClientIDInputView: View {
     
     @State private var clientID: String = ""
     
-    var handler: ((String) -> Void)?
-    
     var body: some View {
         VStack {
-            Spacer()
             Text("Past your client token here:")
             TextField("client token", text: $clientID)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding()
-            Spacer()
-            FullScreenButton(text: "Next", handler: {
-                self.handler?(self.clientID)
-            })
         }
     }
 }

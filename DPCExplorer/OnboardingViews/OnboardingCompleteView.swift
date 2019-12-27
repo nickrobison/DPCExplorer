@@ -10,11 +10,8 @@ import SwiftUI
 
 struct OnboardingCompleteView: View {
     
-    var handler: (() -> Void)
-    
     var body: some View {
         VStack {
-            Spacer()
             Image(systemName: "checkmark.circle")
                 .resizable()
                 .scaledToFit()
@@ -22,14 +19,12 @@ struct OnboardingCompleteView: View {
                 .padding(100)
             Text("Setup complete!")
                 .font(.title)
-            Spacer()
-            FullScreenButton(text: "Finish", handler: self.handler)
         }
     }
 }
 
 struct OnboardingCompleteView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingCompleteView(handler: {})
+        OnboardingCompleteView()
     }
 }

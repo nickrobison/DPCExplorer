@@ -9,7 +9,7 @@
 import SwiftUI
 import DPCKit
 
-enum OnBoardingState {
+enum OnBoardingState: CaseIterable {
     case initial
     case host
     case clientID
@@ -20,8 +20,8 @@ enum OnBoardingState {
 struct OnboardingView: View {
     
     let handler: ((_ settings: ApplicationSettings) -> Void)?
-    @State private var onboardingState: OnBoardingState = .initial
-    
+    @State var onboardingState: OnBoardingState = .initial
+    @State private var stateIdx = 0
     @State private var host: URL? = nil
     @State private var clientToken = ""
     @State private var privateKey = ""
@@ -39,44 +39,51 @@ struct OnboardingView: View {
         self.handler?(settings)
     }
     
-    private func buildViews() -> AnyView {
-        switch (self.onboardingState) {
-        case .initial:
-            return AnyView(InitialOnboardingView(handler: {
-                self.onboardingState = .host
-            }))
-        case .host:
-            return AnyView(HostSelectionView(handler: {
-                debugPrint("Host: ", $0)
-                self.host = $0
-                self.onboardingState = .clientID
-            }))
-        case .clientID:
-            return AnyView(ClientIDInputView(handler: {
-                self.clientToken = $0
-                self.onboardingState = .key
-            }))
-        case .key:
-            return AnyView(PublicKeyUploadView(handler: {
-                self.privateKey = $0
-                self.onboardingState = .finished
-            }))
-        case .finished:
-            return AnyView(OnboardingCompleteView(handler: {
-                self.updateSettings()
-            }))
+    private func buildViews() -> some View {
+        VStack(alignment: .leading) {
+            Spacer()
+            if (self.onboardingState == .initial) {
+                InitialOnboardingView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+            }
+            else if (self.onboardingState == .host) {
+                HostSelectionView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+            } else if (self.onboardingState == .clientID) {
+                ClientIDInputView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+            } else if (self.onboardingState == .key) {
+                PublicKeyUploadView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+            } else {
+                OnboardingCompleteView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
+            }
+            Spacer()
+            FullScreenButton(text: self.buttonText(), handler: self.incrementState)
         }
     }
     
-    private func finalView() -> some View {
-        return VStack(alignment: .leading) {
-            Text("Ready to rock")
+    private func incrementState() -> Void {
+        self.stateIdx += 1
+        self.onboardingState = OnBoardingState.allCases[self.stateIdx]
+    }
+    
+    private func buttonText() -> String {
+        switch (self.onboardingState) {
+        case .finished:
+            return "Finish"
+        default:
+            return "Next"
         }
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(handler: nil)
+        ForEach(OnBoardingState.allCases, id: \.self) {state in
+            OnboardingView(handler: nil, onboardingState: state)
+        }
+        
     }
 }
