@@ -75,7 +75,7 @@ private let kCryptoExportImportManagerPublicNumberOfCharactersInALine = 64
  * As far as I know, any other way of importing and using public keys from the outside is not
  * advised: https://devforums.apple.com/message/301532#301532
  */
-class CryptoExportImportManager: NSObject {
+public class CryptoExportImportManager: NSObject {
     // MARK: - Import methods.
     
     /**
@@ -134,7 +134,7 @@ class CryptoExportImportManager: NSObject {
      * Exports a key retrieved from the keychain so it can be used outside iOS (i.e: in OpenSSL).
      * Returns a PEM representation of the key.
      */
-    func exportPublicKeyToPEM(_ rawPublicKeyBytes: Data, keyType: String, keySize: Int) -> String? {
+    public func exportPublicKeyToPEM(_ rawPublicKeyBytes: Data, keyType: String, keySize: Int) -> String? {
         if keyType == kSecAttrKeyTypeEC as String {
             return exportECPublicKeyToPEM(rawPublicKeyBytes, keyType: keyType, keySize: keySize)
         } else if keyType == kSecAttrKeyTypeRSA as String {

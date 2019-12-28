@@ -41,6 +41,8 @@ target 'DPCKit' do
 
   pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'FHIR', :git => 'https://github.com/nickrobison-usds/Swift-FHIR.git', :branch => 'swift5-stu3'
+  pod "SwiftJWT", :git => 'https://github.com/nickrobison/Swift-JWT.git', :branch => 'public-signers'
+  pod "BlueRSA"
 
   # Pods for DPCKit
 

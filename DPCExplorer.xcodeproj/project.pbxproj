@@ -36,6 +36,10 @@
 		EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
+		EB6F363223B6FFC800AEC1A9 /* DPCSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */; };
+		EB6F363623B701DA00AEC1A9 /* KeyPairManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */; };
+		EB6F363823B7033200AEC1A9 /* JWTFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F363723B7033200AEC1A9 /* JWTFactory.swift */; };
+		EB6F363923B7056E00AEC1A9 /* CryptoImportExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */; };
 		EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */; };
 		EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestResources.swift */; };
 		EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A62236BB512001EC7C9 /* PersonCellView.swift */; };
@@ -81,8 +85,7 @@
 		EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5192672381BDF500C979C3 /* ExportClient.swift */; };
 		EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
 		EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
-		EBEECBBC23B666750018A8C4 /* KeyPairManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */; };
-		EBEECBBE23B673670018A8C4 /* CryptoImportExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */; };
+		EBEECBC023B6A53E0018A8C4 /* SMARTAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */; };
 		EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -213,6 +216,8 @@
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		EB5192672381BDF500C979C3 /* ExportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportClient.swift; sourceTree = "<group>"; };
+		EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCSigner.swift; sourceTree = "<group>"; };
+		EB6F363723B7033200AEC1A9 /* JWTFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTFactory.swift; sourceTree = "<group>"; };
 		EB763A15236BA890001EC7C9 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		EB763A56236BABFD001EC7C9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderBioView.swift; sourceTree = "<group>"; };
@@ -262,6 +267,7 @@
 		EBEC7EC623A6B700004D3C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairManager.swift; sourceTree = "<group>"; };
 		EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoImportExportManager.swift; sourceTree = "<group>"; };
+		EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMARTAuthHandler.swift; sourceTree = "<group>"; };
 		EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsManager.swift; sourceTree = "<group>"; };
 		F3DF8002CA6518F5A87E6CBB /* Pods_DPCExplorer_DPCExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPCExplorer_DPCExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F407B3ED6A60C5A18F24C812 /* Pods-DPCExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPCExplorer.release.xcconfig"; path = "Target Support Files/Pods-DPCExplorer/Pods-DPCExplorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -390,6 +396,7 @@
 		EB100E6E23667ED30065E084 /* DPCExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */,
 				EB3F1EC523A72239002844C1 /* InitialsView.swift */,
 				EB1BE1CD23B53E9200D33A7E /* OnboardingViews */,
 				EBD24E2823AB086800D35859 /* ProviderViews */,
@@ -411,8 +418,6 @@
 				EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */,
 				EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */,
 				EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */,
-				EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */,
-				EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
 			isa = PBXGroup;
 			children = (
+				EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */,
 				EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */,
 				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
 				EB5192672381BDF500C979C3 /* ExportClient.swift */,
@@ -542,6 +548,9 @@
 				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
 				EBEC7EB723A6B700004D3C22 /* DPCKit.h */,
 				EBEC7EB823A6B700004D3C22 /* Info.plist */,
+				EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */,
+				EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */,
+				EB6F363723B7033200AEC1A9 /* JWTFactory.swift */,
 			);
 			path = DPCKit;
 			sourceTree = "<group>";
@@ -1104,7 +1113,6 @@
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,
 				EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */,
-				EBEECBBE23B673670018A8C4 /* CryptoImportExportManager.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
@@ -1114,7 +1122,6 @@
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,
 				EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */,
 				EBE8FDAC238F53200047C024 /* PatientAssign.swift in Sources */,
-				EBEECBBC23B666750018A8C4 /* KeyPairManager.swift in Sources */,
 				EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */,
 				EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */,
 				EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */,
@@ -1122,6 +1129,7 @@
 				EB1BE1CF23B53EA100D33A7E /* InitialOnboardingView.swift in Sources */,
 				EB1BE1D523B5450500D33A7E /* PublicKeyUploadView.swift in Sources */,
 				EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */,
+				EB6F363623B701DA00AEC1A9 /* KeyPairManager.swift in Sources */,
 				EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */,
 				EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */,
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
@@ -1178,14 +1186,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBEECBC023B6A53E0018A8C4 /* SMARTAuthHandler.swift in Sources */,
 				EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */,
 				EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */,
+				EB6F363923B7056E00AEC1A9 /* CryptoImportExportManager.swift in Sources */,
+				EB6F363823B7033200AEC1A9 /* JWTFactory.swift in Sources */,
 				EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */,
 				EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */,
 				EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */,
 				EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */,
 				EBEC7F0323A6BA6D004D3C22 /* Patient.swift in Sources */,
 				EBEC7F0423A6BA6D004D3C22 /* Person.swift in Sources */,
+				EB6F363223B6FFC800AEC1A9 /* DPCSigner.swift in Sources */,
 				EBEC7F0523A6BA6D004D3C22 /* Address.swift in Sources */,
 				EBEC7F0623A6BA6D004D3C22 /* JobCompletionModel.swift in Sources */,
 				EBEC7F0723A6BA6D004D3C22 /* ExportDownload.swift in Sources */,

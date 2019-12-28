@@ -1,37 +1,68 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - BlueCryptor (1.0.32)
+  - BlueECC (1.2.5)
   - BlueRSA (1.0.34)
   - FHIR (3.0.0)
+  - KituraContracts (1.2.1):
+    - LoggerAPI (~> 1.7)
+  - LoggerAPI (1.9.0):
+    - Logging (~> 1.1)
+  - Logging (1.2.0)
   - SwiftIcons (2.3.2)
+  - SwiftJWT (3.5.3):
+    - BlueCryptor (~> 1.0)
+    - BlueECC (~> 1.1)
+    - BlueRSA (~> 1.0)
+    - KituraContracts (~> 1.1)
+    - LoggerAPI (~> 1.7)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - BlueRSA
   - FHIR (from `https://github.com/nickrobison-usds/Swift-FHIR.git`, branch `swift5-stu3`)
   - SwiftIcons (~> 2.3.2)
+  - SwiftJWT (from `https://github.com/nickrobison/Swift-JWT.git`, branch `public-signers`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - BlueCryptor
+    - BlueECC
     - BlueRSA
+    - KituraContracts
+    - LoggerAPI
+    - Logging
     - SwiftIcons
 
 EXTERNAL SOURCES:
   FHIR:
     :branch: swift5-stu3
     :git: https://github.com/nickrobison-usds/Swift-FHIR.git
+  SwiftJWT:
+    :branch: public-signers
+    :git: https://github.com/nickrobison/Swift-JWT.git
 
 CHECKOUT OPTIONS:
   FHIR:
     :commit: 68fdf5ff28ddc745335989f0c268670074db33ee
     :git: https://github.com/nickrobison-usds/Swift-FHIR.git
+  SwiftJWT:
+    :commit: 0e441680b27a96e7b7cbdd37077a12e871595e84
+    :git: https://github.com/nickrobison/Swift-JWT.git
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  BlueCryptor: b0aee3d9b8f367b49b30de11cda90e1735571c24
+  BlueECC: 0d18e93347d3ec6d41416de21c1ffa4d4cd3c2cc
   BlueRSA: 6f9776d62d9773502415a7db3bcbb2bbb3f71fc3
   FHIR: 62ef849618a11e4b8d219fbbcde33b9d39b7a257
+  KituraContracts: e845e60dc8627ad0a76fa55ef20a45451d8f830b
+  LoggerAPI: fb78461eedac5316b290f2404d88b9d614d96c57
+  Logging: 7838d379d234d7e5ae1265fa02804a9084caf04c
   SwiftIcons: e652cfd2676441c462ad57b6e92977faf577e590
+  SwiftJWT: 9a47a71090cae25767078756b5810e3b630aa9a7
 
-PODFILE CHECKSUM: 7b54ac2cc969831d9eb537063682bba25786561f
+PODFILE CHECKSUM: f332d050038eb54aa618cac175c159205e5221fc
 
 COCOAPODS: 1.8.4
