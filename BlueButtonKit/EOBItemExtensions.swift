@@ -35,6 +35,10 @@ extension ExplanationOfBenefitItem {
     }
     
     func getDate() -> Date? {
-        servicedDate?.nsDate
+        if let date = self.servicedDate {
+            return date.nsDate
+        }
+        
+        return servicedPeriod?.start?.nsDate
     }
 }

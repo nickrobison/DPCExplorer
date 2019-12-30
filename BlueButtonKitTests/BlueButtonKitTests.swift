@@ -25,10 +25,16 @@ class BlueButtonKitTests: XCTestCase {
     }
     
     // Disable this for now
-    //    func testDateExtraction() {
-    //        let date = testEOB.item![0].getDate()
-    //        XCTAssertNotNil(date, "Should have date from EOB item")
-    //    }
+        func testDateExtraction() {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-dd"
+            formatter.timeZone = TimeZone(identifier: "UTC")
+            
+            let date = testEOB.item![0].getDate()
+            XCTAssertNotNil(date, "Should have date from EOB item")
+            
+            XCTAssertEqual("2015-04-01", formatter.string(from: date!), "Dates should be equal")
+        }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
