@@ -15,7 +15,7 @@ struct TokenResponse: Codable {
     let access_token: String
     let token_type: String
     let expires_in: Int
-    let scope: String
+    let scope: String? // Until the patch lands in DPC
 }
 
 struct DPCClaims: Claims {
@@ -123,8 +123,6 @@ class SMARTAuthHandler: RequestInterceptor {
             "client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
             "client_assertion": jwt
         ]
-        
-//        session.request(<#T##convertible: URLConvertible##URLConvertible#>, method: <#T##HTTPMethod#>, parameters: <#T##Encodable?#>, encoder: <#T##ParameterEncoder#>, headers: <#T##HTTPHeaders?#>, interceptor: <#T##RequestInterceptor?#>)
         
         session.request(urlString, method: .post, parameters: parameters, encoder: URLEncodedFormParameterEncoder.default, headers: headers)
             .responseDecodable(of: TokenResponse.self) { [weak self] response in
