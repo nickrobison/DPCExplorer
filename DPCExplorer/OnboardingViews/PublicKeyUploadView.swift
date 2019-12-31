@@ -32,14 +32,19 @@ struct PublicKeyUploadView: View {
                 .padding([.top, .bottom])
             }
             .padding(.leading)
+            Group {
+                Text("Paste the key ID")
+                Text("Paste it from the UI")
+                TextField("Public Key ID", text: .constant("key here, please"))
+                    .foregroundColor(.gray)
+                    .labelsHidden()
+            }
         }
     }
 }
 
 struct PublicKeyUploadView_Previews: PreviewProvider {
     static var previews: some View {
-        ForEach(["Hello", OnboardingView.defaultKeyText], id: \.self) {
-            PublicKeyUploadView(publicKey: $0)
-        }
+        PublicKeyUploadView(publicKey: OnboardingView.defaultKeyText)
     }
 }

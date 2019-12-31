@@ -13,19 +13,17 @@ import DPCKit
 struct ProviderAdd: View {
     @Environment(\.presentationMode) var presentationMode
     
-    let completionHandler: CompletionHandler<Practitioner>?
+    @ObservedObject private var viewModel = ProviderAddViewModel()
     
-    @State private var lastName = ""
-    @State private var firstName = ""
-    @State private var npi = ""
+    let completionHandler: CompletionHandler<Practitioner>?
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Name")) {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("NPI", text: $npi)
+                    TextField("First Name", text: self.$viewModel.firstName)
+                    TextField("Last Name", text: self.$viewModel.lastName)
+                    TextField("NPI", text: self.$viewModel.npi)
                 }
             }
             .navigationBarTitle(Text("Add Provider"))
@@ -35,7 +33,8 @@ struct ProviderAdd: View {
             }, label: {Text("Cancel")}), trailing:
                 Button(action: {
                     self.create()
-                }, label: { Text("Add")}))
+                }, label: { Text("Add")})
+                    .disabled(!self.viewModel.isValid))
         }
     }
     
@@ -44,12 +43,12 @@ struct ProviderAdd: View {
         
         let id = FHIR.Identifier()
         id.system = FHIRURL.init("http://hl7.org/fhir/sid/us-npi")
-        id.value = FHIRString.init(self.npi)
+        id.value = FHIRString.init(self.viewModel.npi)
         provider.identifier = [id]
         
         let name = HumanName()
-        name.given = [FHIRString.init(self.firstName)]
-        name.family = FHIRString.init(self.lastName)
+        name.given = [FHIRString.init(self.viewModel.firstName)]
+        name.family = FHIRString.init(self.viewModel.lastName)
         provider.name = [name]
         
         self.completionHandler?(provider)

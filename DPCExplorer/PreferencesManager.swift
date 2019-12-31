@@ -48,4 +48,5 @@ class PreferencesManager: ObservableObject {
 struct ApplicationSettings: Codable {
     var url: URL
     var clientToken: String
+    var keyID: String
 }

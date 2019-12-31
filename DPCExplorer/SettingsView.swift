@@ -30,6 +30,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(settings: .constant(ApplicationSettings(url: URL.init(string: "http://test.local")!, clientToken: "")))
+        SettingsView(settings: .constant(ApplicationSettings(url: URL.init(string: "http://test.local")!, clientToken: "", keyID: "This is not a key")))
     }
 }

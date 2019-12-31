@@ -26,6 +26,7 @@ struct OnboardingView: View {
     @State private var stateIdx = 0
     @State private var host: String? = "http://localhost:3002/v1/" // This needs to work correctly. Why doesn't it?
     @State private var clientToken = ""
+    @State private var keyID = ""
     @State private var buttonAnimating = false
     
     var body: some View {
@@ -82,7 +83,7 @@ struct OnboardingView: View {
         debugPrint("Setting settings")
         debugPrint("Host: ", self.host!)
         debugPrint("Token: ", self.clientToken)
-        let settings = ApplicationSettings(url: URL.init(string: self.host!)!, clientToken: self.clientToken)
+        let settings = ApplicationSettings(url: URL.init(string: self.host!)!, clientToken: self.clientToken, keyID: self.keyID)
         self.handler?(settings)
     }
     

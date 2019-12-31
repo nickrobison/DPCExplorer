@@ -13,29 +13,26 @@ import DPCKit
 struct PatientAdd: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @ObservedObject private var addModel = PatientAddViewModel()
+    
     let completionHandler: CompletionHandler<FHIR.Patient>?
-
+    
     private let genderValues = ["Male", "Female", "Other", "Unknown"]
     private let minDate = Calendar.current.date(byAdding: .year, value: -65, to: Date())!
-    @State private var lastName = ""
-    @State private var firstName = ""
-    @State private var mbi = ""
-    @State private var birthday = Date()
-    @State private var gender = 0
     
     var body: some View {
         NavigationView {
             Form {
                 Section(header: Text("Name")) {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $lastName)
-                    TextField("MBI", text: $mbi)
+                    TextField("First Name", text: self.$addModel.firstName)
+                    TextField("Last Name", text: self.$addModel.lastName)
+                    TextField("MBI", text: self.$addModel.mbi)
                 }
                 Section(header: Text("Birthday")) {
-                    DatePicker(selection: $birthday, in: ...self.minDate, displayedComponents: .date, label: { EmptyView() })
+                    DatePicker(selection: self.$addModel.birthday, in: ...self.minDate, displayedComponents: .date, label: { EmptyView() })
                 }
                 Section {
-                    Picker(selection: $gender, label: Text("Gender")) {
+                    Picker(selection: self.$addModel.gender, label: Text("Gender")) {
                         ForEach(0 ..< self.genderValues.count) {
                             Text(self.genderValues[$0])
                         }
@@ -49,7 +46,9 @@ struct PatientAdd: View {
             }, label: {Text("Cancel")}), trailing:
                 Button(action: {
                     self.create()
-                }, label: { Text("Add")}))
+                }, label: { Text("Add")})
+                    .disabled(!self.addModel.isValid))
+            
         }
         
     }
@@ -60,15 +59,15 @@ struct PatientAdd: View {
         
         let id = FHIR.Identifier()
         id.system = FHIRURL.init("https://bluebutton.cms.gov/resources/variables/bene_id")
-        id.value =  FHIRString.init(self.mbi)
+        id.value =  FHIRString.init(self.addModel.mbi)
         patient.identifier = [id]
         
         let name = HumanName()
-        name.given = [FHIRString.init(self.firstName)]
-        name.family = FHIRString.init(self.lastName)
+        name.given = [FHIRString.init(self.addModel.firstName)]
+        name.family = FHIRString.init(self.addModel.lastName)
         patient.name = [name]
-        patient.birthDate = self.birthday.fhir_asDate()
-        patient.gender = AdministrativeGender.init(rawValue: self.genderValues[self.gender].lowercased())
+        patient.birthDate = self.addModel.birthday.fhir_asDate()
+        patient.gender = AdministrativeGender.init(rawValue: self.genderValues[self.self.addModel.gender].lowercased())
         
         self.completionHandler?(patient)
         self.presentationMode.wrappedValue.dismiss();

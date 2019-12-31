@@ -54,6 +54,10 @@
 		EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */; };
 		EB8DB38C23B597EE009A62B0 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC523A72239002844C1 /* InitialsView.swift */; };
 		EB97538923BBD1F70011CF90 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97538823BBD1F70011CF90 /* ActivityIndicator.swift */; };
+		EB97538B23BBDDB20011CF90 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97538A23BBDDB20011CF90 /* OnboardingViewModel.swift */; };
+		EB97538D23BBDE330011CF90 /* PatientAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97538C23BBDE330011CF90 /* PatientAddViewModel.swift */; };
+		EB97538F23BBE4510011CF90 /* ProviderAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97538E23BBE4510011CF90 /* ProviderAddViewModel.swift */; };
+		EB97539123BBE48D0011CF90 /* FormValidationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97539023BBE48D0011CF90 /* FormValidationHelpers.swift */; };
 		EB9976F2236687D40072DD9B /* OrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F1236687D40072DD9B /* OrganizationView.swift */; };
 		EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9976F3236689320072DD9B /* ProviderDetailView.swift */; };
 		EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAA8A60236CF7AD00EC0253 /* MainView.swift */; };
@@ -243,6 +247,10 @@
 		EB763A6E236BBE20001EC7C9 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		EB763A70236BBFA8001EC7C9 /* DPCClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCClient.swift; sourceTree = "<group>"; };
 		EB97538823BBD1F70011CF90 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		EB97538A23BBDDB20011CF90 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		EB97538C23BBDE330011CF90 /* PatientAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAddViewModel.swift; sourceTree = "<group>"; };
+		EB97538E23BBE4510011CF90 /* ProviderAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderAddViewModel.swift; sourceTree = "<group>"; };
+		EB97539023BBE48D0011CF90 /* FormValidationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidationHelpers.swift; sourceTree = "<group>"; };
 		EB9976F1236687D40072DD9B /* OrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationView.swift; sourceTree = "<group>"; };
 		EB9976F3236689320072DD9B /* ProviderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderDetailView.swift; sourceTree = "<group>"; };
 		EBAA8A60236CF7AD00EC0253 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -429,6 +437,8 @@
 				EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */,
 				EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */,
 				EB97538823BBD1F70011CF90 /* ActivityIndicator.swift */,
+				EB97538A23BBDDB20011CF90 /* OnboardingViewModel.swift */,
+				EB97539023BBE48D0011CF90 /* FormValidationHelpers.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -479,6 +489,7 @@
 				EB763A6C236BB9D0001EC7C9 /* PatientBioView.swift */,
 				EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */,
 				EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */,
+				EB97538C23BBDE330011CF90 /* PatientAddViewModel.swift */,
 			);
 			path = PatientViews;
 			sourceTree = "<group>";
@@ -507,6 +518,7 @@
 				EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */,
 				EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */,
 				EBE8FDAB238F53200047C024 /* PatientAssign.swift */,
+				EB97538E23BBE4510011CF90 /* ProviderAddViewModel.swift */,
 			);
 			path = ProviderViews;
 			sourceTree = "<group>";
@@ -1127,10 +1139,13 @@
 				EB8DB38C23B597EE009A62B0 /* InitialsView.swift in Sources */,
 				EB100E7023667ED30065E084 /* AppDelegate.swift in Sources */,
 				EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */,
+				EB97538F23BBE4510011CF90 /* ProviderAddViewModel.swift in Sources */,
+				EB97538B23BBDDB20011CF90 /* OnboardingViewModel.swift in Sources */,
 				EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
+				EB97538D23BBDE330011CF90 /* PatientAddViewModel.swift in Sources */,
 				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
 				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
 				EB1BE1CC23B53C6100D33A7E /* FullScreenButton.swift in Sources */,
@@ -1150,6 +1165,7 @@
 				EB100E7723667ED30065E084 /* ContentView.swift in Sources */,
 				EB97538923BBD1F70011CF90 /* ActivityIndicator.swift in Sources */,
 				EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */,
+				EB97539123BBE48D0011CF90 /* FormValidationHelpers.swift in Sources */,
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
 				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
 				EB1BE1D123B53ED300D33A7E /* HostSelectionView.swift in Sources */,

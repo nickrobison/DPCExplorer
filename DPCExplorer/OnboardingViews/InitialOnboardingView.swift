@@ -14,6 +14,7 @@ struct InitialOnboardingView: View {
         VStack(alignment: .leading) {
             Group {
                 Text("Hello,")
+                    .bold()
                 Text("Let's get started")
             }
             .padding(.leading)
