@@ -21,7 +21,7 @@ struct ContentView: View {
                 MainView()
                     .environmentObject(client!)
             } else {
-                OnboardingView(handler: self.updateSettings, publicKey: self.preferences.publicKey)
+                MainOnboardingView(handler: self.updateSettings, publicKey: self.preferences.publicKey)
             }
         }
         .onAppear() {

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HostSelectionView: View {
     
-    @Binding var hostURL: String?
+    @Binding var hostURL: String
     
     private let hosts = ["Local": "http://localhost:3002/v1/",
         "Dev": "https://dev.dpc.cms.gov/api/v1/",

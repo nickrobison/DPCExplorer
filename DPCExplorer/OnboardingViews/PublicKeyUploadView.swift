@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct PublicKeyUploadView: View {
-    @State private var buttonText = "Copy key"
     
     let publicKey: String
+    @Binding var keyID: String
+    @State private var buttonText = "Copy key"
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -35,7 +36,7 @@ struct PublicKeyUploadView: View {
             Group {
                 Text("Paste the key ID")
                 Text("Paste it from the UI")
-                TextField("Public Key ID", text: .constant("key here, please"))
+                TextField("Public Key ID", text: self.$keyID)
                     .foregroundColor(.gray)
                     .labelsHidden()
             }
@@ -45,6 +46,6 @@ struct PublicKeyUploadView: View {
 
 struct PublicKeyUploadView_Previews: PreviewProvider {
     static var previews: some View {
-        PublicKeyUploadView(publicKey: OnboardingView.defaultKeyText)
+        PublicKeyUploadView(publicKey: MainOnboardingView.defaultKeyText, keyID: .constant(""))
     }
 }

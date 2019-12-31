@@ -39,7 +39,7 @@
 		EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */; };
 		EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
-		EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* OnboardingView.swift */; };
+		EB427DCB2374E84D00833623 /* MainOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* MainOnboardingView.swift */; };
 		EB6F363223B6FFC800AEC1A9 /* DPCSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */; };
 		EB6F363623B701DA00AEC1A9 /* KeyPairManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */; };
 		EB6F363823B7033200AEC1A9 /* JWTFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F363723B7033200AEC1A9 /* JWTFactory.swift */; };
@@ -227,7 +227,7 @@
 		EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
-		EB427DCA2374E84D00833623 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		EB427DCA2374E84D00833623 /* MainOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingView.swift; sourceTree = "<group>"; };
 		EB5192672381BDF500C979C3 /* ExportClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportClient.swift; sourceTree = "<group>"; };
 		EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCSigner.swift; sourceTree = "<group>"; };
 		EB6F363723B7033200AEC1A9 /* JWTFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTFactory.swift; sourceTree = "<group>"; };
@@ -430,14 +430,12 @@
 				EB763A62236BB512001EC7C9 /* PersonCellView.swift */,
 				EB763A64236BB582001EC7C9 /* ViewHelpers.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
-				EB427DCA2374E84D00833623 /* OnboardingView.swift */,
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
 				EB3F1EC723A723FB002844C1 /* NameView.swift */,
 				EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */,
 				EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */,
 				EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */,
 				EB97538823BBD1F70011CF90 /* ActivityIndicator.swift */,
-				EB97538A23BBDDB20011CF90 /* OnboardingViewModel.swift */,
 				EB97539023BBE48D0011CF90 /* FormValidationHelpers.swift */,
 			);
 			path = DPCExplorer;
@@ -473,6 +471,8 @@
 		EB1BE1CD23B53E9200D33A7E /* OnboardingViews */ = {
 			isa = PBXGroup;
 			children = (
+				EB97538A23BBDDB20011CF90 /* OnboardingViewModel.swift */,
+				EB427DCA2374E84D00833623 /* MainOnboardingView.swift */,
 				EB1BE1CE23B53EA100D33A7E /* InitialOnboardingView.swift */,
 				EB1BE1D023B53ED300D33A7E /* HostSelectionView.swift */,
 				EB1BE1D223B5433600D33A7E /* ClientIDInputView.swift */,
@@ -1167,7 +1167,7 @@
 				EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */,
 				EB97539123BBE48D0011CF90 /* FormValidationHelpers.swift in Sources */,
 				EB763A6D236BB9D0001EC7C9 /* PatientBioView.swift in Sources */,
-				EB427DCB2374E84D00833623 /* OnboardingView.swift in Sources */,
+				EB427DCB2374E84D00833623 /* MainOnboardingView.swift in Sources */,
 				EB1BE1D123B53ED300D33A7E /* HostSelectionView.swift in Sources */,
 				EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */,
 				EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */,

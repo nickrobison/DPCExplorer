@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ClientIDInputView: View {
     
-    @State private var clientID: String = ""
+    @Binding var clientID: String
     
     var body: some View {
         VStack {
@@ -24,6 +24,6 @@ struct ClientIDInputView: View {
 
 struct ClientIDInputView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientIDInputView()
+        ClientIDInputView(clientID: .constant(""))
     }
 }
