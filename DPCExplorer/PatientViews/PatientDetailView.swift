@@ -14,6 +14,7 @@ struct PatientTabView: View {
     
     let viewIdx: Int
     let patient: PatientEntity
+    @EnvironmentObject var manager: ClaimsManager
     
     var body: some View {
         switch viewIdx {
@@ -29,7 +30,14 @@ struct PatientTabView: View {
     }
     
     private func buildOverview() -> some View {
-        return Text("Overview")
+        VStack {
+            Text("Overview")
+            ScrollView {
+                if(self.manager.claims.count > 0) {
+                    ClaimsOverviewView(boxes: self.manager.boxes)
+                }
+            }
+        }
     }
     
     private func buildProviders() -> some View {
@@ -52,7 +60,8 @@ struct PatientTabView: View {
             Image(systemName: "checkmark.circle.fill")
                 .font(.subheadline)
                 .foregroundColor(.green)
-            ClaimsOverviewView(manager: ClaimsManager(eob: patient.claims), boxes: .constant([VitalRecordBox(.success)]))
+            
+            ClaimsHistoryView(eob: self.manager.claims)
             }
         }
     }
@@ -82,6 +91,7 @@ struct PatientDetailView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             PatientTabView(viewIdx: $selectorIndex.wrappedValue, patient: self.patient)
+                .environmentObject(ClaimsManager(eob: self.patient.claims))
             
             Spacer()
         }

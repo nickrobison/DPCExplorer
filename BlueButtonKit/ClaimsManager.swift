@@ -12,8 +12,8 @@ import FHIR
 
 public class ClaimsManager: ObservableObject {
     
-    @Published var claims: [ExplanationOfBenefit] = []
-    @Published var boxes: [VitalRecordBox] = []
+    @Published public var claims: [ExplanationOfBenefit] = []
+    @Published public var boxes: [BoxBuilder] = []
     
     private var cancellableSet: Set<AnyCancellable> = []
     
@@ -28,7 +28,7 @@ public class ClaimsManager: ObservableObject {
         let boxCancel = boxPublisher
             .receive(on: RunLoop.main)
             .map { status in
-                return VitalRecordBox(status)
+                return DefaultBoxBuilder(status: status)
         }
         .sink {box in
             self.boxes.append(box)
