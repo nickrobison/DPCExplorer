@@ -51,3 +51,22 @@ target 'DPCKit' do
   end
 
 end
+
+# Temporary workaround until: https://github.com/CocoaPods/CocoaPods/issues/9275 is merged with 1.9.0
+# This fixes the issue with Previews not loading due to missing FHIR dependency in BBKit
+class Pod::Target::BuildSettings::AggregateTargetSettings
+    BUILT_PRODUCTS_DIR_VARIABLE = "${BUILT_PRODUCTS_DIR}"
+
+    alias_method :ld_runpath_search_paths_original, :ld_runpath_search_paths
+
+    def ld_runpath_search_paths
+        ld_runpath_search_paths_original + custom_ld_paths + [BUILT_PRODUCTS_DIR_VARIABLE]
+    end
+
+    def custom_ld_paths
+        return [] unless configuration_name == "Debug"
+        target.pod_targets.map do |pod|
+            BUILT_PRODUCTS_DIR_VARIABLE + "/" + pod.product_basename
+        end
+    end
+end

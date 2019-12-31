@@ -42,3 +42,9 @@ extension ExplanationOfBenefitItem {
         return servicedPeriod?.start?.nsDate
     }
 }
+
+extension ExplanationOfBenefitItem {
+    var serviceCode: String {
+        self.service?.coding?[0].code?.string ?? ""
+    }
+}

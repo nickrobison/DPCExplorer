@@ -95,4 +95,14 @@ extension ExplanationOfBenefit {
     var date: Date? {
         return item![0].getDate()
     }
+    
+    var primaryPhysician: Reference? {
+        return self.careTeam?.filter {member in
+            let matchingCode = member.role?.coding?.filter{code in
+                return code.code == "primary"
+            }
+            
+            return !(matchingCode?.isEmpty ?? false)
+            }[0].provider
+    }
 }

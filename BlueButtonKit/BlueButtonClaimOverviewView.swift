@@ -17,23 +17,23 @@ extension Patient {
 
 struct BlueButtonOverviewView: View {
     
+    private let dateFormat = "YYYY-MM-dd"
+    private var formatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        return formatter
+    }
+    
     @Binding var isExpanded: Bool
     let eob: ExplanationOfBenefit
     var body: some View {
         Section(header: buildHeader()) {
             if (self.isExpanded) {
-                HStack {
-                    Text("Services")
-                        .font(.headline)
-                    Spacer()
-                }
-                .padding([.leading])
-                Divider()
-                ForEach(eob.item!, id: \.self) { item in
-                    ServiceRowItemView(item: item)
-                }
+                EOBDetailView(eob: eob)
             }
         }
+        .padding()
         .animation(.easeInOut)
         //        VStack {
         //            if isExpanded {
@@ -51,7 +51,22 @@ struct BlueButtonOverviewView: View {
     }
     
     private func buildHeader() -> some View {
-        Text("Claim on: \(eob.date?.description ?? "None"). Diagnosis: \(eob.primaryDiagnosis!.icd9Code)")
+        HStack {
+            Text("Date: \(self.format(eob.date))")
+            Text("Diagnosis: \(eob.primaryDiagnosis!.icd9Code)")
+            Spacer()
+            Image(systemName: "chevron.right.circle")
+                .foregroundColor(.accentColor)
+                .rotationEffect(Angle(degrees: self.isExpanded ? 90 : 0))
+        }
+    }
+    
+    private func format(_ date: Date?) -> String {
+        guard let date = date else {
+            return ""
+        }
+        
+        return self.formatter.string(from: date)
     }
 }
 

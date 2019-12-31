@@ -9,20 +9,14 @@
 import SwiftUI
 import FHIR
 
-extension ExplanationOfBenefitItem {
-    var serviceCode: String {
-        return "ada"
-//        self.productOrService?.coding?[0].code?.string ?? "Nada"
-    }
-}
-
 struct ServiceRowItemView: View {
     
     let item: ExplanationOfBenefitItem
     var body: some View {
         HStack {
             Text("Service \(item.sequence!.int):")
-            Text("Code: \(item.serviceCode)")
+            Text("Service Code: \(item.serviceCode)")
+            Image(systemName: "info.circle")
         }
     }
 }

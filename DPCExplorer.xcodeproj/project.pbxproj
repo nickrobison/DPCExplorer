@@ -25,6 +25,7 @@
 		EB100E7F23667ED60065E084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB100E7D23667ED60065E084 /* LaunchScreen.storyboard */; };
 		EB100E8A23667ED60065E084 /* DPCExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E8923667ED60065E084 /* DPCExplorerTests.swift */; };
 		EB100E9523667ED60065E084 /* DPCExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */; };
+		EB168E0023BAE38300ACEA0E /* EOBDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB168DFF23BAE38300ACEA0E /* EOBDetailView.swift */; };
 		EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */; };
 		EB1BE1CA23B51DE300D33A7E /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1C923B51DE300D33A7E /* PreferencesManager.swift */; };
 		EB1BE1CC23B53C6100D33A7E /* FullScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1CB23B53C6100D33A7E /* FullScreenButton.swift */; };
@@ -55,8 +56,8 @@
 		EBAF7EBF238A0E0E0050039D /* PatientAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF7EBE238A0E0E0050039D /* PatientAdd.swift */; };
 		EBB899FD238B6E25008D7CB6 /* ProviderAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FC238B6E25008D7CB6 /* ProviderAdd.swift */; };
 		EBC5EB48239039C6003E0B3B /* SelectableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5EB47239039C6003E0B3B /* SelectableRow.swift */; };
-		EBCC9C8223AFE93E0083538F /* EOBItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */; };
-		EBCC9C8423AFEAFC0083538F /* EOBExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */; };
+		EBCC9C8223AFE93E0083538F /* EOBItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8123AFE93E0083538F /* EOBItem+Extensions.swift */; };
+		EBCC9C8423AFEAFC0083538F /* EOB+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8323AFEAFC0083538F /* EOB+Extensions.swift */; };
 		EBCC9C8623AFFB8C0083538F /* ServiceRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */; };
 		EBCC9C8A23AFFFB40083538F /* ClaimsOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */; };
 		EBD24E3723AB08A900D35859 /* BlueButtonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */; };
@@ -201,6 +202,7 @@
 		EB100E9023667ED60065E084 /* DPCExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPCExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB100E9423667ED60065E084 /* DPCExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPCExplorerUITests.swift; sourceTree = "<group>"; };
 		EB100E9623667ED60065E084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB168DFF23BAE38300ACEA0E /* EOBDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBDetailView.swift; sourceTree = "<group>"; };
 		EB1BE1C523B5157600D33A7E /* DPCKit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DPCKit.xcdatamodel; sourceTree = "<group>"; };
 		EB1BE1C723B51BDB00D33A7E /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		EB1BE1C823B51BFF00D33A7E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -242,8 +244,8 @@
 		EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FHIRSerializers.swift; sourceTree = "<group>"; };
 		EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamReader.swift; sourceTree = "<group>"; };
 		EBC5EB47239039C6003E0B3B /* SelectableRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableRow.swift; sourceTree = "<group>"; };
-		EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBItemExtensions.swift; sourceTree = "<group>"; };
-		EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBExtensions.swift; sourceTree = "<group>"; };
+		EBCC9C8123AFE93E0083538F /* EOBItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EOBItem+Extensions.swift"; sourceTree = "<group>"; };
+		EBCC9C8323AFEAFC0083538F /* EOB+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EOB+Extensions.swift"; sourceTree = "<group>"; };
 		EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRowItemView.swift; sourceTree = "<group>"; };
 		EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsOverviewView.swift; sourceTree = "<group>"; };
 		EBD24E2E23AB08A900D35859 /* BlueButtonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlueButtonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -508,11 +510,12 @@
 				EBD24E3123AB08A900D35859 /* Info.plist */,
 				EBD24E4D23AB09A800D35859 /* BlueButtonClaimOverviewView.swift */,
 				EB08272823AF142500CA7CC8 /* VitalRecordBox.swift */,
-				EBCC9C8123AFE93E0083538F /* EOBItemExtensions.swift */,
-				EBCC9C8323AFEAFC0083538F /* EOBExtensions.swift */,
+				EBCC9C8123AFE93E0083538F /* EOBItem+Extensions.swift */,
+				EBCC9C8323AFEAFC0083538F /* EOB+Extensions.swift */,
 				EBCC9C8523AFFB8C0083538F /* ServiceRowItemView.swift */,
 				EBCC9C8923AFFFB40083538F /* ClaimsOverviewView.swift */,
 				EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */,
+				EB168DFF23BAE38300ACEA0E /* EOBDetailView.swift */,
 			);
 			path = BlueButtonKit;
 			sourceTree = "<group>";
@@ -1162,15 +1165,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB168E0023BAE38300ACEA0E /* EOBDetailView.swift in Sources */,
 				EB08272023AF0F4E00CA7CC8 /* Test Resources.swift in Sources */,
 				EBD24E4E23AB09A800D35859 /* BlueButtonClaimOverviewView.swift in Sources */,
-				EBCC9C8423AFEAFC0083538F /* EOBExtensions.swift in Sources */,
+				EBCC9C8423AFEAFC0083538F /* EOB+Extensions.swift in Sources */,
 				EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */,
 				EB08271F23AF0F4E00CA7CC8 /* LoadData.swift in Sources */,
 				EB08272923AF142500CA7CC8 /* VitalRecordBox.swift in Sources */,
 				EBCC9C8623AFFB8C0083538F /* ServiceRowItemView.swift in Sources */,
 				EBCC9C8A23AFFFB40083538F /* ClaimsOverviewView.swift in Sources */,
-				EBCC9C8223AFE93E0083538F /* EOBItemExtensions.swift in Sources */,
+				EBCC9C8223AFE93E0083538F /* EOBItem+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
