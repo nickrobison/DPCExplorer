@@ -26,6 +26,7 @@ struct OnboardingView: View {
     @State private var stateIdx = 0
     @State private var host: String? = "http://localhost:3002/v1/" // This needs to work correctly. Why doesn't it?
     @State private var clientToken = ""
+    @State private var buttonAnimating = false
     
     var body: some View {
         VStack {
@@ -55,14 +56,18 @@ struct OnboardingView: View {
                     .transition(AnyTransition.opacity.animation(.easeInOut(duration: 1.0)))
             }
             Spacer()
-            FullScreenButton(text: self.buttonText(), handler: self.buttonHandler())
+            FullScreenButton(text: self.buttonText(), isAnimating: self.$buttonAnimating, handler: self.buttonHandler())
         }
     }
     
     private func buttonHandler() -> (() -> Void) {
+        
         switch (self.onboardingState) {
         case.finished:
-            return self.updateSettings
+            return {
+                self.buttonAnimating = true; defer { self.buttonAnimating = false}
+                self.updateSettings()
+            }
         default:
             return self.incrementState
         }
