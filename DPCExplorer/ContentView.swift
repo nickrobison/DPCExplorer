@@ -31,7 +31,7 @@ struct ContentView: View {
     
     private func updateSettings(_ settings: ApplicationSettings) {
         debugPrint("From the completion handler")
-        self.preferences.saveSettings(settings)
+        self.preferences.settings = settings
         self.buildClient()
     }
     
@@ -40,7 +40,7 @@ struct ContentView: View {
         guard let settings = self.preferences.settings else {
             return
         }
-        let client = DPCClient(baseURL: settings.url.absoluteString, context: managedObjectContext)
+        let client = DPCClient(baseURL: "http://localhost:3002/v1/", context: managedObjectContext, keyID: settings.keyID, key: self.preferences.privateKey, clientToken: settings.clientToken)
         client.fetchOrganization(handler: {
             debugPrint("From org completion handler")
             self.client = client
@@ -51,7 +51,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     
     static var previews: some View {
-//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         return ContentView()
         .environmentObject(PreferencesManager())
     }

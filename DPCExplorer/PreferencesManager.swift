@@ -15,16 +15,22 @@ class PreferencesManager: ObservableObject {
     static let SettingsKey = "ApplicationSettings"
     
     @Published var client: DPCClient?
-    @Published var settings: ApplicationSettings?
+    @Published var settings: ApplicationSettings? {
+        willSet(newSettings) {
+            self.saveSettings(newSettings)
+        }
+    }
     @Published var publicKey: String
+    @Published var privateKey: SecKey // DON'T DO THIS, we should simply return the value and then forget about it
     
     init() {
         let manager = KeyPairManager()
         self.publicKey = try! manager.convertToPEM(key: manager.getPublicKey()!)!
+        self.privateKey = manager.getPrivateKey()!
         self.settings = loadSettings()
     }
     
-    func loadSettings() -> ApplicationSettings? {
+    private func loadSettings() -> ApplicationSettings? {
         let defaults = UserDefaults.standard
         if let savedSettings = defaults.data(forKey: PreferencesManager.SettingsKey) {
             let decoder = JSONDecoder()
@@ -34,12 +40,14 @@ class PreferencesManager: ObservableObject {
         return nil
     }
     
-    func saveSettings(_ settings: ApplicationSettings) {
+    private func saveSettings(_ settings: ApplicationSettings?) {
+        guard let settings = settings else {
+            return
+        }
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(settings) {
             let defaults = UserDefaults.standard
             defaults.set(encoded, forKey: PreferencesManager.SettingsKey)
-            self.settings = settings
         }
     }
 }

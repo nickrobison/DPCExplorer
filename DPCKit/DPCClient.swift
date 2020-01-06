@@ -19,16 +19,22 @@ public final class DPCClient: ObservableObject {
     @Published public var organization: OrganizationEntity?
     @Published public var providers: [ProviderEntity]
     
-    public init(baseURL: String, context: NSManagedObjectContext) {
+    private let session: Session
+    
+    public init(baseURL: String, context: NSManagedObjectContext, keyID: String, key: SecKey, clientToken: String) {
         self.baseURL = baseURL
         self.providers = []
         self.context = context
+        
+        let interceptor = SMARTAuthHandler(privateKey: key, keyID: keyID, clientToken: clientToken, baseURL: baseURL)
+        
+        self.session = Session(configuration: URLSessionConfiguration.default, interceptor: interceptor as RequestInterceptor)
     }
     
     public func fetchOrganization(handler: (() -> Void)? ) {
         
-        let uri = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
-        AF.request(uri)
+        let url = self.baseURL + "Organization/46ac7ad6-7487-4dd0-baa0-6e2c8cae76a0"
+        self.session.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseDecodable(of: Organization.self){ response in
@@ -57,9 +63,9 @@ public final class DPCClient: ObservableObject {
         }
         
         // Fetch providers from the server
-        let uri = self.baseURL + "Practitioner"
+        let url = self.baseURL + "Practitioner"
         
-        AF.request(uri)
+        self.session.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseFHIRResource(of: FHIR.Bundle.self){ response in
@@ -107,7 +113,7 @@ public final class DPCClient: ObservableObject {
             "characteristic-value": "|attributed-to$|\(provider.getFirstID.value!)"
         ]
         
-        AF.request(url, method: .get, parameters: params,
+        self.session.request(url, method: .get, parameters: params,
                    encoding: URLEncoding(destination: .queryString))
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
@@ -187,7 +193,7 @@ public final class DPCClient: ObservableObject {
             return
         }
         
-        let uri = self.baseURL + "Patient"
+        let url = self.baseURL + "Patient"
         
         let dateStringFormatter = DateFormatter()
         // FHIR date formatter
@@ -195,7 +201,7 @@ public final class DPCClient: ObservableObject {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .formatted(dateStringFormatter)
         
-        AF.request(uri)
+        self.session.request(url)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseFHIRResource(of: FHIR.Bundle.self){ response in
@@ -267,9 +273,9 @@ public final class DPCClient: ObservableObject {
                 "Content-Type": "application/fhir+json"
             ]
             
-            let uri = self.baseURL + "Group/\(to.rosterID!)/$add"
+            let url = self.baseURL + "Group/\(to.rosterID!)/$add"
             // Submit to DPC using the $add operation
-            AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+            self.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: ["application/fhir+json"])
                 .responseFHIRResource(of: Group.self) { response in
@@ -300,11 +306,11 @@ public final class DPCClient: ObservableObject {
         // Submit to DPC
         var errors: [FHIRValidationError] = []
         let params = patient.asJSON(errors: &errors)
-        let uri = self.baseURL + "Patient"
+        let url = self.baseURL + "Patient"
         let headers: HTTPHeaders = [
             "Content-Type": "application/fhir+json"
         ]
-        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        self.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseData { response in
@@ -337,14 +343,14 @@ public final class DPCClient: ObservableObject {
     }
     
     public func addProvider(provider: FHIR.Practitioner) -> Void {
-        let uri = self.baseURL + "Practitioner"
+        let url = self.baseURL + "Practitioner"
         
         var errors: [FHIRValidationError] = []
         let params = provider.asJSON(errors: &errors)
         let headers: HTTPHeaders = [
             "Content-Type": "application/fhir+json"
         ]
-        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        self.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseFHIRResource(of: Practitioner.self){ response in
@@ -400,9 +406,9 @@ public final class DPCClient: ObservableObject {
             "Content-Type": "application/fhir+json"
         ]
         
-        let uri = self.baseURL + "Group"
+        let url = self.baseURL + "Group"
         // Submit to DPC using the $add operation
-        AF.request(uri, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
+        self.session.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/fhir+json"])
             .responseFHIRResource(of: Group.self) { response in

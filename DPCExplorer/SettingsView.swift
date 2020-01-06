@@ -16,13 +16,22 @@ struct SettingsView: View {
     
     var body: some View {
         Form {
-            HStack {
-                Text("Host:")
-                Spacer()
-                Text(self.settings.url.absoluteString)
+            Section(header: Text("Connection")) {
+                HStack {
+                    Text("Host:")
+                    Spacer()
+                    Text(self.settings.url.absoluteString)
+                }
+                HStack {
+                    Text("Public Key ID:")
+                    Spacer()
+                    Text(self.settings.keyID)
+                }
             }
-            Toggle(isOn: $toggled) {
-                Text("Since parameter")
+            Section(header: Text("Query Options")) {
+                Toggle(isOn: $toggled) {
+                    Text("Since parameter")
+                }
             }
         }
     }

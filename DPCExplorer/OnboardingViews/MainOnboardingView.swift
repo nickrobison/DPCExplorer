@@ -62,7 +62,6 @@ struct MainOnboardingView: View {
     }
     
     private func buttonHandler() -> (() -> Void) {
-        
         switch (self.onboardingState) {
         case.finished:
             return {
@@ -81,6 +80,8 @@ struct MainOnboardingView: View {
     
     private func buttonDisabled() -> Bool {
         switch (self.onboardingState) {
+        case .host:
+            return self.viewModel.host == ""
         case .clientID:
             return self.viewModel.clientToken == ""
         case .key:
@@ -103,6 +104,9 @@ struct MainOnboardingView: View {
     private func buttonText() -> String {
         switch (self.onboardingState) {
         case .finished:
+            debugPrint("Host: ", self.viewModel.host);
+            debugPrint("Token: ", self.viewModel.clientToken);
+            debugPrint("Key ID: ", self.viewModel.keyID);
             return "Finish"
         default:
             return "Next"
