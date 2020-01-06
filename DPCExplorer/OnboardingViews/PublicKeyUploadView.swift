@@ -8,11 +8,18 @@
 
 import SwiftUI
 
+extension AnyTransition {
+    static func moveAndFade(edge: Edge) -> AnyTransition {
+        AnyTransition.move(edge: edge).combined(with: .opacity)
+    }
+}
+
 struct PublicKeyUploadView: View {
     
     let publicKey: String
     @Binding var keyID: String
-    @State private var buttonText = "Copy key"
+    @State private var keyCopied = false
+//    @State private var buttonText = "Copy key"
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -26,21 +33,30 @@ struct PublicKeyUploadView: View {
                     debugPrint("Copied")
                     let pasteboard = UIPasteboard.general
                     pasteboard.string = self.publicKey
-                    self.buttonText = "Copied"
+                    withAnimation(.easeInOut(duration: 0.75)) {
+                        self.keyCopied = true
+                    }
                 })) {
-                    Text(self.buttonText)
+                    Text(self.buttonText())
                 }
                 .padding([.top, .bottom])
             }
-            .padding(.leading)
-            Group {
-                Text("Paste the key ID")
-                Text("Paste it from the UI")
-                TextField("Public Key ID", text: self.$keyID)
-                    .foregroundColor(.gray)
-                    .labelsHidden()
+            .animation(.spring())
+            if (self.keyCopied) {
+                Group {
+                    Text("Paste the key ID")
+                    Text("Paste it from the UI")
+                    TextField("Public Key ID", text: self.$keyID)
+                        .foregroundColor(.gray)
+                        .labelsHidden()
+                }
+                .transition(.moveAndFade(edge: .bottom))
             }
         }
+    }
+    
+    private func buttonText() -> String {
+        return self.keyCopied ? "Copied" : "Copy Key"
     }
 }
 
