@@ -17,6 +17,7 @@ struct ProviderDetailView: View {
     @State private var showAdd = false
     
     let provider: ProviderEntity
+    let notificationCenter = NotificationDelegate()
     var body: some View {
         VStack {
             ProviderBioView(provider: provider)
@@ -39,7 +40,9 @@ struct ProviderDetailView: View {
             Divider()
             HStack {
                 Button(action: {
-                    self.client.exportData(provider: self.provider)
+                    self.client.exportData(provider: self.provider) {
+                        self.notificationCenter.sendNotification(notificationType: "Export Data", msg: "Export Completed")
+                    }
                 }) {
                     Text("Update Data")
                 }
@@ -63,7 +66,7 @@ struct ProviderDetailView: View {
     func performDelete(at offsets: IndexSet) {
         debugPrint(offsets)
     }
-
+    
     private func getAssignablePatients() -> [PatientEntity] {
         let names = self.client.fetchAssignablePatients(provider: provider)
             .collect()

@@ -298,9 +298,9 @@ public final class DPCClient: ObservableObject {
         }
     }
     
-    public func exportData(provider: ProviderEntity) -> Void {
+    public func exportData(provider: ProviderEntity, handler: @escaping () -> Void) -> Void {
         let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context, token: self.interceptor.accessToken)
-        client.exportData()
+        client.exportData(handler)
     }
     
     public func addPatient(patient: FHIR.Patient) -> Void {
