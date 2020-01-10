@@ -24,7 +24,6 @@ public struct ClaimsOverviewView: View {
                 Spacer()
             }
             .padding([.bottom])
-            Text("Quick look")
             ForEach(0..<self.boxes.count, id:\.self){ idx in
                 self.boxes[idx].build()
                     .padding([.trailing, .leading])

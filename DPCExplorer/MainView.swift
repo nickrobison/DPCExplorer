@@ -20,7 +20,7 @@ struct MainView: View {
             OrganizationView(o: client.organization!)
                 .tabItem {
                     VStack {
-                        Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.hospital), size: CGSize(width: 35, height: 35)))
+                        TabIcon(icon: .fontAwesomeSolid(.hospital))
                         Text("Organization")
                     }
             }
@@ -28,7 +28,7 @@ struct MainView: View {
             ProviderView()
                 .tabItem {
                     VStack {
-                        Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.stethoscope), size: CGSize(width: 35, height: 35)))
+                        TabIcon(icon: .fontAwesomeSolid(.stethoscope))
                         Text("Providers")
                     }
             }
@@ -36,7 +36,7 @@ struct MainView: View {
             PatientView()
                 .tabItem {
                     VStack {
-                        Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.notesMedical), size: CGSize(width: 35, height: 35)))
+                        TabIcon(icon: .fontAwesomeSolid(.notesMedical))
                         Text("Patients")
                     }
             }
@@ -44,7 +44,7 @@ struct MainView: View {
             SettingsView(settings: .constant(preferences.settings!))
                 .tabItem {
                     VStack {
-                        Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.cog), size: CGSize(width: 35, height: 35)))
+                        TabIcon(icon: .fontAwesomeSolid(.cog))
                         Text("Settings")
                     }
             }
