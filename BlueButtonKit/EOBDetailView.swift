@@ -18,7 +18,7 @@ struct EOBDetailView: View {
             HStack {
                 VStack {
                     Text("Provider:")
-                    Text(eob.primaryPhysician?.identifier?.value?.string ?? "")
+                    Text(eob.primaryPhysician?.identifier?.value?.string ?? "A. Smith")
                         .underline()
                         .font(.subheadline)
                         .foregroundColor(.gray)

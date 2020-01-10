@@ -10,9 +10,10 @@ import Foundation
 
 struct DefaultBoxBuilder: BoxBuilder {
      
+    let name: String
     let status: RecordStatus
     
     func build() -> VitalRecordBox {
-        return VitalRecordBox(self.status)
+        return VitalRecordBox(name:self.name, status: self.status)
     }
 }

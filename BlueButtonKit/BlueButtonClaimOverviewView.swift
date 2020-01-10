@@ -30,24 +30,14 @@ struct BlueButtonOverviewView: View {
     var body: some View {
         Section(header: buildHeader()) {
             if (self.isExpanded) {
-                EOBDetailView(eob: eob)
+                withAnimation {
+                    EOBDetailView(eob: eob)
+                        .transition(AnyTransition.asymmetric(insertion: AnyTransition.opacity.animation(.easeInOut(duration: 1.0)), removal: AnyTransition.identity))
+                }
             }
         }
         .padding()
         .animation(.easeInOut)
-        //        VStack {
-        //            if isExpanded {
-        //                Text("Claim Details")
-        //                    .font(.title)
-        //                VStack {
-        //                    Text("Diagnosis: \(eob.primaryDiagnosis!.icd9Code)" )
-        //                    Text("Date: \(eob.date?.description ?? "None")")
-        //                }
-        //                .padding([.bottom])
-        //                 else {
-        //
-        //            }
-        //        }
     }
     
     private func buildHeader() -> some View {

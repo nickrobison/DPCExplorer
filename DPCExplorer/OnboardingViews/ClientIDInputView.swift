@@ -13,11 +13,11 @@ struct ClientIDInputView: View {
     @Binding var clientID: String
     
     var body: some View {
-        VStack {
-            Text("Past your client token here:")
+        VStack(alignment: .leading) {
+            Text("Paste your client token:")
+                .font(.title)
             TextField("client token", text: $clientID)
                 .textFieldStyle(PlainTextFieldStyle())
-                .padding()
         }
     }
 }

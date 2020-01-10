@@ -31,7 +31,6 @@ struct PatientTabView: View {
     
     private func buildOverview() -> some View {
         VStack {
-            Text("Overview")
             ScrollView {
                 if(self.manager.claims.count > 0) {
                     ClaimsOverviewView(boxes: self.manager.boxes)
@@ -56,10 +55,12 @@ struct PatientTabView: View {
     
     private func buildWithClaims() -> some View {
         return ScrollView {VStack {
+            HStack {
             Text("Fetched EOBs: \(patient.claims.count)")
             Image(systemName: "checkmark.circle.fill")
                 .font(.subheadline)
                 .foregroundColor(.green)
+            }
             
             ClaimsHistoryView(eob: self.manager.claims)
             }

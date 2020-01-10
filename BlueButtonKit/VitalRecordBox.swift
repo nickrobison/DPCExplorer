@@ -17,11 +17,8 @@ public enum RecordStatus: CaseIterable {
 
 public struct VitalRecordBox: View {
     
+    let name: String
     let status: RecordStatus
-    
-    public init (_ status: RecordStatus) {
-        self.status = status
-    }
     
     public var body: some View {
         VStack {
@@ -29,7 +26,7 @@ public struct VitalRecordBox: View {
             HStack {
                 Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.syringe), size: CGSize(width: 50, height: 50)))
                 Spacer()
-                Text("Flu Shot")
+                Text(self.name)
                     .foregroundColor(.white)
                     .font(.title)
                 Spacer()
@@ -76,7 +73,7 @@ public struct VitalRecordBox: View {
 struct VitalRecordBox_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(RecordStatus.allCases, id: \.self) { status in
-            VitalRecordBox(status)
+            VitalRecordBox(name: "Flu Shot", status: status)
         }
     }
 }

@@ -15,10 +15,13 @@ public class ClaimsManager: ObservableObject {
     @Published public var claims: [ExplanationOfBenefit] = []
     @Published public var boxes: [BoxBuilder] = []
     
+    private let checks = ["Annual Wellness", "Flu shot", "Mammogram"]
+    private let statuses = RecordStatus.allCases
+    
     private var cancellableSet: Set<AnyCancellable> = []
     
-    private var boxPublisher: AnyPublisher<RecordStatus, Never> {
-        Publishers.Sequence(sequence: RecordStatus.allCases)
+    private var boxPublisher: AnyPublisher<Int, Never> {
+        Publishers.Sequence(sequence: 0..<RecordStatus.allCases.count)
         .eraseToAnyPublisher()
     }
     
@@ -28,7 +31,7 @@ public class ClaimsManager: ObservableObject {
         let boxCancel = boxPublisher
             .receive(on: RunLoop.main)
             .map { status in
-                return DefaultBoxBuilder(status: status)
+                return DefaultBoxBuilder(name: self.checks[status], status: self.statuses[status])
         }
         .sink {box in
             self.boxes.append(box)
