@@ -47,7 +47,7 @@
 		EB763A59236BACA9001EC7C9 /* ProviderBioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A58236BACA9001EC7C9 /* ProviderBioView.swift */; };
 		EB763A5D236BAD7E001EC7C9 /* TestResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A5C236BAD7E001EC7C9 /* TestResources.swift */; };
 		EB763A63236BB512001EC7C9 /* PersonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A62236BB512001EC7C9 /* PersonCellView.swift */; };
-		EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A64236BB582001EC7C9 /* ViewHelpers.swift */; };
+		EB763A65236BB582001EC7C9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A64236BB582001EC7C9 /* String+Extensions.swift */; };
 		EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A66236BB804001EC7C9 /* ProviderView.swift */; };
 		EB763A69236BB922001EC7C9 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A68236BB922001EC7C9 /* PatientView.swift */; };
 		EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */; };
@@ -239,7 +239,7 @@
 		EB763A5E236BB06E001EC7C9 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		EB763A60236BB481001EC7C9 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		EB763A62236BB512001EC7C9 /* PersonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellView.swift; sourceTree = "<group>"; };
-		EB763A64236BB582001EC7C9 /* ViewHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHelpers.swift; sourceTree = "<group>"; };
+		EB763A64236BB582001EC7C9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		EB763A66236BB804001EC7C9 /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
 		EB763A68236BB922001EC7C9 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
 		EB763A6A236BB9B3001EC7C9 /* PatientDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientDetailView.swift; sourceTree = "<group>"; };
@@ -428,7 +428,7 @@
 				EB100E7A23667ED60065E084 /* Preview Content */,
 				EB9976F1236687D40072DD9B /* OrganizationView.swift */,
 				EB763A62236BB512001EC7C9 /* PersonCellView.swift */,
-				EB763A64236BB582001EC7C9 /* ViewHelpers.swift */,
+				EB763A64236BB582001EC7C9 /* String+Extensions.swift */,
 				EBAA8A60236CF7AD00EC0253 /* MainView.swift */,
 				EBC5EB47239039C6003E0B3B /* SelectableRow.swift */,
 				EB3F1EC723A723FB002844C1 /* NameView.swift */,
@@ -1146,7 +1146,7 @@
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
 				EB97538D23BBDE330011CF90 /* PatientAddViewModel.swift in Sources */,
-				EB763A65236BB582001EC7C9 /* ViewHelpers.swift in Sources */,
+				EB763A65236BB582001EC7C9 /* String+Extensions.swift in Sources */,
 				EB763A6B236BB9B3001EC7C9 /* PatientDetailView.swift in Sources */,
 				EB1BE1CC23B53C6100D33A7E /* FullScreenButton.swift in Sources */,
 				EBAA8A61236CF7AD00EC0253 /* MainView.swift in Sources */,

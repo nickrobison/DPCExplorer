@@ -46,7 +46,7 @@ struct PatientTabView: View {
         }
     }
     
-    private func buildClaims() -> AnyView  {
+    private func  buildClaims() -> AnyView  {
         if (self.patient.eobs?.count ?? 0 > 1) {
             return AnyView(buildWithClaims())
         } else {
@@ -67,7 +67,7 @@ struct PatientTabView: View {
     }
     
     private func buildNoClaims() -> some View {
-        return EmptyView()
+        return Text("No claims history yet")
     }
     
     private func buildDefault() -> some View {

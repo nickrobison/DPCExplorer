@@ -11,6 +11,7 @@ import Combine
 import FHIR
 import CoreData
 import Compression
+import Alamofire
 
 enum ExportError: Error {
     case inProgress
@@ -22,17 +23,19 @@ class ExportClient {
     private let baseURL: String
     private let provider: ProviderEntity
     private let context: NSManagedObjectContext
+    private let accessToken: String
     
     private var exportCancel: AnyCancellable?
     private var backGroundQueue: DispatchQueue
     private var activeDownloads: [URL: ExportDownload] = [:]
     
-    init(with: String, provider: ProviderEntity, context: NSManagedObjectContext) {
+    init(with: String, provider: ProviderEntity, context: NSManagedObjectContext, token: String) {
         self.defaultURLSession = ExportClient.buildSession()
         self.baseURL = with
         self.backGroundQueue = DispatchQueue(label: "DPCExplorer")
         self.provider = provider
         self.context = context
+        self.accessToken = token
     }
     
     public func exportData() {
@@ -63,6 +66,7 @@ class ExportClient {
         var request = URLRequest(url: url)
         request.setValue("respond-async", forHTTPHeaderField: "Prefer")
         request.setValue("application/fhir+json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
         
         self.exportCancel = self.defaultURLSession.dataTaskPublisher(for: request)
             .tryMap{ data, response -> URL in
@@ -97,9 +101,12 @@ class ExportClient {
                 return
             }
             
+            var request = URLRequest(url: output.url)
+            request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
+            
             let export = ExportDownload(output: output)
             
-            export.task = self.defaultURLSession.downloadTask(with: output.url) { url, response, error in
+            export.task = self.defaultURLSession.downloadTask(with: request) { url, response, error in
                 guard let url = url else {
                     return
                 }
@@ -228,6 +235,7 @@ class ExportClient {
         var request = URLRequest(url: jobURL)
         request.setValue("respond-async", forHTTPHeaderField: "Prefer")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
         
         return self.defaultURLSession.dataTaskPublisher(for: request)
             .tryMap{data, response -> Data in
