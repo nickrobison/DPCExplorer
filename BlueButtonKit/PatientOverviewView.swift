@@ -35,6 +35,6 @@ public struct ClaimsOverviewView: View {
 
 struct ClaimsOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        ClaimsOverviewView(boxes: [DefaultBoxBuilder(status: .success)])
+        ClaimsOverviewView(boxes: [DefaultBoxBuilder(name: "Flu Shot", status: .success)])
     }
 }
