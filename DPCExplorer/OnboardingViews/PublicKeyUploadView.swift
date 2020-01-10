@@ -25,7 +25,9 @@ struct PublicKeyUploadView: View {
         VStack(alignment: .leading) {
             Group{
                 Text("Use this public key:")
+                    .font(.title)
                 Text("Copy and paste it into the web UI")
+                    .font(.caption)
                 TextField("Public Key", text: .constant(publicKey))
                     .foregroundColor(.gray)
                     .labelsHidden()
@@ -45,9 +47,10 @@ struct PublicKeyUploadView: View {
             if (self.keyCopied) {
                 Group {
                     Text("Paste the key ID")
+                        .font(.title)
                     Text("Paste it from the UI")
+                        .font(.caption)
                     TextField("Public Key ID", text: self.$keyID)
-                        .foregroundColor(.gray)
                         .labelsHidden()
                 }
                 .transition(.moveAndFade(edge: .bottom))

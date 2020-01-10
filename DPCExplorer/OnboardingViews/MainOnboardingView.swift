@@ -59,6 +59,7 @@ struct MainOnboardingView: View {
             FullScreenButton(text: self.buttonText(), isAnimating: self.$buttonAnimating, handler: self.buttonHandler())
                 .disabled(self.buttonDisabled())
         }
+        .padding([.leading, .trailing])
     }
     
     private func buttonHandler() -> (() -> Void) {
