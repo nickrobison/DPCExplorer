@@ -38,7 +38,7 @@ class ExportClient {
         self.accessToken = token
     }
     
-    public func exportData() {
+    public func exportData(_ handler: @escaping () -> Void) {
         exportCancel?.cancel()
         
         guard let groupID = self.provider.rosterID else {
@@ -85,6 +85,8 @@ class ExportClient {
         .sink(receiveCompletion: {completion in
             switch completion {
             case .finished:
+                debugPrint("Calling completion")
+                handler()
                 break
             case .failure(let error):
                 debugPrint("Received an error: ", error)
