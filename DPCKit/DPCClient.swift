@@ -20,13 +20,14 @@ public final class DPCClient: ObservableObject {
     @Published public var providers: [ProviderEntity]
     
     private let session: Session
+    private let interceptor: SMARTAuthHandler
     
     public init(baseURL: String, context: NSManagedObjectContext, keyID: String, key: SecKey, clientToken: String) {
         self.baseURL = baseURL
         self.providers = []
         self.context = context
         
-        let interceptor = SMARTAuthHandler(privateKey: key, keyID: keyID, clientToken: clientToken, baseURL: baseURL)
+        self.interceptor = SMARTAuthHandler(privateKey: key, keyID: keyID, clientToken: clientToken, baseURL: baseURL)
         
         self.session = Session(configuration: URLSessionConfiguration.default, interceptor: interceptor as RequestInterceptor)
     }
@@ -298,7 +299,7 @@ public final class DPCClient: ObservableObject {
     }
     
     public func exportData(provider: ProviderEntity) -> Void {
-        let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context)
+        let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context, token: self.interceptor.accessToken)
         client.exportData()
     }
     

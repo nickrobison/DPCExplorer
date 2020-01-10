@@ -49,7 +49,8 @@ class SMARTAuthHandler: RequestInterceptor {
     private var isRefreshing = false
     private var requestsToRetry: [RetryResultCompletion] = []
     // We need init logic here, we can't always fail the first request
-    private var accessToken = ""
+    // This shouldn't be public, but ok for a demo
+    var accessToken = ""
     
     init(privateKey: SecKey, keyID: String, clientToken: String, baseURL: String) {
         self.privateKey = privateKey
