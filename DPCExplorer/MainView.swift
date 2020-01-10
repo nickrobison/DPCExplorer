@@ -9,6 +9,8 @@
 import SwiftUI
 import DPCKit
 
+//Image(uiImage: UIImage.init(icon: .fontAwesomeSolid(.syringe), size: CGSize(width: 50, height: 50)))
+
 struct MainView: View {
     @EnvironmentObject var client: DPCClient
     @EnvironmentObject var preferences: PreferencesManager
@@ -18,7 +20,7 @@ struct MainView: View {
             OrganizationView(o: client.organization!)
                 .tabItem {
                     VStack {
-                        Image("first")
+                        TabIcon(icon: .fontAwesomeSolid(.hospital))
                         Text("Organization")
                     }
             }
@@ -26,7 +28,7 @@ struct MainView: View {
             ProviderView()
                 .tabItem {
                     VStack {
-                        Image("first")
+                        TabIcon(icon: .fontAwesomeSolid(.stethoscope))
                         Text("Providers")
                     }
             }
@@ -34,7 +36,7 @@ struct MainView: View {
             PatientView()
                 .tabItem {
                     VStack {
-                        Image("second")
+                        TabIcon(icon: .fontAwesomeSolid(.notesMedical))
                         Text("Patients")
                     }
             }
@@ -42,7 +44,7 @@ struct MainView: View {
             SettingsView(settings: .constant(preferences.settings!))
                 .tabItem {
                     VStack {
-                        Image(systemName: "gear")
+                        TabIcon(icon: .fontAwesomeSolid(.cog))
                         Text("Settings")
                     }
             }

@@ -24,7 +24,6 @@ public struct ClaimsOverviewView: View {
                 Spacer()
             }
             .padding([.bottom])
-            Text("Quick look")
             ForEach(0..<self.boxes.count, id:\.self){ idx in
                 self.boxes[idx].build()
                     .padding([.trailing, .leading])
@@ -35,6 +34,6 @@ public struct ClaimsOverviewView: View {
 
 struct ClaimsOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        ClaimsOverviewView(boxes: [DefaultBoxBuilder(status: .success)])
+        ClaimsOverviewView(boxes: [DefaultBoxBuilder(name: "Flu Shot", status: .success)])
     }
 }

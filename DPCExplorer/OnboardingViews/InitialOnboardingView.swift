@@ -17,7 +17,6 @@ struct InitialOnboardingView: View {
                     .bold()
                 Text("Let's get started")
             }
-            .padding(.leading)
         }
         .font(.title)
     }
