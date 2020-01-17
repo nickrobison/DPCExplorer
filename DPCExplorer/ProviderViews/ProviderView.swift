@@ -25,11 +25,14 @@ struct ProviderView: View {
     var providers: FetchedResults<ProviderEntity>
     var body: some View {
         NavigationView {
-            List(providers, id:\.id) { provider in
-                NavigationLink(destination: ProviderDetailView(provider: provider)) {
-                    PersonCellView(person: provider)
+            List {
+                ForEach(providers, id:\.id) { provider in
+                    NavigationLink(destination: ProviderDetailView(provider: provider)) {
+                        PersonCellView(person: provider)
+                    }
+                    .isDetailLink(true)
                 }
-                .isDetailLink(true)
+                .onDelete(perform: self.remove)
             }
             .navigationBarTitle("Providers")
             .navigationBarItems(trailing:
@@ -50,6 +53,13 @@ struct ProviderView: View {
     
     private func submitProvider(provider: FHIR.Practitioner) {
         self.client.addProvider(provider: provider)
+    }
+    
+    private func remove(at offsets: IndexSet) {
+        for index in offsets {
+            let provider = self.providers[index]
+            self.client.delete(provider: provider)
+        }
     }
 }
 

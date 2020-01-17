@@ -430,4 +430,33 @@ public final class DPCClient: ObservableObject {
                 }
         }
     }
+    
+    public func delete(patient: PatientEntity) {
+        let url = self.baseURL + "Patient/\(patient.id!)"
+        self.deleteOperation(url: url, entity: patient)
+    }
+    
+    public func delete(provider: ProviderEntity) {
+        let url = self.baseURL + "Practitioner/\(provider.id!)"
+        self.deleteOperation(url: url, entity: provider)
+    }
+    
+    private func deleteOperation(url: String, entity: NSManagedObject) {
+        
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/fhir+json"
+        ]
+
+        // Submit to DPC using the DELETE operation
+        self.session.request(url, method: .delete, headers: headers)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/fhir+json"])
+            .responseData{response in
+                debugPrint(response)
+                
+                self.context.performAndWait {
+                    self.context.delete(entity)
+                }
+        }
+    }
 }
