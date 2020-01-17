@@ -40,6 +40,7 @@
 		EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */; };
 		EB32B9C723C901D50033D8DF /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9C623C901D50033D8DF /* Notifications.swift */; };
 		EB32B9C523C8F9CC0033D8DF /* TabIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9C423C8F9CC0033D8DF /* TabIcon.swift */; };
+		EB32B9CB23C9152B0033D8DF /* DeletableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9CA23C9152B0033D8DF /* DeletableList.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* MainOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* MainOnboardingView.swift */; };
 		EB6F363223B6FFC800AEC1A9 /* DPCSigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */; };
@@ -229,6 +230,7 @@
 		EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EB32B9C623C901D50033D8DF /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		EB32B9C423C8F9CC0033D8DF /* TabIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIcon.swift; sourceTree = "<group>"; };
+		EB32B9CA23C9152B0033D8DF /* DeletableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableList.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		EB427DCA2374E84D00833623 /* MainOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				EB97539023BBE48D0011CF90 /* FormValidationHelpers.swift */,
 				EB32B9C623C901D50033D8DF /* Notifications.swift */,
 				EB32B9C423C8F9CC0033D8DF /* TabIcon.swift */,
+				EB32B9CA23C9152B0033D8DF /* DeletableList.swift */,
 			);
 			path = DPCExplorer;
 			sourceTree = "<group>";
@@ -1150,6 +1153,7 @@
 				EB97538B23BBDDB20011CF90 /* OnboardingViewModel.swift in Sources */,
 				EB1BE1D323B5433600D33A7E /* ClientIDInputView.swift in Sources */,
 				EB100E7223667ED30065E084 /* SceneDelegate.swift in Sources */,
+				EB32B9CB23C9152B0033D8DF /* DeletableList.swift in Sources */,
 				EB9976F4236689320072DD9B /* ProviderDetailView.swift in Sources */,
 				EB763A67236BB804001EC7C9 /* ProviderView.swift in Sources */,
 				EB97538D23BBDE330011CF90 /* PatientAddViewModel.swift in Sources */,

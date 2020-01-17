@@ -26,18 +26,18 @@ struct PatientView: View {
     var patients: FetchedResults<PatientEntity>
     var body: some View {
         NavigationView {
-            List(patients, id:\.id) {patient in
+            DeletableList(elements: self.patients, id: \.self, factory: { patient in
                 NavigationLink(destination: PatientDetailView(patient: patient)) {
                     PersonCellView(person: patient)
                 }
                 .isDetailLink(true)
-            }
-            .navigationBarTitle("Patients")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    debugPrint("clicked")
-                    self.showAdd = true
-                }, label: { Image(systemName: "plus")}))
+            }, deleteHandler: self.remove)
+                .navigationBarTitle("Patients")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        debugPrint("clicked")
+                        self.showAdd = true
+                    }, label: { Image(systemName: "plus")}))
         }
             .navigationViewStyle(StackNavigationViewStyle()) // Temporary hack found via Reddit: https://www.reddit.com/r/SwiftUI/comments/ds5ku3/navigationview_rotation_bug_portrait_to_landscape/
             .onAppear() {
@@ -51,6 +51,13 @@ struct PatientView: View {
     
     private func submitPatient(patient: FHIR.Patient) {
         self.client.addPatient(patient: patient)
+    }
+    
+    private func remove(at offsets: IndexSet) {
+        for index in offsets {
+            let patient = patients[index]
+            self.client.delete(patient: patient)
+        }
     }
 }
 

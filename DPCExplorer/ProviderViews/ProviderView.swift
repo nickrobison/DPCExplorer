@@ -25,18 +25,18 @@ struct ProviderView: View {
     var providers: FetchedResults<ProviderEntity>
     var body: some View {
         NavigationView {
-            List(providers, id:\.id) { provider in
+            DeletableList(elements: self.providers, id: \.self, factory: {provider in
                 NavigationLink(destination: ProviderDetailView(provider: provider)) {
                     PersonCellView(person: provider)
                 }
                 .isDetailLink(true)
-            }
-            .navigationBarTitle("Providers")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    debugPrint("clicked")
-                    self.showAdd = true
-                }, label: { Image(systemName: "plus")}))
+            }, deleteHandler: self.remove)
+                .navigationBarTitle("Providers")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        debugPrint("clicked")
+                        self.showAdd = true
+                    }, label: { Image(systemName: "plus")}))
                 .onAppear() {
                     debugPrint("Here are the providers")
                     self.client.fetchProviders()
@@ -50,6 +50,13 @@ struct ProviderView: View {
     
     private func submitProvider(provider: FHIR.Practitioner) {
         self.client.addProvider(provider: provider)
+    }
+    
+    private func remove(at offsets: IndexSet) {
+        for index in offsets {
+            let provider = self.providers[index]
+            self.client.delete(provider: provider)
+        }
     }
 }
 
