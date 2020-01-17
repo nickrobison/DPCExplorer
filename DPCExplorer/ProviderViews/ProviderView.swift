@@ -25,21 +25,18 @@ struct ProviderView: View {
     var providers: FetchedResults<ProviderEntity>
     var body: some View {
         NavigationView {
-            List {
-                ForEach(providers, id:\.id) { provider in
-                    NavigationLink(destination: ProviderDetailView(provider: provider)) {
-                        PersonCellView(person: provider)
-                    }
-                    .isDetailLink(true)
+            DeletableList(elements: self.providers, id: \.self, factory: {provider in
+                NavigationLink(destination: ProviderDetailView(provider: provider)) {
+                    PersonCellView(person: provider)
                 }
-                .onDelete(perform: self.remove)
-            }
-            .navigationBarTitle("Providers")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    debugPrint("clicked")
-                    self.showAdd = true
-                }, label: { Image(systemName: "plus")}))
+                .isDetailLink(true)
+            }, deleteHandler: self.remove)
+                .navigationBarTitle("Providers")
+                .navigationBarItems(trailing:
+                    Button(action: {
+                        debugPrint("clicked")
+                        self.showAdd = true
+                    }, label: { Image(systemName: "plus")}))
                 .onAppear() {
                     debugPrint("Here are the providers")
                     self.client.fetchProviders()

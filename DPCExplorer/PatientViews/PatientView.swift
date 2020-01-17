@@ -26,8 +26,11 @@ struct PatientView: View {
     var patients: FetchedResults<PatientEntity>
     var body: some View {
         NavigationView {
-            DeletableList(elements: self.patients, id: \.self, factory: { elem in
-                PersonCellView(person: elem)
+            DeletableList(elements: self.patients, id: \.self, factory: { patient in
+                NavigationLink(destination: PatientDetailView(patient: patient)) {
+                    PersonCellView(person: patient)
+                }
+                .isDetailLink(true)
             }, deleteHandler: self.remove)
                 .navigationBarTitle("Patients")
                 .navigationBarItems(trailing:
