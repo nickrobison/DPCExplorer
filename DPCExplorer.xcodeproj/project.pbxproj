@@ -38,8 +38,8 @@
 		EB1BE1D523B5450500D33A7E /* PublicKeyUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */; };
 		EB1BE1D723B5463D00D33A7E /* OnboardingCompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */; };
 		EB1BE1DB23B54F2F00D33A7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */; };
-		EB32B9C723C901D50033D8DF /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9C623C901D50033D8DF /* Notifications.swift */; };
 		EB32B9C523C8F9CC0033D8DF /* TabIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9C423C8F9CC0033D8DF /* TabIcon.swift */; };
+		EB32B9C723C901D50033D8DF /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9C623C901D50033D8DF /* Notifications.swift */; };
 		EB32B9CB23C9152B0033D8DF /* DeletableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB32B9CA23C9152B0033D8DF /* DeletableList.swift */; };
 		EB3F1EC823A723FB002844C1 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F1EC723A723FB002844C1 /* NameView.swift */; };
 		EB427DCB2374E84D00833623 /* MainOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB427DCA2374E84D00833623 /* MainOnboardingView.swift */; };
@@ -98,6 +98,8 @@
 		EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */; };
 		EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */; };
 		EBEECBC023B6A53E0018A8C4 /* SMARTAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */; };
+		EBF9857F23D686CA00C077A3 /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9857E23D686CA00C077A3 /* ExportManager.swift */; };
+		EBF9858223D68AB200C077A3 /* FHIR+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */; };
 		EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -228,8 +230,8 @@
 		EB1BE1D423B5450500D33A7E /* PublicKeyUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyUploadView.swift; sourceTree = "<group>"; };
 		EB1BE1D623B5463D00D33A7E /* OnboardingCompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCompleteView.swift; sourceTree = "<group>"; };
 		EB1BE1DA23B54F2F00D33A7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		EB32B9C623C901D50033D8DF /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		EB32B9C423C8F9CC0033D8DF /* TabIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabIcon.swift; sourceTree = "<group>"; };
+		EB32B9C623C901D50033D8DF /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		EB32B9CA23C9152B0033D8DF /* DeletableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletableList.swift; sourceTree = "<group>"; };
 		EB3F1EC523A72239002844C1 /* InitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		EB3F1EC723A723FB002844C1 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
@@ -292,6 +294,8 @@
 		EBEECBBB23B666750018A8C4 /* KeyPairManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairManager.swift; sourceTree = "<group>"; };
 		EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoImportExportManager.swift; sourceTree = "<group>"; };
 		EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMARTAuthHandler.swift; sourceTree = "<group>"; };
+		EBF9857E23D686CA00C077A3 /* ExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportManager.swift; sourceTree = "<group>"; };
+		EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIR+Extensions.swift"; sourceTree = "<group>"; };
 		EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsManager.swift; sourceTree = "<group>"; };
 		F3DF8002CA6518F5A87E6CBB /* Pods_DPCExplorer_DPCExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPCExplorer_DPCExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F407B3ED6A60C5A18F24C812 /* Pods-DPCExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPCExplorer.release.xcconfig"; path = "Target Support Files/Pods-DPCExplorer/Pods-DPCExplorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -575,10 +579,10 @@
 		EBEC7EB623A6B700004D3C22 /* DPCKit */ = {
 			isa = PBXGroup;
 			children = (
+				EBF9858023D6877800C077A3 /* Export */,
 				EBEECBBD23B673670018A8C4 /* CryptoImportExportManager.swift */,
 				EB1BE1C423B5157600D33A7E /* DPCKit.xcdatamodeld */,
 				EBC0DA6E23838E1F006A2D0D /* StreamReader.swift */,
-				EB5192672381BDF500C979C3 /* ExportClient.swift */,
 				EBB899FE238B713D008D7CB6 /* FHIRSerializers.swift */,
 				EB763A14236BA87C001EC7C9 /* Models */,
 				EB763A70236BBFA8001EC7C9 /* DPCClient.swift */,
@@ -587,6 +591,7 @@
 				EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */,
 				EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */,
 				EB6F363723B7033200AEC1A9 /* JWTFactory.swift */,
+				EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */,
 			);
 			path = DPCKit;
 			sourceTree = "<group>";
@@ -614,6 +619,15 @@
 				E3E083957CB475B3655CAED9 /* Pods_SwiftFHIRDependency.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EBF9858023D6877800C077A3 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				EB5192672381BDF500C979C3 /* ExportClient.swift */,
+				EBF9857E23D686CA00C077A3 /* ExportManager.swift */,
+			);
+			path = Export;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1243,12 +1257,14 @@
 				EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */,
 				EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */,
 				EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */,
+				EBF9857F23D686CA00C077A3 /* ExportManager.swift in Sources */,
 				EBEC7F0323A6BA6D004D3C22 /* Patient.swift in Sources */,
 				EBEC7F0423A6BA6D004D3C22 /* Person.swift in Sources */,
 				EB6F363223B6FFC800AEC1A9 /* DPCSigner.swift in Sources */,
 				EBEC7F0523A6BA6D004D3C22 /* Address.swift in Sources */,
 				EBEC7F0623A6BA6D004D3C22 /* JobCompletionModel.swift in Sources */,
 				EBEC7F0723A6BA6D004D3C22 /* ExportDownload.swift in Sources */,
+				EBF9858223D68AB200C077A3 /* FHIR+Extensions.swift in Sources */,
 				EBEC7F0B23A6BAA6004D3C22 /* StreamReader.swift in Sources */,
 				EBEC7F0823A6BA6D004D3C22 /* FHIRExtensions.swift in Sources */,
 				EBEC7ED323A6B7FD004D3C22 /* DPCClient.swift in Sources */,

@@ -52,8 +52,6 @@ class ExportClient {
         components.port = 3002
         components.path = "/v1/Group/\(groupID)/$export"
         
-        // /\(groupID.uuidString.lowercased())/$export
-        
         do {
             let u = try components.asURL()
             debugPrint(u)

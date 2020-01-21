@@ -21,6 +21,9 @@ public final class DPCClient: ObservableObject {
     
     private let session: Session
     private let interceptor: SMARTAuthHandler
+    private lazy var exportManager: ExportManager = {
+        ExportManager(with: self.baseURL, interceptor: self.interceptor, context: self.context)
+    }()
     
     public init(baseURL: String, context: NSManagedObjectContext, keyID: String, key: SecKey, clientToken: String) {
         self.baseURL = baseURL
@@ -299,8 +302,7 @@ public final class DPCClient: ObservableObject {
     }
     
     public func exportData(provider: ProviderEntity, handler: @escaping () -> Void) -> Void {
-        let client = ExportClient(with: "http://localhost:3002/v1", provider: provider, context: self.context, token: self.interceptor.accessToken)
-        client.exportData(handler)
+        self.exportManager.beginExport(for: provider, handler: handler)
     }
     
     public func addPatient(patient: FHIR.Patient) -> Void {
