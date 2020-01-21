@@ -100,6 +100,9 @@
 		EBEECBC023B6A53E0018A8C4 /* SMARTAuthHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */; };
 		EBF9857F23D686CA00C077A3 /* ExportManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9857E23D686CA00C077A3 /* ExportManager.swift */; };
 		EBF9858223D68AB200C077A3 /* FHIR+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */; };
+		EBF9858423D68EB200C077A3 /* ExportWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9858323D68EB200C077A3 /* ExportWatcher.swift */; };
+		EBF9858623D696FB00C077A3 /* ExportRetryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9858523D696FB00C077A3 /* ExportRetryHandler.swift */; };
+		EBF9858823D698A900C077A3 /* ChainedRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF9858723D698A900C077A3 /* ChainedRequestInterceptor.swift */; };
 		EBFA21FE23B2939600FFBAAB /* ClaimsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -296,6 +299,9 @@
 		EBEECBBF23B6A53E0018A8C4 /* SMARTAuthHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMARTAuthHandler.swift; sourceTree = "<group>"; };
 		EBF9857E23D686CA00C077A3 /* ExportManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportManager.swift; sourceTree = "<group>"; };
 		EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FHIR+Extensions.swift"; sourceTree = "<group>"; };
+		EBF9858323D68EB200C077A3 /* ExportWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportWatcher.swift; sourceTree = "<group>"; };
+		EBF9858523D696FB00C077A3 /* ExportRetryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportRetryHandler.swift; sourceTree = "<group>"; };
+		EBF9858723D698A900C077A3 /* ChainedRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainedRequestInterceptor.swift; sourceTree = "<group>"; };
 		EBFA21FD23B2939600FFBAAB /* ClaimsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsManager.swift; sourceTree = "<group>"; };
 		F3DF8002CA6518F5A87E6CBB /* Pods_DPCExplorer_DPCExplorerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DPCExplorer_DPCExplorerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F407B3ED6A60C5A18F24C812 /* Pods-DPCExplorer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DPCExplorer.release.xcconfig"; path = "Target Support Files/Pods-DPCExplorer/Pods-DPCExplorer.release.xcconfig"; sourceTree = "<group>"; };
@@ -592,6 +598,7 @@
 				EB6F363123B6FFC800AEC1A9 /* DPCSigner.swift */,
 				EB6F363723B7033200AEC1A9 /* JWTFactory.swift */,
 				EBF9858123D68AB200C077A3 /* FHIR+Extensions.swift */,
+				EBF9858723D698A900C077A3 /* ChainedRequestInterceptor.swift */,
 			);
 			path = DPCKit;
 			sourceTree = "<group>";
@@ -626,6 +633,8 @@
 			children = (
 				EB5192672381BDF500C979C3 /* ExportClient.swift */,
 				EBF9857E23D686CA00C077A3 /* ExportManager.swift */,
+				EBF9858323D68EB200C077A3 /* ExportWatcher.swift */,
+				EBF9858523D696FB00C077A3 /* ExportRetryHandler.swift */,
 			);
 			path = Export;
 			sourceTree = "<group>";
@@ -1250,12 +1259,15 @@
 			files = (
 				EBEECBC023B6A53E0018A8C4 /* SMARTAuthHandler.swift in Sources */,
 				EB1BE1C623B5157700D33A7E /* DPCKit.xcdatamodeld in Sources */,
+				EBF9858623D696FB00C077A3 /* ExportRetryHandler.swift in Sources */,
 				EBEC7F0923A6BA94004D3C22 /* ExportClient.swift in Sources */,
 				EB6F363923B7056E00AEC1A9 /* CryptoImportExportManager.swift in Sources */,
 				EB6F363823B7033200AEC1A9 /* JWTFactory.swift in Sources */,
 				EBEC7F0A23A6BA94004D3C22 /* FHIRSerializers.swift in Sources */,
 				EBEC7F0023A6BA6D004D3C22 /* Organization.swift in Sources */,
+				EBF9858823D698A900C077A3 /* ChainedRequestInterceptor.swift in Sources */,
 				EBEC7F0123A6BA6D004D3C22 /* Provider.swift in Sources */,
+				EBF9858423D68EB200C077A3 /* ExportWatcher.swift in Sources */,
 				EBEC7F0223A6BA6D004D3C22 /* Name.swift in Sources */,
 				EBF9857F23D686CA00C077A3 /* ExportManager.swift in Sources */,
 				EBEC7F0323A6BA6D004D3C22 /* Patient.swift in Sources */,
