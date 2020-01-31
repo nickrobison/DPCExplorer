@@ -15,10 +15,11 @@ struct InitialOnboardingView: View {
             Group {
                 Text("Hello,")
                     .bold()
+                    .font(.largeTitle)
                 Text("Let's get started")
+                    .font(.title)
             }
         }
-        .font(.title)
     }
 }
 

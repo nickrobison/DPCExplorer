@@ -36,7 +36,7 @@ struct MainOnboardingView: View {
     }
     
     private func buildViews() -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             Spacer()
             if (self.onboardingState == .initial) {
                 InitialOnboardingView()
