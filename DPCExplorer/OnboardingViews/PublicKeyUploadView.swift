@@ -27,7 +27,7 @@ struct PublicKeyUploadView: View {
                 Text("Use this public key:")
                     .font(.title)
                 Text("Copy and paste it into the web UI")
-                    .font(.caption)
+                    .font(.subheadline)
                 TextField("Public Key", text: .constant(publicKey))
                     .foregroundColor(.gray)
                     .labelsHidden()
@@ -40,6 +40,7 @@ struct PublicKeyUploadView: View {
                     }
                 })) {
                     Text(self.buttonText())
+                        .font(.title)
                 }
                 .padding([.top, .bottom])
             }
@@ -49,7 +50,7 @@ struct PublicKeyUploadView: View {
                     Text("Paste the key ID")
                         .font(.title)
                     Text("Paste it from the UI")
-                        .font(.caption)
+                        .font(.subheadline)
                     TextField("Public Key ID", text: self.$keyID)
                         .labelsHidden()
                 }

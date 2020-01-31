@@ -22,12 +22,11 @@ struct HostSelectionView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Spacer()
             Text("Select a host:")
                 .font(.title)
                 .bold()
             Text("Make sure you have permissions to access each environment")
-                .font(.caption)
+                .font(.subheadline)
             Picker(selection: $hostURL, label: Text("")) {
                 ForEach(hosts, id: \.0) { (name, env) in
                     Text(name).tag(env)
