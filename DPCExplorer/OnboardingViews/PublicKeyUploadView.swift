@@ -50,7 +50,7 @@ struct PublicKeyUploadView: View {
                     Text("Paste the key ID")
                         .font(.title)
                     Text("Paste it from the UI")
-                        .font(.caption)
+                        .font(.subheadline)
                     TextField("Public Key ID", text: self.$keyID)
                         .labelsHidden()
                 }
